@@ -1,0 +1,11 @@
+{
+  "configs": 8224,
+  "no_improver": [],
+  "n_no_improver": 0,
+  "first_drain_move_tags": {
+    "top-give/bot-recv": 1649,
+    "mid-give/top-recv": 87,
+    "mid-give/bot-recv": 6358,
+    "mid-give/mid-recv": 130
+  }
+}

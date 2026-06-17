@@ -1,0 +1,22 @@
+{
+  "B1a": {
+    "certified": true,
+    "h_shift": 3
+  },
+  "B1b": {
+    "certified": true,
+    "h_shift": 3
+  },
+  "B2": {
+    "certified": true,
+    "h_shift": 3
+  },
+  "B3a": {
+    "certified": true,
+    "h_shift": 0
+  },
+  "B3b": {
+    "certified": true,
+    "h_shift": 0
+  }
+}

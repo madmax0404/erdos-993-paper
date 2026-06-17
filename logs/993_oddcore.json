@@ -1,0 +1,111 @@
+{
+  "proof_steps": {
+    "m_max": 80,
+    "fails": {
+      "a": [],
+      "b": [],
+      "c": [],
+      "d": []
+    },
+    "n_fails": {
+      "a": 0,
+      "b": 0,
+      "c": 0,
+      "d": 0
+    }
+  },
+  "odd_scope": [
+    {
+      "arms": [
+        1,
+        8
+      ],
+      "n": 21,
+      "C": 9,
+      "in_grid": true,
+      "certificate_max_ratio": 0.19418935892489184,
+      "k_dec": 7,
+      "bandB_empty": true,
+      "brute_force_unimodal": true
+    },
+    {
+      "arms": [
+        3,
+        4
+      ],
+      "n": 17,
+      "C": 7,
+      "in_grid": true,
+      "certificate_max_ratio": 0.15107514994211202,
+      "k_dec": 6,
+      "bandB_empty": true,
+      "brute_force_unimodal": true
+    },
+    {
+      "arms": [
+        4,
+        7
+      ],
+      "n": 25,
+      "C": 11,
+      "in_grid": true,
+      "certificate_max_ratio": 0.1627074215031049,
+      "k_dec": 9,
+      "bandB_empty": true,
+      "brute_force_unimodal": true
+    },
+    {
+      "arms": [
+        4,
+        9
+      ],
+      "n": 29,
+      "C": 13,
+      "in_grid": true,
+      "certificate_max_ratio": 0.1479411085702029,
+      "k_dec": 10,
+      "bandB_empty": true,
+      "brute_force_unimodal": true
+    },
+    {
+      "arms": [
+        4,
+        11
+      ],
+      "n": 33,
+      "C": 15,
+      "in_grid": true,
+      "certificate_max_ratio": 0.1446747075674909,
+      "k_dec": 11,
+      "bandB_empty": true,
+      "brute_force_unimodal": true
+    },
+    {
+      "arms": [
+        7,
+        8
+      ],
+      "n": 33,
+      "C": 15,
+      "in_grid": true,
+      "certificate_max_ratio": 0.0783220898113978,
+      "k_dec": 11,
+      "bandB_empty": true,
+      "brute_force_unimodal": true
+    },
+    {
+      "arms": [
+        11,
+        12
+      ],
+      "n": 49,
+      "C": 23,
+      "in_grid": true,
+      "certificate_max_ratio": 0.0326694602958442,
+      "k_dec": 17,
+      "bandB_empty": true,
+      "brute_force_unimodal": true
+    }
+  ],
+  "all_checks_pass": true
+}

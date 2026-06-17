@@ -1,0 +1,53 @@
+"""Tools for exploring Erdős Problem #993."""
+
+from .indpoly import (
+    IndependenceAnalysis,
+    independence_polynomial,
+    is_log_concave,
+    is_unimodal,
+    log_concavity_failures,
+    synchronization_failures,
+    synchronization_margins,
+)
+from .families import (
+    t_3_m_n,
+    t_3_m_n_penultimate_margin,
+    t_3_m_n_parts,
+    t_3_m_n_polynomial,
+    t_3_m_n_tail_coefficients,
+    t_a_b_c,
+    t_a_b_c_parts,
+    t_a_b_c_penultimate_margin,
+    t_a_b_c_polynomial,
+    t_a_b_c_tail_coefficients,
+    t_star_3_m_n,
+    t_star_3_m_n_penultimate_margin,
+    t_star_3_m_n_parts,
+    t_star_3_m_n_polynomial,
+    t_star_3_m_n_tail_coefficients,
+)
+
+__all__ = [
+    "IndependenceAnalysis",
+    "independence_polynomial",
+    "is_log_concave",
+    "is_unimodal",
+    "log_concavity_failures",
+    "synchronization_failures",
+    "synchronization_margins",
+    "t_3_m_n",
+    "t_3_m_n_penultimate_margin",
+    "t_3_m_n_parts",
+    "t_3_m_n_polynomial",
+    "t_3_m_n_tail_coefficients",
+    "t_a_b_c",
+    "t_a_b_c_parts",
+    "t_a_b_c_penultimate_margin",
+    "t_a_b_c_polynomial",
+    "t_a_b_c_tail_coefficients",
+    "t_star_3_m_n",
+    "t_star_3_m_n_penultimate_margin",
+    "t_star_3_m_n_parts",
+    "t_star_3_m_n_polynomial",
+    "t_star_3_m_n_tail_coefficients",
+]

@@ -1,7 +1,23 @@
 [project]
 name = "erdos-993-paper"
 version = "0.1.0"
-description = "Add your description here"
+description = "Paper and reproducibility package for Erdős problem 993 hub-spider computations"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "networkx>=3.6.1",
+    "numpy>=2.4.6",
+    "sympy>=1.14.0",
+]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.0",
+]

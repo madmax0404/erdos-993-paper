@@ -1,0 +1,24 @@
+{
+  "configs_checked": 3522,
+  "sanity_mismatches": 0,
+  "tight_configs": 3264,
+  "improver_counts": {
+    "T2": 1801,
+    "T1T2": 1206,
+    "T1": 257
+  },
+  "neither_improves": [],
+  "n_neither": 0,
+  "core": {
+    "fails": [],
+    "n_fails": 0,
+    "min_ratio": [
+      1.002028397565923,
+      6,
+      8,
+      34,
+      6,
+      4
+    ]
+  }
+}

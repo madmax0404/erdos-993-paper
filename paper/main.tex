@@ -1,0 +1,1529 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{question}[theorem]{Question}
+
+\newcommand{\eps}{\varepsilon}
+\DeclareMathOperator{\lc}{LC}
+
+\title{Unimodality of independence polynomials of hub spiders:\\
+log-concavity certificates and a reduction to a single inequality}
+\author{Jongyun (Max) Han\thanks{madmax0404@maxandomnis.com}}
+\date{June 2026 --- draft v0.4}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+A conjecture of Alavi, Malde, Schwenk, and Erd\H{o}s (1987) asserts that
+the independent-set sequence of every tree and forest is unimodal; it is
+problem~993 in the Erd\H{o}s problems collection.  We study the family of
+\emph{hub spiders} $S(c_1,\dots,c_h)$: a root joined to $h$ hubs, the
+$i$-th hub bearing $c_i$ pendant paths of length two.  This family
+contains the trees $T_{a,b,c}$ of Kadrawi--Levit, the first known trees
+whose independence sequence fails log-concavity, and for which
+unimodality was previously known only in special cases.
+
+We develop a reduction of unimodality for this family to a single
+explicit inequality: the log-concavity in $t$ of the coefficient flow
+$G(t)=[x^k]\prod_i\bigl((1+2x)^{c_i}+t\,x(1+x)^{c_i}\bigr)$ at band
+positions $k$.  The route runs through: a quantitative
+ultra-log-concavity theorem for the hub factor
+$H_c=(1+2x)^c+x(1+x)^c$ with virtual degree $c+1+\lceil c/30\rceil$;
+an exact identity expressing the log-concavity defect of $I(S)$
+through the relative-mass sequence $\eps_k=(F_k-g_k)/g_k$; sharp
+per-class growth bounds obtained from exact window-mean identities
+and Jensen's inequality; and the concavity of the flow, which
+controls all moments of the class-mass profile.  The flow concavity
+is proved completely for $h=2$, for arbitrary arms --- by an
+elementary argument (a trinomial collapse, symmetrization, AM--GM,
+and Vandermonde) extended through a $t$-cancellation identity and a
+coefficientwise Schur lemma; at
+uniform multisets it is equivalent to a symmetric pairwise
+inequality (the \emph{E-core}), which is proved in the limit
+$c\to\infty$ for all $h$ and $k$ by a five-line calculus bound and
+established for all integer $c$ on a large finite range of $(k,h)$
+by an exact polynomial certification method.  Consequently the
+unimodality of $I(S)$ is proved unconditionally for $h=1$ (all
+$c$) and for $82$ further families: $55$ uniform ones including
+$S(4^5)$, a particularly fragile uniform hub spider found by the search, and
+the diagonal $T_{c,c,c}$ for $c\le 10$; eleven mixed-arm
+two-hub members of the certificate grid; and sixteen three-hub
+adjacent-two-value families including $T_{3,4,4}$ and $T_{3,3,4}$,
+the first published non-log-concave trees.  Two natural pairwise strengthenings of
+the flow concavity are shown to be false, with explicit hub-spider
+witnesses; the reduction is stated in the exact form the
+counterexamples leave standing.
+
+We also record structural results from a systematic counterexample
+search: a balance invariant that measures distance from unimodality
+failure, an exact offset law for the location of log-concavity failures
+in uniform hub spiders, and the observation that the
+Levit--Mandrescu/Basit--Galvin decreasing zone protects this junction
+mechanism from becoming a unimodality failure.
+\end{abstract}
+
+\section{Introduction}\label{sec:intro}
+
+For a finite graph $G$, write $i_k(G)$ for the number of independent
+sets of size $k$, $\alpha=\alpha(G)$ for the independence number, and
+\[
+  I(G;x)\;=\;\sum_{k=0}^{\alpha} i_k(G)\,x^k
+\]
+for the independence polynomial.  A sequence $(a_k)$ is \emph{unimodal}
+if $a_0\le\cdots\le a_m\ge\cdots\ge a_\alpha$ for some $m$, and
+\emph{log-concave} (LC) if $a_k^2\ge a_{k-1}a_{k+1}$ for all internal
+$k$; for positive sequences log-concavity implies unimodality.
+Alavi, Malde, Schwenk, and Erd\H{o}s~\cite{AMSE87} proved that the
+independence sequence of a general graph can be arbitrarily far from
+unimodal and asked whether it is unimodal for every tree and forest;
+the question appears as problem~993 of~\cite{ErdosProblems}.
+
+The conjecture has stimulated a substantial literature.  Levit and
+Mandrescu proved that for K\H{o}nig--Egerv\'ary graphs (hence all
+forests) the final third of the sequence is nonincreasing; Basit and
+Galvin~\cite{BasitGalvin} extended the decreasing zone and proved that
+random labelled trees are almost surely ``almost unimodal''.
+Galvin and Hilyard~\cite{GalvinHilyard} established unimodality for
+several recursively structured tree families.  On the negative side,
+Kadrawi and Levit~\cite{KadrawiLevit} gave infinite families extending
+the $26$-vertex examples whose independence sequences are not
+log-concave.  Galvin~\cite{GalvinNonLC} later constructed families with
+log-concavity failures at unbounded independence number; machine
+search~\cite{RamosSun} produced many further examples; Li~\cite{Li}
+proved unimodality for two infinite Kadrawi--Levit families; and
+Bautista-Ramos, Guill\'en-Galv\'an and G\'omez-Salgado~\cite{BautistaRamos}
+developed linear recurrences and further non-log-concave families.  The
+hub-spider subfamily below isolates the junction mechanism in the
+Kadrawi--Levit examples and in many examples found by the search.
+
+\begin{definition}[Hub spiders]\label{def:hub}
+For $h\ge 1$ and $c_1,\dots,c_h\ge 1$, the \emph{hub spider}
+$S(c_1,\dots,c_h)$ is the tree consisting of a root $r$, hubs
+$v_1,\dots,v_h$ adjacent to $r$, and, for each $i$, $c_i$ pendant paths
+of length two attached to $v_i$.  It has $n=1+h+2C$ vertices and
+independence number $D=h+C$, where $C=\sum_i c_i$.  We write $S(c^h)$
+in the uniform case $c_1=\cdots=c_h=c$.
+\end{definition}
+
+The family contains the Kadrawi--Levit trees $T_{a,b,c}=S(a,b,c)$,
+including the unstarred families treated by Li~\cite{Li}, and captures
+many hub-spider examples produced by the machine search~\cite{RamosSun}.
+By the root
+decomposition,
+\begin{equation}\label{eq:PFG}
+  I(S(c_1,\dots,c_h);x) \;=\; P \;=\; F + x\,g,\qquad
+  F=\prod_{i=1}^h H_{c_i},\quad g=(1+2x)^{C},
+\end{equation}
+where $H_c=(1+2x)^c+x(1+x)^c$ is the independence polynomial of a hub
+with $c$ pendant $P_2$'s, the two summands according to whether the hub
+is excluded or included.
+
+\subsection{Results}
+
+Our first group of results is unconditional.
+
+\begin{theorem}[Unconditional scope]\label{thm:scope}
+$I(S(c_1,\dots,c_h);x)$ has a unimodal coefficient sequence in the
+following cases:
+\begin{enumerate}
+  \item $h=1$, all $c\ge 1$ (indeed $I$ is log-concave);
+  \item the uniform families $S(c^h)$ with
+    \[
+      \begin{array}{c|cccccccccc}
+        h & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9{-}10\\\hline
+        c\le & \text{all} & 10 & 10 & 10 & 7 & 6 & 5 & 3 & 2
+      \end{array}
+    \]
+  \item the eleven mixed-arm spiders of the certificate grid:
+    $S(1,8)$, $S(2,4)$, $S(3,4)$, $S(4,7)$, $S(4,9)$, $S(4,11)$,
+    $S(6,8)$, $S(6,12)$, $S(7,8)$, $S(10,12)$, $S(11,12)$;
+  \item the sixteen three-hub adjacent-two-value spiders
+    $S(a^p,(a{+}1)^{3-p})$, $1\le a\le8$, $p\in\{1,2\}$ ---
+    including $T_{3,4,4}=S(3,4,4)$ and $T_{3,3,4}=S(3,3,4)$, the
+    first published non-log-concave trees.
+\end{enumerate}
+In particular $S(4^5)$, a particularly fragile uniform hub spider found
+by the search (Section~\ref{sec:extremal}), and the uniform Kadrawi--Levit
+diagonal $T_{c,c,c}$, $c\le 10$, have unimodal independence sequences.
+\end{theorem}
+
+The proof of Theorem~\ref{thm:scope} is a composition of human-proved
+lemmas with machine-verified components, all executed in exact
+rational arithmetic and reproducible from the public scripts; the
+methodology is described in Section~\ref{sec:verification}.
+
+The structural heart of the paper is a reduction theorem.
+
+\begin{theorem}[Reduction to the flow concavity]\label{thm:reduction}
+Fix $h\ge 2$ and $c_1,\dots,c_h$, and let $b_i=x(1+x)^{c_i}$,
+$E_i=(1+2x)^{c_i}$.  Suppose that
+\begin{enumerate}
+\item[(i)] the certificate inequalities of
+  Section~\ref{sec:verification} hold for $(c_1,\dots,c_h)$ at every
+  band position (verified exactly for every multiset in the grid
+  $\mathcal G$ of Section~\ref{sec:verification}, and conjectured in
+  general, Conjecture~\ref{conj:g2}); and
+\item[(ii)] at every position $k$ in the band \eqref{eq:band}, the
+  demotion flow $G(t)=\bigl[\prod_{l=1}^h(E_l+t\,b_l)\bigr]_k$ is
+  log-concave in $t$ on $[0,2]$:
+\begin{equation}\label{eq:flowcc}
+  G(t)\,G''(t)\;\le\;G'(t)^2 ,\qquad 0\le t\le 2 .
+\end{equation}
+\end{enumerate}
+Then $I(S(c_1,\dots,c_h);x)$ is unimodal.
+\end{theorem}
+
+Expanding \eqref{eq:flowcc} by the product rule
+(Proposition~\ref{prop:dd}), hypothesis (ii) is the aggregate
+inequality $\sum_{i\ne j}(G\,y_{ij}-x_ix_j)\le\sum_ix_i^2$, where
+$A_l=E_l+t\,b_l$, $x_i=[b_i\prod_{l\ne i}A_l]_k$ and
+$y_{ij}=[b_ib_j\prod_{l\ne i,j}A_l]_k$.  At uniform multisets the
+diagonal flow makes all $x_i$ equal and all $y_{ij}$ equal, and (ii)
+becomes the \emph{symmetric E-core}
+\begin{equation}\label{eq:sym}
+  [b_ib_jW]_k\,[A_iA_jW]_k\;\le\;
+  \Bigl(1+\frac1{h-1}\Bigr)[b_iA_jW]_k\,[b_jA_iW]_k,
+  \qquad W=\prod_{l\ne i,j}A_l,
+\end{equation}
+which is the form all certifications below address.
+
+We caution --- twice --- against strengthening (ii) to a
+\emph{pairwise} statement for general multisets; both natural
+pairwise forms were intermediate conjectures of this project,
+refuted by adversarial scanning.  The symmetric form \eqref{eq:sym}
+fails at lopsided pairs: at $(1,c,1^{h-2})$ with all-$E$ background
+it fails in band from $c\approx16$, the normalized defect reaching
+$4.35$ at $(h,c)=(8,64)$.  The weighted form
+$G\,y_{ij}-x_ix_j\le(x_i^2+x_j^2)/(2(h-1))$ --- the exact-allocation
+split, which restricts to \eqref{eq:sym} at $x_i=x_j$ --- fails at
+$1$-heavy backgrounds: its smallest violation is the $107$-vertex
+spider $S(1,27,1^{16})$ at $k=5$, and at $(128,128,1^{192})$, $k=7$
+it fails by the factor $2.53$.  The failure mode is an allocation
+artifact: the uniform $1/(h-1)$ budget starves the heavy pair while
+the many light pairs underdraw.  The aggregate (ii) itself passes
+every exact scan --- $14{,}410$ evaluations across the flow
+parameter, including all $200$ pairwise-violation witnesses, with
+worst ratio $0.085$ and margins that \emph{grow} (to $-5.3$ at
+background size $1024$) exactly where the pairwise splits die
+(Section~\ref{sec:verification}).
+
+Four results establish \eqref{eq:flowcc} unconditionally on large
+families.
+
+\begin{theorem}[E-core at $h=2$]\label{thm:h2}
+For $h=2$ the symmetric form holds with constant $2$ for all $c\ge1$
+and all $k\ge0$, with no band restriction; by AM--GM this implies
+the flow concavity \eqref{eq:flowcc} at $h=2$, $c_1=c_2$.
+\end{theorem}
+
+The proof (Section~\ref{sec:p6}) is elementary and short: the bracket
+$[bE]_k$ collapses to a coefficient of the trinomial power
+$(1+3x+2x^2)^c$, and a symmetrization, the AM--GM inequality, the
+Vandermonde identity, and log-concavity of binomial coefficients finish
+in four lines.
+
+\begin{theorem}[Flow concavity at $h=2$, arbitrary arms]\label{thm:h2mixed}
+For $h=2$ with any arms $(c_1,c_2)$, the flow concavity
+\eqref{eq:flowcc} holds at every position $k\ge0$, with no band
+restriction.  In particular hypothesis (ii) of
+Theorem~\ref{thm:reduction} holds for every two-hub spider.
+\end{theorem}
+
+The proof (Section~\ref{sec:p6}) combines two new lemmas with the
+core of Theorem~\ref{thm:h2}: a \emph{$t$-cancellation} lemma --- for
+any fixed background the pairwise defect $G y_{ij}-x_ix_j$ is
+independent of the flow parameter on the two pair slots, a unipotent
+congruence of the $2\times2$ bracket matrix --- and a
+coefficientwise Schur lemma: among the splits $c_1+c_2=s$, the
+coefficients of $(1+x)^{c_1}(1+2x)^{c_2}+(1+x)^{c_2}(1+2x)^{c_1}$ are
+minimized at the balanced one.  For even $s$ the balanced split is
+the core of Theorem~\ref{thm:h2}; odd $s$ needs one further
+inequality (the \emph{odd core}, Lemma~\ref{lem:oddcore}), whose
+four-line proof runs on Pascal's rule, log-concavity of a binomial
+row, and the numerical accident $\tfrac32>\sqrt2$.
+
+\begin{theorem}[Limit calculus]\label{thm:limit}
+For each fixed $k$ and $h\ge3$, the defect of the symmetric form in
+the uniform case with all-$E$ slots and background (the binding
+configuration in all sweeps) converges as $c\to\infty$ to
+\[
+  \Delta_\infty(k,\ell)=\Bigl(1-\tfrac1k\Bigr)
+  \Bigl(1+\tfrac1{2\ell+2}\Bigr)^{2}
+  \Bigl(1-\tfrac1{(2\ell+3)^2}\Bigr)^{k}-1,
+  \qquad \ell=h-2,
+\]
+and $(h-1)\sup_{k\ge2}\Delta_\infty(k,h-2)\le 1.1/(2h-1)\le 0.22$
+for every $h\ge 3$: the limit is uniformly at least $4.5$ times below
+the required bound.
+\end{theorem}
+
+\begin{theorem}[Finite certification]\label{thm:cert}
+The symmetric form \eqref{eq:sym} (hence, at uniform multisets, the
+flow concavity \eqref{eq:flowcc}) holds, for all integer
+$c\ge1$ in the uniform case, at every $(k,h)$ with $3\le h\le 7$, $k\le 28$ and
+$8\le h\le 10$, $k\le 20$, and every background pattern: $996$
+instances, each certified by an exact polynomial argument
+(Section~\ref{sec:verification}).
+\end{theorem}
+
+Finally, the counterexample search that initiated this work produced
+extremal information of independent interest
+(Section~\ref{sec:extremal}): an exact \emph{offset law} --- in
+$S(c^h)$ with $c\ge4$ the unique log-concavity failure sits exactly
+$h-2$ positions below the top degree --- and the \emph{record
+fragility} tree, a $48$-vertex junction tree (four hub gadgets and
+one exotic gadget) whose log-concavity
+\emph{balance} (Definition~\ref{def:balance}) is $0.0451$, more than
+twice the previous literature record, yet still $22$ times short of
+what a unimodality counterexample requires.
+
+\subsection{Method overview}\label{sec:overview}
+
+Write $P=F+xg$ as in \eqref{eq:PFG} and let
+\[
+  \begin{gathered}
+  \eps_k=\frac{F_k-g_k}{g_k},\qquad d_k=\eps_{k+1}-\eps_k,\\
+  \rho_k=\frac{g_k}{g_{k-1}}=\frac{2(C-k+1)}{k},\qquad
+  \lambda_k=\frac{(k-1)(C-k)}{(k+1)(C-k+2)} .
+  \end{gathered}
+\]
+The engine of the reduction is the exact identity
+(Lemma~\ref{lem:epsid})
+\[
+  \underbrace{2F_kg_{k-1}-F_{k-1}g_k-F_{k+1}g_{k-2}}_{\text{defect}(k)}
+  \;=\; g_kg_{k-1}\Bigl[(1-\lambda_k)(1+\eps_k)+d_{k-1}-\lambda_kd_k\Bigr],
+\]
+which converts band log-concavity of $P$ into a one-dimensional
+statement about the sequence $(\eps_k)$, absorbed against the
+Newton-strength margin $\lc_F(k)\ge F_k^2\,(N_F+1)/\bigl((k+1)(N_F-k+1)\bigr)$
+provided by the virtual ultra-log-concavity of the factors
+(Theorem~\ref{thm:a2}).  Class decomposition of $F-g$, exact
+window-mean identities, and two Jensen arguments give closed-form
+two-sided bounds on every class growth; the \emph{demotion flow}
+$\phi(t)=\ln[x^k]\prod_i(E_i+tb_i)$ supplies all moment bounds for the
+class-mass profile via its concavity --- which is exactly the single
+inequality \eqref{eq:flowcc} of Theorem~\ref{thm:reduction}, and which
+at uniform multisets is equivalent to the symmetric E-core
+\eqref{eq:sym}.  The final assembly into explicit certificates,
+verified in exact rational arithmetic, is described in
+Section~\ref{sec:verification}.
+
+\section{Setup and notation}\label{sec:setup}
+
+Throughout, $[u]_k$ (or $u_k$, or $u[k]$) denotes the coefficient of
+$x^k$ in $u$; $\lc_u(k)=u_k^2-u_{k-1}u_{k+1}$; $r^u(j)=u_j/u_{j-1}$.
+Fixed symbols: $C=\sum_ic_i$, $D=h+C$, $n=1+h+2C$,
+$g=(1+2x)^C$, $\rho_k=2(C-k+1)/k$,
+$\lambda_k=(k-1)(C-k)/\bigl((k+1)(C-k+2)\bigr)$,
+$\eps_k=(F_k-g_k)/g_k$, $d_k=\eps_{k+1}-\eps_k$,
+$N_c=c+1+\lceil c/30\rceil$, $N_F=\sum_iN_{c_i}$,
+$m_k=(N_F+1)/\bigl((k+1)(N_F-k+1)\bigr)$,
+$q_k=k/(2(C-k+1))$, $\sigma_k=\rho_k/\rho_{k+1}-1$.
+
+For \eqref{eq:PFG} write $b_i=x(1+x)^{c_i}$, so $H_{c_i}=E_i+b_i$.
+Expanding the product over the choice of summand in each factor,
+\[
+  F-g \;=\; R\;=\;\sum_{\emptyset\ne S\subseteq[h]} t_S,\qquad
+  t_S=x^{|S|}\prod_{i\in S}(1+x)^{c_i}\prod_{i\notin S}(1+2x)^{c_i},
+\]
+and we write $W_s(k)=\bigl(\sum_{|S|=s}t_S[k]\bigr)/g_k$ for the class
+masses, $\eps_k=\sum_s W_s(k)$.
+
+The \emph{band} is
+\begin{equation}\label{eq:band}
+  2\;\le\;k\;\le\;k_A:=\min(\ell_{\mathrm{BG}}-1,\;k_0-1,\;C-1),
+\end{equation}
+where $k_0=\lceil(2D-1)/3\rceil$ (Levit--Mandrescu) and
+$\ell_{\mathrm{BG}}=\lceil D(n-1)/(D+n)\rceil$ (Basit--Galvin), and set
+$k_{\mathrm{dec}}=\min(k_0,\ell_{\mathrm{BG}})$.  Beyond
+$k_{\mathrm{dec}}$ the sequence is nonincreasing by those theorems, and
+positions between $C$ and the decreasing zone are handled separately
+(Section~\ref{sec:assembly}).
+
+\section{The composition skeleton}\label{sec:skeleton}
+
+\begin{lemma}[Seam]\label{lem:seam}
+Let $P$ be a positive sequence of degree $D$, log-concave at every
+$k\in[1,k_{\mathrm{dec}}-1]$, and nonincreasing on
+$[k_{\mathrm{dec}},D]$.  Then $P$ is unimodal.
+\end{lemma}
+
+\begin{proof}
+Log-concavity at $k$ means $r_k\ge r_{k+1}$ for $r_k=P_k/P_{k-1}$, so
+$r_1\ge\cdots\ge r_{k_{\mathrm{dec}}}$ and the ratio sequence crosses
+$1$ at most once on that range; hence $P$ is unimodal on
+$[0,k_{\mathrm{dec}}]$, with mode $m$ say.  On $[m,k_{\mathrm{dec}}]$
+the ratios are $\le1$, so $P$ is nonincreasing there, and it continues
+nonincreasing on $[k_{\mathrm{dec}},D]$ by hypothesis.
+\end{proof}
+
+The case $k=1$ of the log-concavity hypothesis is universal: for any
+tree on $n$ vertices, $i_1=n$ and $i_2=\binom n2-(n-1)$, and
+$n^2\ge\binom n2-(n-1)$ reads $n^2+3n-2\ge0$.
+
+\subsection{Band B}\label{sec:bandB}
+
+When the multiset is leaf-heavy (roughly $h\gtrsim 0.62\,C$) the
+decreasing zone begins above $C$, leaving positions
+$k\in[C,k_{\mathrm{dec}}-1]$ outside the band \eqref{eq:band}.  These
+are handled directly.  Since $xg$ has support $[1,C+1]$, we have
+$P_k=F_k$ for $k\ge C+2$; hence for $k\ge C+3$ all three coefficients
+in $\lc_P(k)$ are pure $F$ and $\lc_P(k)=\lc_F(k)\ge0$ by
+Lemma~\ref{lem:a0} and Lemma~\ref{lem:a1}.  At the three remaining
+positions $k\in\{C,C+1,C+2\}$ the corrections to $\lc_F(k)$ are
+explicit in the top three coefficients of $g$:
+\[
+  \lc_P(C{+}2)-\lc_F(C{+}2)=-g_CF_{C+3},\qquad
+  \lc_P(C{+}1)-\lc_F(C{+}1)=2F_{C+1}g_C+g_C^2-g_{C-1}F_{C+2},
+\]
+and similarly at $k=C$ with $g_{C-2},g_{C-1},g_C$.  The negative
+terms are absorbed by the margin of Theorem~\ref{thm:a2} using the
+explicit mass bound
+\begin{equation}\label{eq:W1C}
+  \eps_C\;\ge\;W_1(C)\;=\;\sum_{i=1}^h\frac{C+c_i}{2^{\,c_i+1}},
+\end{equation}
+which follows from the top two coefficients of
+$u_i=(1+x)^{c_i}(1+2x)^{C-c_i}$, namely $u_i[C]=2^{C-c_i}$ and
+$u_i[C-1]=2^{C-c_i-1}(C+c_i)$.  In the leaf-heavy regime
+\eqref{eq:W1C} is large (each $c_i\le2$ term contributes at least
+$(C+1)/8$), so the $g$-tail is negligible against $F$.
+
+The explicit threshold is $C\ge55$.  Put $A_c=2^c+c$, the
+one-below-top coefficient of $H_c$.  Since Band~B is nonempty only
+when $h^2+Ch-C^2-C>0$, we have $h\ge3C/5$, and if $r$ is the number
+of indices with $c_i=1$, then $r\ge2h-C$.  The reversed top expansion
+of $F$ gives
+\[
+  F_C\ge e_h(A_{c_i}),\qquad
+  F_{C+1}\ge e_{h-1}(A_{c_i}),\qquad
+  F_{C+2}\ge e_{h-2}(A_{c_i}).
+\]
+The compression inequality
+\[
+  (2^a+a)(2^b+b)\ge 3(2^{a+b-1}+a+b-1),\qquad a,b\ge1,
+\]
+therefore gives
+$F_C\ge 3^{h-1}(2^{C-h+1}+C-h+1)$; and $A_1=3$, $A_c\ge2^c$ give
+\[
+  F_{C+1}\ge r3^{r-1}2^{C-r},\qquad
+  F_{C+2}\ge \binom r2 3^{r-2}2^{C-r}.
+\]
+Together with $N_F\le2C+h$ and
+$r^F(k{+}1)\le(2C+h)(N_F-k)/((k{+}1)N_F)$ from
+Theorem~\ref{thm:a2}, these bounds make the three absorptions at
+$k=C,C+1,C+2$ explicit rational-exponential inequalities.  For
+$C\ge55$ a quotient check shows that the five residuals are minimized
+on the Band~B range at $(C,h)=(55,35)$, where all are positive.  The
+remaining finite list is exactly the leaf-heavy multisets with
+$C\le54$; these
+are the $24{,}394$ integer partitions of $C-h$ over all admissible
+$(C,h)$, comprising $54{,}049$ Band~B coefficient positions.  The
+verifier checks each position in exact integer arithmetic and finds
+zero failures.
+
+\section{Log-concavity of the factors}\label{sec:factors}
+
+\begin{lemma}[A0]\label{lem:a0}
+For every $c\ge1$ and $t\in[0,2]$ the polynomial $E_c+t\,b_c$ has a
+log-concave coefficient sequence.  Quantitatively, for $H_c=E_c+b_c$,
+\[
+  H_k^2-H_{k-1}H_{k+1}\;\ge\;
+  \frac{4^k\binom ck^2(c+1)}{(k+1)(c-k+1)}
+  \;-\;2^{k-1}\binom ck\binom c{k-1}\;\ge\;0 .
+\]
+\end{lemma}
+
+\begin{proof}
+With $A_k=\binom ck2^k$ and $B_k=\binom c{k-1}$ decompose
+$\Delta_k=(A+tB)_k^2-(A+tB)_{k-1}(A+tB)_{k+1}$ into the two pure
+margins and a cross term:
+\[
+  \Delta_k=\underbrace{\frac{4^k\binom ck^2(c+1)}{(k+1)(c-k+1)}}_{A\text{-margin}}
+  +\;t^2\underbrace{\frac{\binom c{k-1}^2(c+1)}{k(c-k+2)}}_{B\text{-margin}}
+  +\;t\,2^{k-1}\Bigl[3\tbinom ck\tbinom c{k-1}-4\tbinom c{k+1}\tbinom c{k-2}\Bigr].
+\]
+Both margins are exact evaluations of binomial log-concavity.  Since
+$\binom c{k+1}\binom c{k-2}<\binom ck\binom c{k-1}$ always, the cross
+deficit is at most $t\,2^{k-1}\binom ck\binom c{k-1}$, and for $t\le2$
+the $A$-margin absorbs it because
+$2^{k}(c+1)\ge k(k+1)$, which holds as $2^k\ge k$ and $c+1\ge k+1$.
+\end{proof}
+
+\begin{theorem}[A2: virtual ultra-log-concavity]\label{thm:a2}
+$H_c$ is $N_c$-ULC with $N_c=c+1+\lceil c/30\rceil$: the sequence
+$H_k/\binom{N_c}k$ is log-concave.  Consequently, by Liggett's
+convolution theorem~\cite{Liggett}, $F=\prod_iH_{c_i}$ is $N_F$-ULC
+with $N_F=\sum_iN_{c_i}$, and for all $k$
+\[
+  \lc_F(k)\;=\;F_k^2-F_{k-1}F_{k+1}\;\ge\;
+  F_k^2\,\frac{N_F+1}{(k+1)(N_F-k+1)} .
+\]
+\end{theorem}
+
+\begin{remark}
+$H_c$ is not real-rooted for $c\ge3$ and not plainly ULC for
+$c\ge41$, so a virtual degree is necessary; $N_c$ is nearly optimal
+(empirically the minimal $N$ is $c+1$ for $c\le40$ and
+${\sim}1.032c$ asymptotically).
+\end{remark}
+
+\begin{proof}
+Write $C_j=\binom cj$, $A_k=C_k2^k$, $B_k=C_{k-1}$, $N=N_c$, and
+$\Delta=H_k^2\,k(N-k)-H_{k-1}H_{k+1}(k+1)(N-k+1)$; we must show
+$\Delta\ge0$ for $1\le k\le c$.  Three exact evaluations, using
+$C_{k-1}C_{k+1}/C_k^2=k(c-k)/\bigl((k+1)(c-k+1)\bigr)$ and the
+telescoping $(N-k)(c-k+1)-(N-k+1)(c-k)=N-c$:
+\begin{align*}
+  A\text{-part:}\quad
+  &A_k^2k(N-k)-A_{k-1}A_{k+1}(k+1)(N-k+1)
+   =2^kC_kC_{k-1}\cdot2^k(N-c);\\
+  B\text{-part:}\quad
+  &B_k^2k(N-k)-B_{k-1}B_{k+1}(k+1)(N-k+1)
+   =\frac{C_{k-1}^2}{k(c-k+2)}
+   \Bigl[k^2(N-c-1)\\
+  &\hspace{8em} +(c-k+1)(N-k+1)\Bigr]\ge0;\\
+  \text{cross:}\quad
+  &2A_kB_kk(N-k)-(A_{k-1}B_{k+1}+A_{k+1}B_{k-1})(k+1)(N-k+1)\\
+  &\qquad=2^kC_kC_{k-1}
+  \Bigl[2k(N-k)-(k+1)(N-k+1)\bigl(\tfrac12+2\theta_k\bigr)\Bigr],\\
+  &\qquad\theta_k=\tfrac{(k-1)(c-k)}{(k+1)(c-k+2)}.
+\end{align*}
+Dropping the nonnegative $B$-part and clearing denominators, it
+suffices that
+\[
+  S(k,c,N):=2(c-k+2)\bigl[2^k(N-c)+2k(N-k)\bigr]
+  -(N-k+1)\bigl[(k+1)(c-k+2)+4(k-1)(c-k)\bigr]\;\ge\;0 .
+\]
+$S$ is nondecreasing in $N$ (the $N$-derivative is
+$2(c-k+2)(2^k+2k)-[(k+1)(c-k+2)+4(k-1)(c-k)]\ge0$ since
+$2^{k+1}\ge k+1$ and $4k(c-k+2)\ge4(k-1)(c-k)$), so it is enough to
+prove $S\ge0$ at the real value $N=c+1+c/30$.  For $k\le12$,
+$P_k(c):=30\,S(k,c,c+1+c/30)$ is a quadratic in $c$ with positive
+leading coefficient and $P_k(k)\ge0$, $P_k'(k)\ge0$ --- for example
+$P_1=6(c+1)(11c+10)$, $P_2=c(39c+248)$, \dots,
+$P_{12}=7913c^2+170618c-2496600$ --- hence $P_k\ge0$ on $c\ge k$.
+For $k\ge13$, use $(k+1)(c-k+2)+4(k-1)(c-k)\le5(k+1)(c-k+2)$,
+$N-k+1\le N+1\le\tfrac{31}{30}(c+30)$, and
+$N-c\ge\tfrac{1}{30}(c+30)$:
+\[
+  S\;\ge\;\frac{(c-k+2)(c+30)}{30}\bigl[2^{k+1}-155(k+1)\bigr]\;\ge\;0,
+\]
+since $2^{k+1}\ge155(k+1)$ for $k\ge13$.  (The inequality $S\ge0$ was
+additionally verified exactly for every $c\le3000$ and every $k\le
+c$.)  The Liggett corollary follows since zero-padding a degree-$d$
+$N$-ULC sequence to virtual degree $N$ preserves log-concavity of the
+normalized sequence.
+\end{proof}
+
+\begin{lemma}[Closure]\label{lem:a1}
+The convolution of positive log-concave sequences with no internal
+zeros is log-concave.  Quantitatively,
+$\lc_{u*v}(k)\ge\sum_j\lc_u(k-1-j)\,\lc_v(j+1)$.
+\end{lemma}
+
+\begin{proof}[Proof sketch]
+The qualitative statement is classical (positive LC sequences with no
+internal zeros are P\'olya frequency of order 2, and PF$_2$ is closed
+under convolution; see e.g.~\cite{Karlin}).  The quantitative form
+follows from the Cauchy--Binet expansion of the $2\times2$ minors of
+the convolution into sums of products of paired spread minors of $u$
+and $v$, of which the displayed sum keeps the adjacent pairs; it is
+stated for completeness but only the qualitative statement is used in
+this paper (the quantitative margins come from Theorem~\ref{thm:a2}).
+\end{proof}
+
+\begin{lemma}[D1: the case $h=1$]\label{lem:d1}
+For every $c\ge1$, $I(S(c))=H_c+xE_c$ is log-concave; in fact the
+mixed defect $2H_kg_{k-1}-H_{k-1}g_k-H_{k+1}g_{k-2}$ is nonnegative
+for all $1\le k\le c$, where $g=E_c$.
+\end{lemma}
+
+\begin{proof}
+Split $H=g+b$, $b_k=\binom c{k-1}$; the defect is linear in its first
+argument, $\mathrm{defect}=W(g,g)+W(b,g)$.  The pure part has the
+exact closed form
+$W(g,g)(k)=g_kg_{k-1}-g_{k+1}g_{k-2}
+=g_kg_{k-1}(2c+2)/\bigl((k+1)(c-k+2)\bigr)>0$, and the mixed part
+evaluates to
+$W(b,g)(k)=2^{k-2}\bigl[4\binom c{k-1}^2-5\binom c{k-2}\binom ck\bigr]
+\ge-2^{k-2}\binom c{k-1}^2$ by log-concavity of the binomial row.
+Absorption: $g_kg_{k-1}=\binom ck\binom c{k-1}2^{2k-1}$, so
+$W(g,g)\ge2^{k-2}\binom c{k-1}^2$ reduces to
+$2^{k+2}(c+1)(c-k+1)\ge k(k+1)(c-k+2)$, which holds since
+$c-k+1\ge(c-k+2)/2$ and $2^{k+1}(c+1)\ge k(k+1)$.  Log-concavity of
+$I(S(c))$ then follows from Lemma~\ref{lem:a0}, log-concavity of the
+shifted binomial $xg$, and $\lc_P=\lc_H+\lc_{xg}+\mathrm{defect}$.
+\end{proof}
+
+\section{The \texorpdfstring{$\eps$}{eps}-calculus and the master
+inequality}\label{sec:eps}
+
+\begin{lemma}[The $\eps$-identity]\label{lem:epsid}
+With the notation of Section~\ref{sec:overview},
+\[
+  2F_kg_{k-1}-F_{k-1}g_k-F_{k+1}g_{k-2}
+  = g_kg_{k-1}\bigl[(1-\lambda_k)(1+\eps_k)+d_{k-1}-\lambda_kd_k\bigr].
+\]
+Moreover $\lc_P(k)\ge \mathrm{defect}(k)+\lc_F(k)$, and with the margin
+of Theorem~\ref{thm:a2} the band log-concavity of $P$ follows from the
+\emph{master inequality}
+\begin{equation}\label{eq:master}
+  \lambda_kd_k-d_{k-1}\;\le\;(1-\lambda_k)(1+\eps_k)
+  +\rho_k m_k(1+\eps_k)^2,
+  \qquad m_k=\frac{N_F+1}{(k+1)(N_F-k+1)} .
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Substituting $F_j=(1+\eps_j)g_j$ and dividing by $g_kg_{k-1}$, the
+left side becomes
+\[
+  2(1+\eps_k)-(1+\eps_{k-1})-(1+\eps_{k+1})\,
+  \frac{g_{k+1}g_{k-2}}{g_kg_{k-1}}
+  \;=\;2(1+\eps_k)-(1+\eps_{k-1})-(1+\eps_{k+1})\,\frac{\rho_{k+1}}{\rho_{k-1}},
+\]
+and $\rho_{k+1}/\rho_{k-1}=\lambda_k$ by the closed form of $\rho$.
+Collecting terms gives the identity.  For the reduction, write
+$\lc_P(k)=\lc_F(k)+\lc_{xg}(k)+\mathrm{defect}(k)$ with
+$\mathrm{defect}(k)=2F_kg_{k-1}-F_{k-1}g_k-F_{k+1}g_{k-2}$ (the mixed
+terms of the square minus the two mixed products); $\lc_{xg}(k)\ge0$
+because shifted binomial sequences are log-concave.  If
+\eqref{eq:master} holds then by the identity
+\[
+  \mathrm{defect}(k)\;\ge\;-\,g_kg_{k-1}\,\rho_km_k(1+\eps_k)^2
+  \;=\;-\,m_k\,g_k^2(1+\eps_k)^2\;=\;-\,m_kF_k^2\;\ge\;-\lc_F(k)
+\]
+by Theorem~\ref{thm:a2}, using $g_kg_{k-1}\rho_k=g_k^2$ and
+$F_k=(1+\eps_k)g_k$.  Hence $\lc_P(k)\ge0$.
+\end{proof}
+
+\section{Per-class growth bounds}\label{sec:classes}
+
+Group the classes by $(s,a)$ with $s=|S|$ and $a=\sum_{i\in S}c_i$:
+the class mass is $w_{s,a}(k)=\nu_{s,a}\,u[k-s]/g_k$ with
+$u=(1+x)^a(1+2x)^{C-a}$ and $\nu_{s,a}$ the number of subsets
+realizing $(s,a)$, so that $W_s(k)=\sum_aw_{s,a}(k)$.  All bounds below concern the
+\emph{growth} $\gamma(k)=w(k)/w(k-1)=r^u(k-s)/\rho_k$, where
+$r^u(j)=u_j/u_{j-1}$.
+
+\begin{lemma}[E1: ratio sandwich]\label{lem:e1}
+For $u=(1+x)^a(1+2x)^{C-a}$ and all $j$ in the support,
+\[
+  \frac{C-j+1}{j}\;\le\;r^u(j)\;\le\;\frac{2(C-j+1)}{j}.
+\]
+\end{lemma}
+
+\begin{proof}
+$(1+x)\le_{\mathrm{lr}}(1+2x)$ (the coefficient ratio $1:2$ exceeds
+$1:1$), and likelihood-ratio order between nonnegative sequences is
+preserved by convolution with a common PF$_2$ (log-concave, no
+internal zeros) factor \cite[Thm.~1.C.9]{ShakedShanthikumar};
+equivalently, a two-line Cauchy--Binet check.  Applying this $a$
+resp.\ $C-a$ times,
+$(1+x)^C\le_{\mathrm{lr}}u\le_{\mathrm{lr}}(1+2x)^C$, and
+$X\le_{\mathrm{lr}}Y$ implies $r^X(j)\le r^Y(j)$ wherever defined; the
+two outer ratios are $(C-j+1)/j$ and $2(C-j+1)/j$.
+\end{proof}
+
+Two corollaries used throughout: $\eps_{k-1}\le2\eps_k$ on the band,
+and $W_s(k)\le\binom hs q_k^s$ with $q_k=k/(2(C-k+1))$.
+
+\begin{lemma}[Exact window means]\label{lem:means}
+Write $u=(1+x)\tilde u$ with $\tilde u=(1+x)^{a-1}(1+2x)^{C-a}$, and
+let $I$ (resp.\ $I'$) be the number of $(1+x)$-factors used at level
+$j-1$ (resp.\ $j$) under the coefficient measure of $u$.  Then
+\[
+  \mathbb E[I]=\frac{a}{1+r^{\tilde u}(j-1)},\qquad
+  \mathbb E[I']=\frac{a}{1+r^{\tilde u}(j)},
+\]
+and consequently, by Lemma~\ref{lem:e1} applied to $\tilde u$,
+\[
+  \mathbb E[I]\;\ge\;\frac{a(j-1)}{(j-1)+2(C-j+1)},\qquad
+  \mathbb E[I']\;\le\;\frac{aj}{C}.
+\]
+\end{lemma}
+
+\begin{proof}
+$\sum_i i\binom ai v_{j-1-i}=a\sum_i\binom{a-1}{i-1}v_{j-1-i}
+=a\,\tilde u_{j-2}$ for $v=(1+2x)^{C-a}$, while
+$u_{j-1}=\tilde u_{j-1}+\tilde u_{j-2}$; divide.  The second identity
+is the same computation one level up.
+\end{proof}
+
+\begin{lemma}[Jensen floor and ceiling]\label{lem:jensen}
+With $r^v(m)=2(C-a-m+1)/m$,
+\[
+  r^u(j)\;\ge\;r^v\!\bigl(j-\mathbb E[I]\bigr)
+  \qquad\text{and}\qquad
+  r^u(j)\;\le\;r^v\!\bigl(j-\mathbb E[I']\bigr).
+\]
+Combined with Lemma~\ref{lem:means} these give closed-form rational
+bounds $\mathrm{fl}(s,a,k)\le\gamma(k)\le\mathrm{ce}(s,a,k)$ for every
+class growth.
+\end{lemma}
+
+\begin{proof}
+Conditioning on $I$, $r^u(j)=\mathbb E_\omega[r^v(j-I)]$ where
+$\omega$ is the level-$(j-1)$ window measure; $i\mapsto r^v(j-i)$ is
+convex and increasing, so Jensen plus the floor on $\mathbb E[I]$ give
+the first bound.  For the second, $1/r^u(j)=\mathbb
+E_{\omega'}[1/r^v(j-I')]$ under the level-$j$ window measure, and
+$i\mapsto 1/r^v(j-i)$ is convex and decreasing; Jensen plus the
+ceiling on $\mathbb E[I']$ finish.
+\end{proof}
+
+\paragraph{The charge decomposition.}
+The left side of \eqref{eq:master} splits exactly over classes:
+\[
+  \lambda_kd_k-d_{k-1}
+  =\sum_{s,a}w_{s,a}(k)\Bigl[\lambda_k(\gamma_+-1)-\bigl(1-\tfrac1{\gamma_0}\bigr)\Bigr],
+\]
+where $\gamma_0,\gamma_+$ are the class growths into $k$ and $k+1$.
+Each bracket admits two upper bounds (``strategies''):
+\[
+  \mathrm{cap}_A=\lambda_k(\mathrm{ce}_+-1)^++\frac{(1-\mathrm{fl})^+}{\mathrm{fl}},
+  \qquad
+  \mathrm{cap}_B=\lambda_k\Bigl(\mathrm{ce}_0\,\sigma_k
+  +\frac{\mathrm{dev}^2}{\mathrm{fl}}\Bigr)
+  +(1-\lambda_k)\frac{(1-\mathrm{fl})^+}{\mathrm{fl}},
+\]
+with $\sigma_k=\rho_k/\rho_{k+1}-1$ and
+$\mathrm{dev}=\max(\mathrm{ce}_0-1,\,1-\mathrm{fl})$; strategy $B$
+uses the second-difference identity
+$\gamma_+-2+1/\gamma_0=(\gamma_+-\gamma_0)+(\gamma_0-1)^2/\gamma_0$
+together with $\gamma_+\le\gamma_0(1+\sigma_k)$ (log-concavity of $u$).
+Since both are upper bounds for the \emph{same} bracket, the
+per-class minimum $\min(\mathrm{cap}_A,\mathrm{cap}_B)$ is a valid
+charge, and
+\begin{equation}\label{eq:charges}
+  \lambda_kd_k-d_{k-1}\;\le\;\sum_sW_s(k)\,\mathrm{cap}(s),\qquad
+  \mathrm{cap}(s)=\max_a\min(\mathrm{cap}_A,\mathrm{cap}_B).
+\end{equation}
+
+\section{The demotion flow}\label{sec:flow}
+
+Fix a band position $k$ and define the \emph{demotion flow}
+\[
+  G(t)\;=\;\Bigl[\prod_{i=1}^h\bigl(E_i+t\,b_i\bigr)\Bigr]_k,
+  \qquad \phi(t)=\ln G(t),\qquad t\in[0,2].
+\]
+Then $G(1)=F_k$, $G(0)=g_k$, and expanding the product over which
+factors contribute $b_i$,
+\[
+  G(t)\;=\;g_k\sum_{s\ge0}W_s(k)\,t^s ,
+\]
+so the flow is the generating function of the class-mass profile.
+Three exact facts:
+\[
+  \phi(1)-\phi(0)=\ln(1+\eps_k),\qquad
+  \phi'(1)=\sum_{i=1}^h\frac{\delta_i}{1+\delta_i},\qquad
+  \sum_s sW_s(k)=(1+\eps_k)\,\phi'(1),
+\]
+where $\delta_i=(F-F^{[i]})_k/F^{[i]}_k$ and $F^{[i]}$ is $F$ with hub
+$i$ demoted ($H_i\to E_i$); the second uses
+$b_i\prod_{l\ne i}H_l=F-F^{[i]}$.
+
+\begin{proposition}[Flow facts]\label{prop:flow}
+Suppose $\phi''\le0$ on $[0,2]$ at position $k$.  Then
+\begin{align*}
+  \textup{(P5)}\quad &\textstyle\sum_s sW_s\le(1+\eps)\ln(1+\eps),\\
+  \textup{(m2)}\quad &\textstyle\sum_s s(s-1)W_s\le(1+\eps)\ln^2(1+\eps),\\
+  \textup{(envelope +)}\quad
+  &\textstyle\sum_{s\ge1}W_st^s\le(1+\eps)^t-1\qquad(1\le t\le2),\\
+  \textup{(envelope --)}\quad
+  &\textstyle\sum_{s\ge1}W_st^s\ge(1+\eps)^t-1\qquad(0\le t\le1).
+\end{align*}
+\end{proposition}
+
+\begin{proof}
+Concavity gives $\phi'(1)\le\phi(1)-\phi(0)=\ln(1+\eps)$, which is
+(P5) after multiplying by $1+\eps$; $G''G\le(G')^2$ at $t=1$ gives
+$\sum_ss(s-1)W_s\le(1+\eps)\phi'(1)^2$, which is (m2) by (P5).  For
+the envelopes: on $[1,2]$, $\phi(t)\le\phi(1)+(t-1)\phi'(1)\le\ln
+F_k+(t-1)\ln(1+\eps)$ (tangent line plus (P5)), and on $[0,1]$,
+$\phi(t)\ge(1-t)\phi(0)+t\phi(1)$ (chord); exponentiate and divide by
+$g_k$.\;
+\end{proof}
+
+\begin{proposition}[Diagonal dominance]\label{prop:dd}
+With $A_l=E_l+tb_l$, $x_i=[b_i\prod_{l\ne i}A_l]_k$ and
+$y_{ij}=[b_ib_j\prod_{l\ne i,j}A_l]_k$,
+\[
+  (G')^2-GG''=\Bigl(\sum_ix_i\Bigr)^2-G\sum_{i\ne j}y_{ij}
+  =\sum_ix_i^2+\sum_{i\ne j}\bigl(x_ix_j-G\,y_{ij}\bigr),
+\]
+so hypothesis (ii) of Theorem~\ref{thm:reduction} is the aggregate
+inequality $\sum_{i\ne j}(G\,y_{ij}-x_ix_j)\le\sum_ix_i^2$, and
+$\phi''(t)\le0$ holds at any $(k,t)$ where all the $x_i$ are equal
+and the symmetric form \eqref{eq:sym} holds for every pair: there
+each ordered pair contributes at most $x^2/(h-1)$, and the
+$h(h-1)$ ordered pairs sum to exactly $\sum_ix_i^2$.
+\end{proposition}
+
+\begin{proof}
+The identity is the product rule for
+$G'=\sum_ix_i$-type derivatives of the multiaffine flow; the
+symmetric case is the stated count.
+\end{proof}
+
+\begin{remark}[Pairwise splits fail]\label{rem:nopairwise}
+The natural per-pair sufficient conditions for the aggregate are
+false in general.  Allocating the budget $\sum_ix_i^2$ uniformly,
+$G\,y_{ij}-x_ix_j\le(x_i^2+x_j^2)/(2(h-1))$ (exact at symmetric
+points), is violated by honest in-band instances at $1$-heavy
+backgrounds --- smallest witness $S(1,27,1^{16})$, $n=107$, at
+$k=5$; worst observed factor $7.5$ at $(1,128,1^{256})$, $k=10$ ---
+while the aggregate holds there with the margin growing without
+bound.  Any pairwise route to hypothesis (ii) for mixed multisets
+must therefore allocate adaptively; the aggregate is the
+invariant object.
+\end{remark}
+
+There is, however, a sufficient route that eliminates the flow
+parameter entirely.  Write $G(t)=\sum_sW_s(k)\,t^s$, where
+\[
+  W_s(k)=\sum_{|S|=s}\Bigl[\,\prod_{i\in S}b_i\prod_{i\notin S}E_i\,
+  \Bigr]_k
+\]
+is the class-mass profile (contiguous support $[0,\min(h,k)]$ at
+band positions).
+
+\begin{proposition}[Factorial criterion]\label{prop:ladder}
+Let $G(t)=\sum_{s}W_st^s$ with $W_s\ge0$ and contiguous support.  If
+the sequence $(s!\,W_s)$ is log-concave on the support, then $G$ is
+log-concave on $(0,\infty)$.  Consequently hypothesis (ii) at
+position $k$ follows from the \emph{ladder}
+\begin{equation}\label{eq:ladder}
+  s\,W_s(k)^2\;\ge\;(s+1)\,W_{s-1}(k)\,W_{s+1}(k),
+  \qquad 1\le s\le\min(h,k)-1 .
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Log-concavity of $(s!W_s)$ says $\rho_s:=sW_s/W_{s-1}$ is
+nonincreasing on the support.  Under the tilted law
+$\mathbb P_t(S=s)=W_st^s/G(t)$,
+\[
+  (\ln G)'(t)=\frac{G'(t)}{G(t)}
+  =\sum_s\frac{(s+1)W_{s+1}t^s}{G(t)}
+  =\mathbb E_t\bigl[\rho_{S+1}\bigr]
+\]
+(with $\rho:=0$ above the support).  For $t'>t$ the likelihood ratio
+$\mathbb P_{t'}(s)/\mathbb P_t(s)\propto(t'/t)^s$ is increasing in
+$s$, so $\mathbb P_{t'}$ dominates $\mathbb P_t$ in the
+likelihood-ratio order, hence stochastically
+\cite{ShakedShanthikumar}; since $\rho_{S+1}$ is nonincreasing,
+$\mathbb E_t[\rho_{S+1}]$ is nonincreasing in $t$.  Thus $(\ln G)'$
+is nonincreasing on $(0,\infty)$.
+\end{proof}
+
+The ladder \eqref{eq:ladder} is tight at its base and unifies the
+results of this paper:
+the rung $s=1$ reads $W_1^2\ge2W_0W_2$, which is \emph{identically}
+hypothesis (ii) at $t=0$ (so the bottom rung is necessary); at $h=2$
+the ladder is that single rung, which is the inequality proved in
+Theorem~\ref{thm:h2mixed}; and at uniform multisets, where
+$W_s=\binom hsu_s$ with $u_s=[b^sE^{h-s}]_k$, rung $s$ becomes
+$u_s^2\ge u_{s-1}u_{s+1}(h-s)/(h-s+1)$, whose first case is the
+symmetric E-core \eqref{eq:sym}.  Each bracket $u_s$ is a polynomial
+in $c$ at fixed $(k,h,s)$, so the higher rungs are certifiable by
+the method of Section~\ref{sec:polyc}.  Exact scans
+(Section~\ref{sec:verification}) found no rung failure anywhere ---
+and located the binding rung at $s=1$ throughout --- so the ladder
+is the route we pursue for mixed multisets
+(Section~\ref{sec:open}).  We also record the polynomial identity
+behind rung $1$: with $\Phi_s=\sum_{|S|=s}\prod_{i\in
+S}b_i\prod_{i\notin S}E_i$ (so $W_s=[\Phi_s]_k$), the cross terms in
+$\Phi_1^2$ cancel against $2\Phi_0\Phi_2$ exactly, leaving
+\[
+  \Phi_1^2-2\Phi_0\Phi_2
+  =\sum_ib_i^2\Bigl(\prod_{l\ne i}E_l\Bigr)^{\!2},
+\]
+which is coefficientwise nonnegative; rung $1$ is the localization
+of this identity to the $(k,k)$ product of coefficients.
+
+The class masses also carry an exact majorization structure.
+
+\begin{proposition}[Schur-convexity of the class masses]
+\label{prop:wschur}
+At fixed $(C,h,k,s)$, the class mass $W_s$ is Schur-convex on
+multisets with sum $C$ and $h$ parts; in particular
+$W_s(c)\ge W_s(\mathrm{bal}(C,h))$ for every multiset $c$, where
+$\mathrm{bal}(C,h)$ is the balanced two-value partition.
+\end{proposition}
+
+\begin{proof}
+A Robin Hood transfer toward balance on slots $(i,j)$ with
+$c_i<c_j$ induces, on the multiset of $s$-subset sums
+$\sigma_S=\sum_{l\in S}c_l$, the simultaneous transfers
+$(\sigma_{S\cup i},\sigma_{S\cup j})\to(\sigma_{S\cup
+i}{+}1,\sigma_{S\cup j}{-}1)$ over all $(s{-}1)$-subsets $S$
+avoiding $i,j$ --- each toward balance, since
+$\sigma_S+c_i<\sigma_S+c_j$; subsets containing both or neither
+are unchanged.  Hence the subset-sum multiset on the spread side
+majorizes the balanced side's.  The summand
+$u(\sigma)=[x^{k-s}](1+x)^\sigma(1+2x)^{C-\sigma}$ is convex in
+$\sigma$, by the exact second difference
+$\Delta^2u=[x^{k-s-2}](1+x)^\sigma(1+2x)^{C-\sigma-2}\ge0$ (linear
+at $k{-}s{=}1$, constant at $k{-}s{=}0$), and Karamata's inequality
+concludes.
+\end{proof}
+
+Thus both sides of every rung grow as the multiset spreads, and
+the open content of the ladder for mixed multisets is a
+relative-rate statement (the domination lemma of
+Section~\ref{sec:open}).
+
+\section{The E-core and the flow concavity at
+\texorpdfstring{$h=2$}{h=2}}\label{sec:p6}
+
+The two reduction lemmas of this section concern the symmetric form
+\eqref{eq:sym}; they power the uniform-case certification, where by
+Proposition~\ref{prop:dd} the symmetric form at every pair is
+equivalent to the flow concavity.  For mixed multisets no pairwise
+reduction is available (Remark~\ref{rem:nopairwise}) and the
+aggregate diagonal $t$-family must be treated as such
+(Section~\ref{sec:open}); the exception is $h=2$, where the
+aggregate \emph{is} the single-pair inequality and is proved below
+for even total degree.
+
+\begin{lemma}[Vertex reduction]\label{lem:vertex}
+The supremum over $(t_1,\dots,t_h)\in[0,2]^h$ of the symmetric-form
+defect $[b_ib_jW][A_iA_jW]/\bigl([b_iA_jW][b_jA_iW]\bigr)$ with
+$A_l=E_l+t_lb_l$ is attained with each $A_l\in\{E_l,\,E_l+2b_l\}$.
+\end{lemma}
+
+\begin{proof}
+The defect is a ratio of polynomials with positive coefficients,
+multiaffine in the $t_l$; as a function of each $t_l$ separately it is
+a M\"obius transformation with no pole on $[0,\infty)$, hence monotone
+there, so the supremum over the box is attained at a vertex.
+\end{proof}
+
+\begin{lemma}[Slot expansion]\label{lem:slot}
+For any nonnegative background $W$, any $d\ge0$, and $H_2:=E+2b$, the
+inequalities with $X_i,X_j\in\{E,H_2\}$ all follow termwise from the
+single core case $X_i=X_j=E$ with the same $W$ and constant $1+d$.
+\end{lemma}
+
+\begin{proof}
+Expand $[H_2X]=[EX]+2[bX]$ in each slot; every cross term appears on
+both sides with matching or dominating coefficients; the only
+nontrivial comparison is the core case.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:h2}]
+By Lemmas~\ref{lem:vertex} and~\ref{lem:slot} it suffices to prove
+$[b^2]_k[E^2]_k\le 2([bE]_k)^2$.  All three brackets are explicit:
+$[b^2]_k=\binom{2c}{k-2}$, $[E^2]_k=\binom{2c}k2^k$, and since
+$(1+x)^c(1+2x)^c=(1+3x+2x^2)^c$,
+\[
+  [bE]_k\;=\;T_{k-1},\qquad
+  T_n:=[x^n](1+3x+2x^2)^c=\sum_m\binom cm\binom c{n-m}2^{\,n-m}.
+\]
+By the symmetry $m\leftrightarrow n-m$ of $\binom cm\binom c{n-m}$ and
+AM--GM, followed by Vandermonde,
+\[
+  T_n=\tfrac12\sum_m\binom cm\binom c{n-m}\bigl(2^m+2^{\,n-m}\bigr)
+  \;\ge\;2^{n/2}\sum_m\binom cm\binom c{n-m}
+  \;=\;2^{n/2}\binom{2c}n .
+\]
+Hence, using log-concavity of the binomial row $\binom{2c}\cdot$,
+\[
+  2\,T_{k-1}^2\;\ge\;2^{k}\binom{2c}{k-1}^2
+  \;\ge\;2^{k}\binom{2c}{k-2}\binom{2c}k\;=\;[b^2]_k\,[E^2]_k. \qedhere
+\]
+\end{proof}
+
+\begin{lemma}[$t$-cancellation]\label{lem:tcancel}
+Fix any background polynomial $W$ and a position $k$, and write
+$A_i=E_i+t\,b_i$, $A_j=E_j+t\,b_j$ on the two pair slots.  Then
+\[
+  [b_ib_jW]_k[A_iA_jW]_k-[b_iA_jW]_k[b_jA_iW]_k
+  \;=\;[b_ib_jW]_k[E_iE_jW]_k-[b_iE_jW]_k[b_jE_iW]_k ,
+\]
+independent of $t$.  Consequently, since the brackets
+$[b_iA_jW]_k=[b_iE_jW]_k+t[b_ib_jW]_k$ are nondecreasing in $t$, any
+upper bound on the pairwise defect that is monotone in the
+cross-brackets need only be verified at $t=0$ on the pair slots.
+\end{lemma}
+
+\begin{proof}
+Brackets are linear in each slot polynomial, so with
+$P=[b_ib_jW]_k$, $Q_0=[E_iE_jW]_k$, $X_0=[b_iE_jW]_k$,
+$Y_0=[b_jE_iW]_k$, the four $t$-dependent brackets are
+$Q_0+t(X_0+Y_0)+t^2P$, $X_0+tP$, and $Y_0+tP$; expanding,
+$P\bigl(Q_0+t(X_0+Y_0)+t^2P\bigr)-(X_0+tP)(Y_0+tP)=PQ_0-X_0Y_0$.
+Equivalently, the matrix
+$M(t)=\bigl(\begin{smallmatrix}P&Y\\X&Q\end{smallmatrix}\bigr)$
+satisfies $M(t)=(I+te_2e_1^{\mathsf T})\,M(0)\,(I+te_1e_2^{\mathsf T})$,
+a unipotent congruence, which preserves the determinant.
+\end{proof}
+
+\begin{lemma}[Schur minimality of the balanced
+split]\label{lem:schurS}
+For $a+b=s$ let $S(a,b)=(1+x)^a(1+2x)^b+(1+x)^b(1+2x)^a$.  Then for
+$a<b$,
+\[
+  S(a,b)-S(a+1,b-1)
+  =x\,\bigl[(1+x)(1+2x)\bigr]^a
+  \Bigl[(1+2x)^{\,b-a-1}-(1+x)^{\,b-a-1}\Bigr]\;\ge\;0
+\]
+coefficientwise; hence the coefficients of $S$ are minimized, among
+the splits of $s$, at the balanced one.
+\end{lemma}
+
+\begin{proof}
+With $d=b-a$, $S(a,b)=[(1+x)(1+2x)]^a\,T_d$ where
+$T_d=(1+x)^d+(1+2x)^d$, and
+$T_d-(1+x)(1+2x)T_{d-2}
+=(1+x)^{d-1}\bigl[(1+x)-(1+2x)\bigr]
++(1+2x)^{d-1}\bigl[(1+2x)-(1+x)\bigr]
+=x\bigl[(1+2x)^{d-1}-(1+x)^{d-1}\bigr]$,
+whose coefficients are nonnegative because $(1+2x)^{d-1}$ dominates
+$(1+x)^{d-1}$ coefficientwise.
+\end{proof}
+
+\begin{lemma}[Odd core]\label{lem:oddcore}
+Let $s=2m+1$, $m\ge1$, and $T_n=[x^n](1+3x+2x^2)^m$.  Then for all
+$k\ge2$,
+\[
+  2\binom s{k-2}2^k\binom sk\;\le\;\bigl(2T_{k-1}+3T_{k-2}\bigr)^2 .
+\]
+\end{lemma}
+
+\begin{proof}
+For $k>s$ the left side vanishes; let $2\le k\le s$ and put
+$a=\binom{2m}{k-2}\ge1$, $b=\binom{2m}{k-1}\ge1$.  By Pascal's rule
+and log-concavity of the row $\binom{2m}\cdot$,
+\[
+  \binom s{k-2}=a+\binom{2m}{k-3}\le a\Bigl(1+\frac ab\Bigr),\qquad
+  \binom sk=b+\binom{2m}k\le b\Bigl(1+\frac ba\Bigr),
+\]
+so $\binom s{k-2}\binom sk\le(a+b)^2$.  The AM--GM/Vandermonde bound
+from the proof of Theorem~\ref{thm:h2}, $T_n\ge2^{n/2}\binom{2m}n$,
+gives
+\[
+  2T_{k-1}+3T_{k-2}\;\ge\;2^{k/2}\Bigl(\sqrt2\,b+\tfrac32\,a\Bigr)
+  \;\ge\;2^{k/2}\sqrt2\,(a+b),
+\]
+the last step because $\tfrac32>\sqrt2$.  Squaring,
+$(2T_{k-1}+3T_{k-2})^2\ge2^{k+1}(a+b)^2
+\ge2\binom s{k-2}2^k\binom sk$.
+\end{proof}
+
+The constant $3$, inherited from $T_1=2+3x$ at the balanced split, is
+exactly what the proof needs: a cross term $\beta x$ with
+$\beta/2<\sqrt2$ would fail.  The lemma is also exactly verified for
+all $s\le161$ and all $k$, with worst ratio $0.5217$ --- the same
+strength as the even core ($0.5218$).
+
+\begin{proof}[Proof of Theorem~\ref{thm:h2mixed}]
+At $h=2$ there is no background and
+$(G')^2-GG''=x_1^2+x_2^2+2(x_1x_2-Gy)$ with $G=[A_1A_2]_k$,
+$y=[b_1b_2]_k$, $x_i=[b_iA_j]_k$, so \eqref{eq:flowcc} reads
+$2(Gy-x_1x_2)\le x_1^2+x_2^2$.  By Lemma~\ref{lem:tcancel} (with
+$W=1$) the left side is independent of $t$ while the right side is
+nondecreasing in $t$, so it suffices to prove, at $t=0$,
+\[
+  2\,[b_1b_2]_k\,[E_1E_2]_k\;\le\;(X_0+Y_0)^2,
+  \qquad X_0=[b_1E_2]_k,\ Y_0=[b_2E_1]_k .
+\]
+Here $[b_1b_2]_k=\binom s{k-2}$ and $[E_1E_2]_k=2^k\binom sk$ depend
+only on $s=c_1+c_2$, while $X_0+Y_0=[x^{k-1}]\,S(c_1,c_2)$ is
+minimized at the balanced split by Lemma~\ref{lem:schurS}.  For even
+$s$,
+$[x^{k-1}]S(s/2,s/2)=2\,[x^{k-1}](1+3x+2x^2)^{s/2}=2\,T_{k-1}$, and
+the display in the proof of Theorem~\ref{thm:h2}, at $c=s/2$, states
+exactly $\binom s{k-2}2^k\binom sk\le2\,T_{k-1}^2$, i.e.
+$2\,[b_1b_2]_k[E_1E_2]_k\le(2T_{k-1})^2\le(X_0+Y_0)^2$.  For odd
+$s$, $S\bigl(\tfrac{s-1}2,\tfrac{s+1}2\bigr)
+=(1+3x+2x^2)^{(s-1)/2}\bigl((1+x)+(1+2x)\bigr)$, so
+$[x^{k-1}]S_{\mathrm{bal}}=2T_{k-1}+3T_{k-2}$ with $T$ at exponent
+$(s-1)/2$, and Lemma~\ref{lem:oddcore} closes the chain.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:limit}]
+With $A=2\ell+2$, $B=2\ell+3$, the bounds $\ln(1-x)\le-x$ and
+$\ln(1+x)\le x$ give
+$\ln(1+\Delta_\infty)\le-\tfrac1k+\tfrac2A-\tfrac k{B^2}$, and by
+AM--GM $\tfrac1k+\tfrac k{B^2}\ge\tfrac2B$, so
+$\ln(1+\Delta_\infty)\le 2/(AB)\le 1/6$.  Since $e^x-1\le1.1x$ on
+$(0,1/6]$,
+\[
+  (h-1)\,\Delta_\infty\;\le\;(\ell+1)\cdot\frac{2.2}{(2\ell+2)(2\ell+3)}
+  \;=\;\frac{1.1}{2\ell+3}\;\le\;0.22 .\qedhere
+\]
+\end{proof}
+
+\begin{proof}[Derivation of $\Delta_\infty$]
+In the uniform all-$E$ background, fix $k$ and let $c\to\infty$.  The
+needed bracket types are $[b^2E^{h-2}]_k$, $[E^h]_k$, and
+$[bE^{h-1}]_k$.  In each finite convolution sum,
+\[
+  \binom{ac}m2^m=\frac{(2ac)^m}{m!}\bigl(1+O(m^2/(ac))\bigr),
+\]
+and therefore
+\begin{align*}
+  [E^h]_k
+  &=\binom{hc}k2^k\sim\frac{(2hc)^k}{k!},\\
+  [bE^{h-1}]_k
+  &=\sum_m\binom cm\binom{(h-1)c}{k-1-m}2^{k-1-m}\\
+  &\sim\frac{(2(h-1)c)^{k-1}}{(k-1)!}
+  \sum_m\binom{k-1}m\Bigl(\frac1{2(h-1)}\Bigr)^m,
+\end{align*}
+and the binomial sum equals $\bigl(1+\tfrac1{2(h-1)}\bigr)^{k-1}$,
+giving $[bE^{h-1}]_k\sim\bigl((2h-1)c\bigr)^{k-1}/(k-1)!$; similarly
+$[b^2E^{h-2}]_k\sim\bigl(2(h-1)c\bigr)^{k-2}/(k-2)!$ via
+$2(h-2)\bigl(1+\tfrac1{h-2}\bigr)=2(h-1)$.  Hence, with $B=2h-1$,
+\[
+  \Delta_\infty+1
+  =\frac{(2(h-1))^{k-2}(2h)^k}{B^{2k-2}}\cdot\frac{(k-1)!^2}{(k-2)!\,k!}
+  =\Bigl(1-\frac1{B^2}\Bigr)^{k-2}\Bigl(1+\frac1B\Bigr)^2
+  \Bigl(1-\frac1k\Bigr),
+\]
+and the identity $(1-B^{-2})^{-2}(1+B^{-1})^2=(1+\tfrac1{B-1})^2$
+converts this to the form displayed in Theorem~\ref{thm:limit} with
+$B-1=2\ell+2$.
+\end{proof}
+
+The finite-$c$ statement of Theorem~\ref{thm:cert} is proved by the
+polynomial certification method of Section~\ref{sec:verification}.
+
+\section{Certificates and machine verification}\label{sec:verification}
+
+This section describes the machine-verified components and the
+protocol under which they were produced and audited.  All
+verifications are exact: every inequality is decided in rational
+arithmetic (Python \texttt{fractions.Fraction} or \texttt{sympy}
+integer polynomials), with no floating point in any verified
+statement.
+
+\subsection{Certificates for the master inequality}
+
+For each multiset and band position, the master inequality
+\eqref{eq:master} is established through \eqref{eq:charges} by one of
+two explicit certificates.
+
+\emph{Certificate T1} (unconditional).  From the identity
+$1+\eps_{k+1}=(r_{k+1}/\rho_{k+1})(1+\eps_k)$ and $r_{k+1}\le r_k$
+(log-concavity of $F$, by Lemmas~\ref{lem:a0} and~\ref{lem:a1}),
+\[
+  \lambda_k(1+\eps_k)\Bigl[(1+\sigma_k)\frac{1+\eps_k}{1+\eps_{k-1}}-1\Bigr]
+  +(\eps_{k-1}-\eps_k)^+\;\le\;\text{RHS of \eqref{eq:master}}
+\]
+suffices, a single rational inequality depending only on
+Lemmas~\ref{lem:a0}, \ref{lem:a1} and Theorem~\ref{thm:a2}.
+
+\emph{Certificate T2} (uses the flow facts, hence the flow
+concavity \eqref{eq:flowcc} at the same position).  A quadratic
+majorant
+$\mu+y_1s+y_2s(s-1)\ge\mathrm{cap}(s)$, anchored at $s=1,2$ with $y_2$
+the maximal second divided difference (clamped so $y_1\ge0$), is
+played against the \emph{rationalized} moment rows
+\[
+  \sum_ssW_s\le R_1=\frac{\eps(2+\eps)}{2},\qquad
+  \sum_ss(s-1)W_s\le R_2=\frac{\eps^2(2+\eps)^2}{4(1+\eps)},
+\]
+which follow from Proposition~\ref{prop:flow} and the trapezoid bound
+$\ln(1+x)\le x(2+x)/(2(1+x))$; the residual tail is covered by the
+class bounds $W_s\le\binom hsq_k^s$ or the $t=2$ envelope, whichever
+is cheaper.  Pointwise domination is checked exactly for every $s$,
+and the certificate obligation is one rational comparison.
+
+These certificate families were located by linear programming
+(maximize the charge sum over all profiles $(W_s)$ satisfying the
+proved constraints; the optimum is $25.97\%$ below the requirement at
+the worst point of the grid), and the dual solutions were then
+replaced by the closed-form constructions above.  Verification: the
+grid $\mathcal G$ consists of $305$ distinct multisets ($215$ uniform,
+covering every $(c,h)$ with $c\le8$, $h(1+c)\le120$ or $c\le10$,
+$n\le160$; and $90$ random mixed multisets with $c_i\le12$); at every
+band position of every member, T1 or T2 passes in exact arithmetic;
+worst certificate ratio $0.4352$.
+
+The separate Band~B verifier proves the finite residual left by
+Section~\ref{sec:bandB}: after the explicit $C\ge55$ threshold, it
+enumerates every leaf-heavy multiset with $C\le54$ and nonempty
+Band~B.  This is $24{,}394$ multisets and $54{,}049$ coefficient
+positions, all checked directly in exact integer arithmetic with zero
+failures.  The same script records the large-threshold residuals through
+$C=1000$ and their positive boundary minimum at $(C,h)=(55,35)$; the
+all-$C$ part is the displayed quotient monotonicity check in
+Section~\ref{sec:bandB}.
+
+\subsection{Polynomial certification of the E-core}\label{sec:polyc}
+
+At fixed $(k,h)$ and background pattern $W=E^{h-2-w}(E+2b)^w$ in the
+uniform case, each bracket of \eqref{eq:sym} is a polynomial in $c$
+of degree at most $k$ (each factor coefficient is a polynomial in $c$;
+the bracket is a finite convolution).  The claim ``\eqref{eq:sym}
+holds for \emph{all integers} $c\ge1$'' is therefore decidable
+exactly: write $R(c)=h\,[bEW]_k^2-(h-1)[b^2W]_k[E^2W]_k$, check the
+leading coefficient is positive, choose $B$ at least the largest real
+root (any upper bound suffices; we use a numerically located bound,
+then \emph{prove} positivity beyond it by verifying that all
+coefficients of the Taylor shift $R(c+B)$ are nonnegative), and
+evaluate $R$ exactly at every integer in $[1,B]$.  The numeric root
+location plays no role in the rigor; it only sizes the verified
+range.  This certified the $996$ instances of Theorem~\ref{thm:cert}
+with zero failures.
+
+\subsection{Audit}\label{sec:audit}
+
+Because nearly every verification script was written by the same
+author as the claim it checks, the full chain was subjected to an
+adversarial audit: independent re-derivation of every load-bearing
+identity; an exact six-way sub-bound audit of the charge machinery
+over $10{,}751$ class instances; independent reconstruction of the
+certification brackets at random points; and end-to-end brute-force
+unimodality of every tree in the claimed scope by the original
+dynamic-programming code.  The audit found two implementation-level
+flaws (an incorrectly indexed ceiling inside $\mathrm{dev}$, masked by
+unrelated slack, and a finite sentinel acting as a false bound at
+class-birth positions), both repaired with all headline figures
+unchanged, and no mathematical flaw.  The audit report and all scripts
+are in the accompanying repository.
+
+The same adversarial methodology was applied to the working
+conjectures themselves, and twice replaced them.  The symmetric form
+\eqref{eq:sym}, formulated from uniform data, was refuted at lopsided
+pairs $(1,c,1^{h-2})$; its exact-allocation weighted replacement was
+in turn refuted at $1$-heavy backgrounds $(c_1,c_2,1^A)$ --- a corner
+the first sweep could not reach because it capped $h$ at $8$ ---
+with smallest witness $S(1,27,1^{16})$, $n=107$, $k=5$.  The
+surviving hypothesis is the aggregate \eqref{eq:flowcc} itself,
+scanned in exact arithmetic across the flow parameter
+$t\in\{0,\tfrac12,1,\tfrac32,2\}$: $14{,}410$ evaluations over the
+families $(c,c,1^A)$, $(1,c,1^A)$, $(2,c,1^A)$ ($c\le128$,
+$A\le256$), all $200$ pairwise-violation witnesses, and $40$ random
+mixed multisets, with zero violations, worst ratio $+0.085$, and the
+margin improving to $-5.3$ in probes to $A=1024$.  At uniform
+multisets the aggregate ratio was confirmed to coincide with the
+symmetric-form ratio (zero mismatches), which is the formal statement
+that Theorems~\ref{thm:h2}, \ref{thm:limit} and~\ref{thm:cert}
+certify instances of hypothesis (ii).
+
+The ladder \eqref{eq:ladder} was scanned with the same rigor:
+$5{,}298$ class-mass profiles in exact arithmetic --- uniform
+multisets ($c\le12$, $h\le12$), the $(a,b,1^A)$ families including
+every pairwise-violation witness ($c\le128$, $A\le256$), and $60$
+random mixed multisets --- with \emph{zero} rung failures; worst
+rung ratios $0.917$ (uniform), $0.971$ ($(128,128,1^{256})$,
+$k=40$), $0.884$ (random mixed), always at the necessary rung
+$s=1$.  A Schur analysis over \emph{all} partitions of $C$ into $h$ parts
+shows the reduction landscape is a threshold phenomenon, not a
+monotonicity: transfer-by-transfer monotonicity of the rung ratio
+is \emph{false} ($11{,}278$ violations among $49{,}941$ exact
+Robin Hood steps, margins to $-0.23$), and in $212$ of $1{,}082$
+exhaustive $(C,h,k,s)$ cases the maximizing partition is not the
+most balanced one.  A later sweep of the bulk-plus-giant family
+$(a^{h-1},M)$ ($4{,}720$ instances to $h=100$, $C=1200$) found it
+beating the balanced companion even deep in the tight regime
+(balanced ratios up to $0.956$ beaten), so no domination statement
+holds; what holds in every observation, without exception, is the
+ladder itself --- the sweep maximum is $0.9865<1$, at the minimal
+gap-two giant $(6^{99},8)$, $k=100$.
+
+Moreover, the polynomial certification extends to the rungs on the
+two-adjacent-value families $(a^p,(a{+}1)^q)$ --- the target of the
+Ladder--Schur reduction: at fixed $(k,h,p,s)$ each class mass is a
+polynomial in $a$ of degree at most $k-s$, and the rung was
+certified for \emph{all} integers $a\ge1$ at every instance with
+$3\le h\le10$, $1\le p\le h$, $k\le28$: $7{,}866$ instances, zero
+failures (with $p=h$ covering the uniform higher rungs) --- the
+ladder holds for every two-adjacent-value multiset within the reach
+of the uniform certification grid.
+As a consistency datapoint, the balanced partition $(1^4,2^{254})$
+of $(C,h)=(512,258)$ at $k=40$ has rung-$1$ ratio $0.9729$,
+slightly above the $0.9711$ of the lopsided $(128,128,1^{256})$ ---
+the balanced partition is the worse one, as the reduction predicts.
+
+\section{Assembly: proofs of Theorems~\ref{thm:scope}
+and~\ref{thm:reduction}}\label{sec:assembly}
+
+\begin{proof}[Proof of Theorem~\ref{thm:reduction}]
+Fix the multiset and let $k$ be a band position \eqref{eq:band}.
+Hypothesis (ii) is precisely $\phi''\le0$ on $[0,2]$ at $k$, hence
+the flow facts hold (Proposition~\ref{prop:flow}), hence the validity
+of certificate T2's
+constraint rows; certificate T1 is valid unconditionally.  By the
+verified certificates, \eqref{eq:master} holds at $k$; by
+Lemma~\ref{lem:epsid}, $P$ is log-concave at $k$.  Log-concavity at
+$k=1$ is universal (Section~\ref{sec:skeleton}), and band B is covered
+by Section~\ref{sec:bandB}.  Thus $P$ is log-concave on
+$[1,k_{\mathrm{dec}}-1]$ and nonincreasing on $[k_{\mathrm{dec}},D]$
+by Levit--Mandrescu/Basit--Galvin, so Lemma~\ref{lem:seam} applies.
+Hypothesis (i) enters exactly once, in the penultimate sentence: the
+master inequality at $k$ is established by the verified certificate at
+$(c_1,\dots,c_h;k)$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:scope}]
+$h=1$ is Lemma~\ref{lem:d1}.
+For $h=2$: Theorem~\ref{thm:h2} supplies the symmetric form at every
+position with constant $2=1+\tfrac1{h-1}$, hence hypothesis (ii) by
+Proposition~\ref{prop:dd} (a single pair; the AM--GM step), so
+Theorem~\ref{thm:reduction} applies to every $S(c,c)$ in the
+certificate grid; for the eleven mixed members, hypothesis (ii) is
+Theorem~\ref{thm:h2mixed} directly (band B is empty at $h=2$:
+$k_{\mathrm{dec}}\le\lceil(2C+3)/3\rceil\le C$ for $C\ge3$).  For
+the sixteen three-hub adjacent-two-value families, hypothesis (ii)
+is supplied by the ladder certificates on $(a^p,(a{+}1)^q)$
+($h=3$, all integer $a$, $k\le28\ge k_A$) with
+Proposition~\ref{prop:ladder}, hypothesis (i) was verified per
+multiset (worst certificate ratio $0.38$), and band B is empty
+except at $(1,1,2)$, whose single position is checked directly.  For $3\le h\le10$: Theorem~\ref{thm:cert} supplies
+the symmetric form, over the whole flow box by
+Lemmas~\ref{lem:vertex} and~\ref{lem:slot}, at every band position
+provided $k_A$ does not exceed the certified $k$-range, which holds
+exactly for the table of Theorem~\ref{thm:scope}; at uniform
+multisets the diagonal is symmetric, so Proposition~\ref{prop:dd}
+yields hypothesis (ii) and Theorem~\ref{thm:reduction} applies.
+\end{proof}
+
+\section{Extremal results and the counterexample
+search}\label{sec:extremal}
+
+\begin{definition}[Balance]\label{def:balance}
+For an interior index $k$ of a positive sequence $(a_k)$, the (local)
+\emph{balance} is $\min(a_{k-1},a_{k+1})/a_k$.  A positive sequence
+fails unimodality if and only if some index $k$ satisfies the global
+condition $\min\bigl(\max_{i<k}a_i,\;\max_{i>k}a_i\bigr)>a_k$; local
+balance $>1$ is the width-one special case, and every log-concavity
+failure observed in trees to date has width exactly one, so local
+balance is the operative diagnostic.
+\end{definition}
+
+A valley at $k$ is precisely an interior index with balance $>1$, so
+searching for a unimodality counterexample is the optimization problem
+``maximize balance over trees''; every valley bottom is in particular
+a log-concavity failure.  Three structural facts organize the search
+space.
+
+\paragraph{The offset law.}
+For uniform hub spiders, $I(S(c^h))=H_c^h+xE_c^h$, and over the range
+$h\le25$, $c\le12$ ($n$ up to $256$) the unique log-concavity failure
+sits at offset exactly $h-2$ below the top degree for every $c\ge4$,
+always with width one.  The failure is a \emph{junction}: the last
+index where the fat $xE^h$ hump still contributes against the thin
+$H^h$ tail.  Balance peaks at $0.0439$ for $S(4^5)$ ($n=46$) and
+decays in both directions.
+
+\paragraph{A high-fragility tree.}
+A beam search over junction trees built from all $2{,}975$ rooted
+gadgets on at most $11$ vertices, seeded with hub-spider multisets,
+produced the largest balance in this search corpus: a $48$-vertex tree
+(root, four
+$H_4$ hub gadgets, one $11$-vertex gadget) with a single
+log-concavity failure of balance $0.04512$ --- more than double the
+previous record ($0.0208$, for the family $T^*$) --- and \emph{every}
+gadget extension beyond it strictly degrades the balance until the dip
+disappears.  Its sequence is non-monic (leading coefficient $2$),
+which did not occur among the cited Kadrawi--Levit examples.
+
+\paragraph{Why the mechanism self-defends.}
+Writing any tree as root plus rooted gadgets,
+$P=\prod F_i+x\prod G_i$, a junction valley needs the $\prod F$ side
+still rising where the $\prod G$ hump ends, while near the junction
+the coefficients of $\prod F$ organize as elementary symmetric
+functions $e_j$ of per-gadget weights.  Dip existence forces
+$e_2<1$ while the achievable balance behaves like $e_3/e_2$, and
+Newton--Maclaurin gives $e_3/e_2\lesssim\tfrac12\sqrt{e_2}$: the same
+log-concavity phenomenon the conjecture asserts is what caps the only
+known failure mechanism, empirically at balance ${\sim}0.05$ against
+the required $>1$.  Moreover the decreasing-zone theorems protect the junction's
+location: the observed failures sit at offset $h-2$ from the top
+degree, while the Basit--Galvin decreasing zone covers the top
+$D-\ell\approx D^2/(D+n)$ positions, and
+$(h+C)^2>(h-2)(3C+h+1)$ for all $c_i\ge1$, so every position the
+known mechanism can reach lies inside the zone where a valley
+(an ascent $i_k<i_{k+1}$) is already impossible.  A unimodality
+counterexample by this mechanism would need the dip pushed below the
+decreasing zone, and the balance data above shows the mechanism
+weakening, not strengthening, in that direction.
+
+Two further observations close the accessible routes: nesting a
+dipped tree as a gadget under a new root erases its failure (the
+second-level $F+xG$ smoothing), and products of tree polynomials
+smooth width-one cliffs away --- in exact scans through total size
+$64$, every forest product checked was log-concave outright, and the
+flat-tail/steep-cliff combination a non-unimodal product requires
+never co-occurs in real tree polynomials.  All searches and caps are,
+of course, evidence about accessible scales only; they are recorded
+here because the structural caps (the offset law, the Maclaurin
+tension, the decreasing-zone protection) are proof-shaped statements
+that delimit where any counterexample must live: width $\ge2$
+log-convex windows, for which no generator is known.
+
+\section{Open problems}\label{sec:open}
+
+\begin{conjecture}[Flow concavity]\label{conj:ecore}
+The flow concavity \eqref{eq:flowcc} holds for all $h\ge2$, all
+$c_1,\dots,c_h\ge1$, all band positions $k$, and all $t\in[0,2]$:
+the demotion flow $G(t)=[\prod_l(E_l+tb_l)]_k$ is log-concave in $t$.
+\end{conjecture}
+
+By Theorem~\ref{thm:reduction} the conjecture implies unimodality of
+$I(S)$ for every hub spider.  The evidence: Theorems~\ref{thm:h2},
+\ref{thm:h2mixed}, \ref{thm:limit} and~\ref{thm:cert} (which prove it
+at $h=2$ and at uniform multisets over the certified range), plus the
+exact aggregate scans of Section~\ref{sec:verification} ($14{,}410$
+instances, zero violations, worst ratio $0.085$).  We emphasize the
+history recorded in Remark~\ref{rem:nopairwise}: two successive
+pairwise strengthenings of this conjecture were refuted by
+systematic probing, at lopsided pairs and at $1$-heavy backgrounds
+respectively, while the aggregate form survives both corners with
+growing margin.  The conjecture as stated is exactly what the
+pipeline uses --- nothing weaker suffices for
+Proposition~\ref{prop:flow}, and nothing stronger is true among the
+natural candidates.
+
+\begin{conjecture}[All-parameters certificates]\label{conj:g2}
+The certificate inequalities T1/T2 of
+Section~\ref{sec:verification} hold for every multiset
+$(c_1,\dots,c_h)$ and every band position, not only on the verified
+grid.  (All certificate ratios are observed monotone or saturating in
+$(h,c,k)$, with worst ratio $0.4352$.)
+\end{conjecture}
+
+\begin{question}
+Does the demotion-flow method extend to root-gadgets of independence
+number $\ge3$ (the \emph{gadget dichotomy}), and thence to broader
+classes of trees in the direction of the full
+Alavi--Malde--Schwenk--Erd\H{o}s conjecture?
+\end{question}
+
+Beyond the two conjectures, three concrete work items would complete
+the program for all hub spiders.  First,
+Conjecture~\ref{conj:ecore} for mixed multisets with $h\ge3$, for
+which Proposition~\ref{prop:ladder} supplies a $t$-free route: it
+suffices to prove the ladder \eqref{eq:ladder}.  The supporting
+structure established so far: the rungs are certified for
+\emph{all} two-adjacent-value multisets $(a^p,(a{+}1)^q)$ in the
+range $h\le10$, $k\le28$ (all integer $a$, Section
+\ref{sec:verification}), and the exact scans show a threshold
+landscape --- whenever a lopsided partition beats the balanced one,
+all ratios in that case sit below $0.544$, while the
+near-$1$ corners are dominated by balanced partitions.  Three structural shortcuts are provably unavailable: plain Schur
+reduction (transfer monotonicity toward balance fails), its
+conditional form (violating transfers exist at ratio $0.868$), and
+a value-window bound (one outlier in a large balanced bulk leaves
+the ratio at $0.944$).  What survives every exact probe
+($\sim$25{,}000 cases) is endpoint domination in its canonical
+conditioning: whenever the \emph{balanced companion's} rung ratio
+is at least $0.7$, no multiset with the same $(C,h)$ beats it ---
+the balanced companion is never beaten above ratio $0.66$ in any
+scan, while at low ratios beats are common and harmless.  This
+\emph{domination lemma} is the open core.  Two pieces of supporting
+structure are in place: Proposition~\ref{prop:wschur} (both sides
+of every rung grow away from balance, so domination is a
+relative-rate statement), and the \emph{band-bottom} reduction:
+by Proposition~\ref{prop:wschur},
+$\rho_s(c,k)\le\bar\rho(C,h,k,s):=
+(s{+}1)W_{s-1}(\mathrm{ext})W_{s+1}(\mathrm{ext})/(sW_s(\mathrm{bal})^2)$
+with $\mathrm{ext}=(1^{h-1},C{-}h{+}1)$, an explicit inequality
+between two canonical multisets.  Exact maps ($h\le60$, $C\le2000$)
+give $\bar\rho\le0.546$ at $k-s=1$ (tracking the derived asymptote
+$(2-\tfrac32\lambda)/(2-\lambda)^2\le\tfrac9{16}$,
+$\lambda=(s{-}1)/h$) and $\bar\rho\le0.897$ at $k-s=2$, while
+$\bar\rho$ crosses $1$ at $k-s=3$ --- the elementary reduction
+reaches exactly to where the high regime begins, so the open
+domination lemma is confined to $k-s\ge3$.  At rung $1$ the ratio is the quadratic form
+$\sum_{i\ne j}w_iw_jK(c_i,c_j)$ in the normalized weights
+$w_i=x_i/\sum x$, with the $h$-free kernel
+$K(\sigma,\tau)=g\,y(\sigma{+}\tau)/(x(\sigma)x(\tau))$, which is
+log-submodular (equivalently, $y$ is log-concave in its argument)
+and maximized at extreme pairs that real multisets cannot weight
+--- the mechanism of domination is this weight--kernel
+anticorrelation, and exact probes rule out every reduction that
+decouples a pair from the rest of the multiset.  What the probes
+leave standing is a variational program: over the transfer graph
+at fixed $(C,h,k)$, all observed tight local maximizers are
+either adjacent-two-value or of the
+\emph{bulk-plus-giant} form $(a,\dots,a,M)$.  No domination
+between the families survives scrutiny --- exact sweeps of the
+giant family show it beating the balanced companion deep in the
+tight regime (e.g.\ $(1^5,95)$ at $k=46$: $0.778$ against
+$0.734$; balanced ratios up to $0.956$ are beaten), while the
+ladder itself stays unviolated, with the sweep maximum $0.9865$
+attained at the minimal gap-two giant $(6^{99},8)$.  Domination
+is also unnecessary: if every tight local maximizer is one of the
+two shapes, the rung for all multisets follows from per-family
+bounds alone.  Both candidate-maximizer families are certified within the
+standing caps: the adjacent-two-value rungs ($7{,}866$ instances)
+and the bulk-plus-giant rungs ($1{,}512$ instances, $h\le10$,
+$M-a\le8$, $k\le28$, all integer $a$, zero failures).  An exact
+hill-climbing census at scale ($h\le24$, $C\le128$, $\sim18$
+starts per position) found $76$ distinct local maximizers, every
+one in the two families.  The open core is therefore the
+first-order \emph{exchange lemma}: every tight local maximizer of
+a rung over the transfer graph is adjacent-two-value or
+bulk-plus-giant.  Its proof must treat the stationarity system
+globally --- the giant's stability is collective (the pair
+$(a,M)$ is stable only because the bulk pins the background), the
+structural reason the pairwise reductions above fail.  Second,
+monotonicity or limit arguments
+upgrading the certificate grid to all parameters
+(Conjecture~\ref{conj:g2}).  Third, an aggregate analysis of the
+symmetric form in the deep band of the uniform case, where the defect
+is observed to be negative but termwise and low-order symmetrization
+arguments provably fail; the higher ladder rungs, which carry more
+slack than the E-core rung in all scans, may help here too.
+
+\section*{AI-use Declaration}
+
+The author used AI tools, including Claude (Anthropic), during proof
+exploration, drafting, code development, and audit.  These tools are
+not authors.  The human author reviewed the output, takes responsibility
+for the manuscript, proofs, verification code and data, and approved the
+final version.  All verification scripts and paper-facing logs are
+available in the accompanying repository.
+
+\begin{thebibliography}{99}
+\bibitem{AMSE87} Y.~Alavi, P.~J. Malde, A.~J. Schwenk, P.~Erd\H{o}s,
+  The vertex independence sequence of a graph is not constrained,
+  \emph{Congr.\ Numer.} \textbf{58} (1987), 15--23.
+\bibitem{ErdosProblems} T.~Bloom, The Erd\H{o}s problems website,
+  problem 993, \url{https://www.erdosproblems.com/993}.
+\bibitem{BasitGalvin} A.~Basit, D.~Galvin, On the independent set
+  sequence of a tree, \emph{Electron. J. Combin.} \textbf{28} (2021),
+  no.~3, Paper No.~3.23, \url{https://doi.org/10.37236/9896}.
+\bibitem{GalvinHilyard} D.~Galvin, J.~Hilyard, The independent set
+  sequence of some families of trees, \emph{Australas. J. Combin.}
+  \textbf{70} (2018), no.~2, 236--252.
+\bibitem{KadrawiLevit} O.~Kadrawi, V.~E. Levit, The independence
+  polynomial of trees is not always log-concave starting from order
+  26, \emph{Ars Math. Contemp.} \textbf{25} (2025), no.~4, Paper
+  No.~P4.03, \url{https://doi.org/10.26493/1855-3974.3207.2ad}.
+\bibitem{GalvinNonLC} D.~Galvin, Trees with non log-concave independent
+  set sequences, arXiv:2502.10654.
+\bibitem{RamosSun} E.~Ramos, S.~Sun, An AI enhanced approach to the
+  tree unimodality conjecture, arXiv:2510.18826.
+\bibitem{Li} G.~M.~X. Li, Unimodality of independence polynomials of
+  two family of trees, arXiv:2603.03025.
+\bibitem{BautistaRamos} C.~Bautista-Ramos, C.~Guill\'en-Galv\'an,
+  P.~G\'omez-Salgado, Linear recurrences for non-log-concave
+  independence polynomials of trees, arXiv:2603.14204.
+\bibitem{Karlin} S.~Karlin, \emph{Total Positivity}, Vol.~I,
+  Stanford University Press, 1968.
+\bibitem{ShakedShanthikumar} M.~Shaked, J.~G. Shanthikumar,
+  \emph{Stochastic Orders}, Springer, 2007.
+\bibitem{Liggett} T.~M. Liggett, Ultra logconcave sequences and
+  negative dependence, \emph{J.\ Combin.\ Theory Ser.\ A} \textbf{79}
+  (1997), 315--325.
+\end{thebibliography}
+
+\end{document}

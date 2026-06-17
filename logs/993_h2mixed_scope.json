@@ -1,0 +1,116 @@
+{
+  "even_mixed": [
+    {
+      "arms": [
+        2,
+        4
+      ],
+      "n": 15,
+      "C": 6,
+      "in_grid": true,
+      "certificate_max_ratio": 0.1256985110439283,
+      "k0": 5,
+      "lBG": 5,
+      "k_dec": 5,
+      "bandB_empty": true,
+      "brute_force_unimodal": true
+    },
+    {
+      "arms": [
+        6,
+        8
+      ],
+      "n": 31,
+      "C": 14,
+      "in_grid": true,
+      "certificate_max_ratio": 0.09609221737770197,
+      "k0": 11,
+      "lBG": 11,
+      "k_dec": 11,
+      "bandB_empty": true,
+      "brute_force_unimodal": true
+    },
+    {
+      "arms": [
+        6,
+        12
+      ],
+      "n": 39,
+      "C": 18,
+      "in_grid": true,
+      "certificate_max_ratio": 0.08626146813250224,
+      "k0": 13,
+      "lBG": 13,
+      "k_dec": 13,
+      "bandB_empty": true,
+      "brute_force_unimodal": true
+    },
+    {
+      "arms": [
+        10,
+        12
+      ],
+      "n": 47,
+      "C": 22,
+      "in_grid": true,
+      "certificate_max_ratio": 0.037601113974219884,
+      "k0": 16,
+      "lBG": 16,
+      "k_dec": 16,
+      "bandB_empty": true,
+      "brute_force_unimodal": true
+    }
+  ],
+  "odd_mixed_pending": [
+    {
+      "arms": [
+        1,
+        8
+      ],
+      "certificate_max_ratio": 0.19418935892489184
+    },
+    {
+      "arms": [
+        3,
+        4
+      ],
+      "certificate_max_ratio": 0.15107514994211202
+    },
+    {
+      "arms": [
+        4,
+        7
+      ],
+      "certificate_max_ratio": 0.1627074215031049
+    },
+    {
+      "arms": [
+        4,
+        9
+      ],
+      "certificate_max_ratio": 0.1479411085702029
+    },
+    {
+      "arms": [
+        4,
+        11
+      ],
+      "certificate_max_ratio": 0.1446747075674909
+    },
+    {
+      "arms": [
+        7,
+        8
+      ],
+      "certificate_max_ratio": 0.0783220898113978
+    },
+    {
+      "arms": [
+        11,
+        12
+      ],
+      "certificate_max_ratio": 0.0326694602958442
+    }
+  ],
+  "all_checks_pass": true
+}

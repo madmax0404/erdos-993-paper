@@ -1,0 +1,283 @@
+{
+  "families": [
+    {
+      "counts": [
+        1,
+        2,
+        2
+      ],
+      "n": 14,
+      "cert_pass": true,
+      "cert_worst": 0.29576927579578627,
+      "kA": 4,
+      "kA_le_28": true,
+      "rungs": 2,
+      "bandB_empty": true,
+      "bandB_positions_checked": [],
+      "bandB_ok": true,
+      "brute_force_unimodal": true
+    },
+    {
+      "counts": [
+        1,
+        1,
+        2
+      ],
+      "n": 12,
+      "cert_pass": true,
+      "cert_worst": 0.23619745869764447,
+      "kA": 3,
+      "kA_le_28": true,
+      "rungs": 2,
+      "bandB_empty": false,
+      "bandB_positions_checked": [
+        [
+          4,
+          1
+        ]
+      ],
+      "bandB_ok": true,
+      "brute_force_unimodal": true
+    },
+    {
+      "counts": [
+        2,
+        3,
+        3
+      ],
+      "n": 20,
+      "cert_pass": true,
+      "cert_worst": 0.27447746185069977,
+      "kA": 6,
+      "kA_le_28": true,
+      "rungs": 2,
+      "bandB_empty": true,
+      "bandB_positions_checked": [],
+      "bandB_ok": true,
+      "brute_force_unimodal": true
+    },
+    {
+      "counts": [
+        2,
+        2,
+        3
+      ],
+      "n": 18,
+      "cert_pass": true,
+      "cert_worst": 0.38137069200359686,
+      "kA": 6,
+      "kA_le_28": true,
+      "rungs": 2,
+      "bandB_empty": true,
+      "bandB_positions_checked": [],
+      "bandB_ok": true,
+      "brute_force_unimodal": true
+    },
+    {
+      "counts": [
+        3,
+        4,
+        4
+      ],
+      "n": 26,
+      "cert_pass": true,
+      "cert_worst": 0.22056866890245702,
+      "kA": 8,
+      "kA_le_28": true,
+      "rungs": 2,
+      "bandB_empty": true,
+      "bandB_positions_checked": [],
+      "bandB_ok": true,
+      "brute_force_unimodal": true
+    },
+    {
+      "counts": [
+        3,
+        3,
+        4
+      ],
+      "n": 24,
+      "cert_pass": true,
+      "cert_worst": 0.33500486884427866,
+      "kA": 8,
+      "kA_le_28": true,
+      "rungs": 2,
+      "bandB_empty": true,
+      "bandB_positions_checked": [],
+      "bandB_ok": true,
+      "brute_force_unimodal": true
+    },
+    {
+      "counts": [
+        4,
+        5,
+        5
+      ],
+      "n": 32,
+      "cert_pass": true,
+      "cert_worst": 0.2084427861194478,
+      "kA": 10,
+      "kA_le_28": true,
+      "rungs": 2,
+      "bandB_empty": true,
+      "bandB_positions_checked": [],
+      "bandB_ok": true,
+      "brute_force_unimodal": true
+    },
+    {
+      "counts": [
+        4,
+        4,
+        5
+      ],
+      "n": 30,
+      "cert_pass": true,
+      "cert_worst": 0.2695941100964909,
+      "kA": 10,
+      "kA_le_28": true,
+      "rungs": 2,
+      "bandB_empty": true,
+      "bandB_positions_checked": [],
+      "bandB_ok": true,
+      "brute_force_unimodal": true
+    },
+    {
+      "counts": [
+        5,
+        6,
+        6
+      ],
+      "n": 38,
+      "cert_pass": true,
+      "cert_worst": 0.17275540026296915,
+      "kA": 12,
+      "kA_le_28": true,
+      "rungs": 2,
+      "bandB_empty": true,
+      "bandB_positions_checked": [],
+      "bandB_ok": true,
+      "brute_force_unimodal": true
+    },
+    {
+      "counts": [
+        5,
+        5,
+        6
+      ],
+      "n": 36,
+      "cert_pass": true,
+      "cert_worst": 0.21900670717886306,
+      "kA": 12,
+      "kA_le_28": true,
+      "rungs": 2,
+      "bandB_empty": true,
+      "bandB_positions_checked": [],
+      "bandB_ok": true,
+      "brute_force_unimodal": true
+    },
+    {
+      "counts": [
+        6,
+        7,
+        7
+      ],
+      "n": 44,
+      "cert_pass": true,
+      "cert_worst": 0.11961094012147772,
+      "kA": 14,
+      "kA_le_28": true,
+      "rungs": 2,
+      "bandB_empty": true,
+      "bandB_positions_checked": [],
+      "bandB_ok": true,
+      "brute_force_unimodal": true
+    },
+    {
+      "counts": [
+        6,
+        6,
+        7
+      ],
+      "n": 42,
+      "cert_pass": true,
+      "cert_worst": 0.15179049589385119,
+      "kA": 14,
+      "kA_le_28": true,
+      "rungs": 2,
+      "bandB_empty": true,
+      "bandB_positions_checked": [],
+      "bandB_ok": true,
+      "brute_force_unimodal": true
+    },
+    {
+      "counts": [
+        7,
+        8,
+        8
+      ],
+      "n": 50,
+      "cert_pass": true,
+      "cert_worst": 0.08263098613134266,
+      "kA": 16,
+      "kA_le_28": true,
+      "rungs": 2,
+      "bandB_empty": true,
+      "bandB_positions_checked": [],
+      "bandB_ok": true,
+      "brute_force_unimodal": true
+    },
+    {
+      "counts": [
+        7,
+        7,
+        8
+      ],
+      "n": 48,
+      "cert_pass": true,
+      "cert_worst": 0.10246786506614626,
+      "kA": 16,
+      "kA_le_28": true,
+      "rungs": 2,
+      "bandB_empty": true,
+      "bandB_positions_checked": [],
+      "bandB_ok": true,
+      "brute_force_unimodal": true
+    },
+    {
+      "counts": [
+        8,
+        9,
+        9
+      ],
+      "n": 56,
+      "cert_pass": true,
+      "cert_worst": 0.05817798063343022,
+      "kA": 18,
+      "kA_le_28": true,
+      "rungs": 2,
+      "bandB_empty": true,
+      "bandB_positions_checked": [],
+      "bandB_ok": true,
+      "brute_force_unimodal": true
+    },
+    {
+      "counts": [
+        8,
+        8,
+        9
+      ],
+      "n": 54,
+      "cert_pass": true,
+      "cert_worst": 0.07055009263972914,
+      "kA": 18,
+      "kA_le_28": true,
+      "rungs": 2,
+      "bandB_empty": true,
+      "bandB_positions_checked": [],
+      "bandB_ok": true,
+      "brute_force_unimodal": true
+    }
+  ],
+  "all_checks_pass": true,
+  "note": "hypothesis (ii) via the adjacent-two-value ladder certificates (h=3, p in {1,2}, k <= 28, all integer a) + Lemma FL; external prompt: github.com/willblair0708/verified-combinatorics"
+}
