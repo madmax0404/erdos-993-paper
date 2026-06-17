@@ -144,6 +144,11 @@ def main() -> None:
     parser.add_argument("--max-n", type=int, default=200)
     parser.add_argument("--workers", type=int, default=14)
     parser.add_argument("--tag", type=str, default="beam")
+    parser.add_argument(
+        "--no-hub-seed",
+        action="store_true",
+        help="run the original unseeded stage-1 beam search",
+    )
     args = parser.parse_args()
 
     started = perf_counter()
@@ -156,35 +161,38 @@ def main() -> None:
     for gi, gadget in enumerate(gadgets):
         beam.append((0.0, gadget["F"], gadget["G"], (gi,)))
 
-    # Seed with uniform hub-spider multisets H_c^h, the known stage-2 states:
-    # the balance gradient is only informative once an LC failure exists, and
-    # greedy stage-1 search provably drifts to a smooth attractor instead.
-    hub_index: dict[int, int] = {}
-    for gi, gadget in enumerate(gadgets):
-        for c in range(1, 6):
-            H = tuple(
-                a + b
-                for a, b in zip(
-                    [int(x) for x in np_binom_row(c, 2)] + [0],
-                    [0] + [int(x) for x in np_binom_row(c, 1)],
-                    strict=True,
+    if not args.no_hub_seed:
+        # Seed with uniform hub-spider multisets H_c^h, the known stage-2
+        # states: the balance gradient is only informative once an LC failure
+        # exists, and greedy stage-1 search drifts to a smooth attractor.
+        hub_index: dict[int, int] = {}
+        for gi, gadget in enumerate(gadgets):
+            for c in range(1, 6):
+                H = tuple(
+                    a + b
+                    for a, b in zip(
+                        [int(x) for x in np_binom_row(c, 2)] + [0],
+                        [0] + [int(x) for x in np_binom_row(c, 1)],
+                        strict=True,
+                    )
                 )
-            )
-            E = tuple(int(x) for x in np_binom_row(c, 2))
-            if gadget["F"] == H and gadget["G"] == E:
-                hub_index[c] = gi
-    for c, gi in sorted(hub_index.items()):
-        gadget = gadgets[gi]
-        for h in range(3, 20):
-            if 1 + h * gadget["n"] > args.max_n:
-                break
-            F, G = gadget["F"], gadget["G"]
-            for _ in range(h - 1):
-                F = mul(F, gadget["F"])
-                G = mul(G, gadget["G"])
-            combined, _, _, _ = score(compose(F, G), len(G))
-            beam.append((combined, F, G, tuple([gi] * h)))
-    print(f"[beam] seeded hub multisets for c in {sorted(hub_index)}", flush=True)
+                E = tuple(int(x) for x in np_binom_row(c, 2))
+                if gadget["F"] == H and gadget["G"] == E:
+                    hub_index[c] = gi
+        for c, gi in sorted(hub_index.items()):
+            gadget = gadgets[gi]
+            for h in range(3, 20):
+                if 1 + h * gadget["n"] > args.max_n:
+                    break
+                F, G = gadget["F"], gadget["G"]
+                for _ in range(h - 1):
+                    F = mul(F, gadget["F"])
+                    G = mul(G, gadget["G"])
+                combined, _, _, _ = score(compose(F, G), len(G))
+                beam.append((combined, F, G, tuple([gi] * h)))
+        print(f"[beam] seeded hub multisets for c in {sorted(hub_index)}", flush=True)
+    else:
+        print("[beam] hub seeding disabled", flush=True)
 
     best_overall: list[dict] = []
     counterexamples: list[dict] = []

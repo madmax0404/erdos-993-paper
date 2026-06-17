@@ -212,6 +212,9 @@ poetry.toml
 # LSP config files
 pyrightconfig.json
 
+# Lean/Lake build artifacts
+.lake/
+
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json

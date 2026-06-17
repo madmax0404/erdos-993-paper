@@ -25,7 +25,6 @@ logs/993_ecore_polyc_certification.json.
 from __future__ import annotations
 
 import json
-import sys
 from pathlib import Path
 
 import sympy as sp
@@ -140,21 +139,65 @@ def certify_instance(k, h, w):
     return all(P.eval(ci) >= 0 for ci in range(1, B + 1))
 
 
+def instance_grid(h_min, h_max, k_min, k_max):
+    for h in range(h_min, h_max + 1):
+        upper = k_max if k_max is not None else min(28, 6 * h)
+        for k in range(k_min, upper + 1):
+            for w in range(0, h - 1):
+                yield k, h, w
+
+
+def topup_grid():
+    for k in range(19, 29):
+        for w in range(0, 2):
+            yield k, 3, w
+    for k in range(25, 29):
+        for w in range(0, 3):
+            yield k, 4, w
+
+
 def main():
+    import argparse
     import time
+
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--h-min", type=int, default=3)
+    parser.add_argument("--h-max", type=int, default=7)
+    parser.add_argument("--k-min", type=int, default=2)
+    parser.add_argument(
+        "--k-max",
+        type=int,
+        default=None,
+        help="fixed k maximum; default is min(28, 6*h) for each h",
+    )
+    parser.add_argument("--out", type=str, default="993_ecore_polyc_certification.json")
+    parser.add_argument(
+        "--topup",
+        action="store_true",
+        help="regenerate the top-up range h=3,k=19..28 and h=4,k=25..28",
+    )
+    args = parser.parse_args()
+
     results = {"certified": [], "failed": []}
     t0 = time.time()
-    H_RANGE = range(3, 8)
-    for h in H_RANGE:
-        K_MAX = min(28, 6 * h)
-        for k in range(2, K_MAX + 1):
-            for w in range(0, h - 1):
-                ok = certify_instance(k, h, w)
-                (results["certified"] if ok else results["failed"]).append([k, h, w])
-        print(f"h={h} done ({time.time()-t0:.0f}s): "
-              f"certified {sum(1 for r in results['certified'] if r[1]==h)}, "
-              f"failed {sum(1 for r in results['failed'] if r[1]==h)}", flush=True)
-    out = REPO / "logs" / "993_ecore_polyc_certification.json"
+
+    if args.topup:
+        args.out = "993_ecore_polyc_topup.json" if args.out == "993_ecore_polyc_certification.json" else args.out
+        instances = list(topup_grid())
+    else:
+        instances = list(instance_grid(args.h_min, args.h_max, args.k_min, args.k_max))
+
+    done_by_h = {}
+    for k, h, w in instances:
+        ok = certify_instance(k, h, w)
+        (results["certified"] if ok else results["failed"]).append([k, h, w])
+        done_by_h[h] = done_by_h.get(h, 0) + 1
+        if done_by_h[h] == sum(1 for _, hh, _ in instances if hh == h):
+            print(f"h={h} done ({time.time()-t0:.0f}s): "
+                  f"certified {sum(1 for r in results['certified'] if r[1]==h)}, "
+                  f"failed {sum(1 for r in results['failed'] if r[1]==h)}", flush=True)
+
+    out = REPO / "logs" / args.out
     out.write_text(json.dumps(results, indent=2))
     print(f"TOTAL certified: {len(results['certified'])}, failed: {len(results['failed'])}")
     if results["failed"]:

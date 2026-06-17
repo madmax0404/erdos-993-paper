@@ -41,6 +41,50 @@ sys.path.insert(0, str(REPO / "src"))
 from erdos993.indpoly import mul  # noqa: E402
 
 
+EXT_MIXED_CASES = [
+    [2, 4, 4, 4, 5, 5, 6, 8],
+    [3, 4, 9, 10, 11, 11],
+    [1, 1, 3, 4, 5, 8],
+    [2, 2, 3, 6, 6, 7],
+    [4, 4, 4, 5, 8, 9],
+    [2, 4],
+    [2, 2, 8, 9, 9, 10, 12],
+    [2, 2, 4, 6, 10, 12, 12, 12],
+    [2, 2, 5, 8, 9],
+    [1, 2, 6, 7, 9, 9, 10],
+    [4, 4, 7, 8, 9, 10],
+    [1, 1, 1, 3, 7, 8, 11],
+    [6, 12],
+    [1, 2, 5, 7, 8, 9, 10, 12],
+    [2, 3, 5, 8, 9, 11, 12],
+    [1, 8],
+    [1, 1, 7, 10],
+    [1, 1, 2, 3, 4, 8, 11, 12],
+    [2, 2, 3, 7, 8],
+    [2, 4, 5],
+    [1, 3, 3],
+    [4, 11],
+    [7, 7, 10, 10, 12, 12],
+    [2, 5, 8, 9, 10],
+    [5, 5, 5, 7, 8, 9],
+    [1, 1, 1, 2, 4, 8, 10, 12],
+    [1, 2, 11],
+    [4, 9],
+    [2, 2, 3, 5, 7, 7, 11],
+    [4, 7, 8, 9, 12],
+    [2, 5, 5, 6, 6, 7, 9, 11],
+    [5, 6, 12],
+    [7, 8, 9, 9, 9, 11, 12],
+    [5, 7, 9, 12, 12],
+    [2, 2, 3, 3, 5, 5, 11],
+    [1, 4, 10, 12],
+    [1, 9, 9, 10, 10, 11],
+    [10, 12],
+    [11, 12],
+    [1, 3, 3, 5, 6, 9, 11, 11],
+]
+
+
 def binp(c, b):
     return tuple(comb(c, k) * b**k for k in range(c + 1))
 
@@ -215,7 +259,7 @@ def verify_case(counts):
     return worst, fail
 
 
-def main():
+def default_cases():
     import random
     cases = []
     for c in range(1, 9):
@@ -226,6 +270,28 @@ def main():
     for _ in range(50):
         h = rng.randint(2, 7)
         cases.append(sorted(rng.randint(1, 10) for _ in range(h)))
+    return cases
+
+
+def extended_cases():
+    cases = []
+    for c in range(1, 11):
+        first_h = 3 if c == 1 else 2
+        max_h = 159 // (1 + 2 * c)
+        for h in range(first_h, max_h + 1):
+            cases.append([c] * h)
+    cases.extend(EXT_MIXED_CASES)
+    return cases
+
+
+def main():
+    import argparse
+
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--ext", action="store_true", help="regenerate logs/993_M_dual_certificates_ext.json")
+    args = parser.parse_args()
+
+    cases = extended_cases() if args.ext else default_cases()
 
     results, failures = [], []
     global_worst = (Fraction(0), None)
@@ -240,15 +306,27 @@ def main():
         if worst[0] > global_worst[0]:
             global_worst = (worst[0], (tuple(counts), worst[1], round(worst[2], 3)))
 
-    payload = {
-        "certificates": ["T1 (Case L', exact rational)", "T2 (quadratic majorant + tail, exact rational)"],
-        "cases": len(results),
-        "failures": failures,
-        "worst_ratio": float(global_worst[0]),
-        "worst_at": str(global_worst[1]),
-        "per_case": results,
-    }
-    out = REPO / "logs" / "993_M_dual_certificates.json"
+    if args.ext:
+        payload = {
+            "cases": len(results),
+            "failures": failures,
+            "worst": float(global_worst[0]),
+            "per_case": [
+                {"counts": r["counts"], "max_ratio": r["max_ratio"]}
+                for r in results
+            ],
+        }
+        out = REPO / "logs" / "993_M_dual_certificates_ext.json"
+    else:
+        payload = {
+            "certificates": ["T1 (Case L', exact rational)", "T2 (quadratic majorant + tail, exact rational)"],
+            "cases": len(results),
+            "failures": failures,
+            "worst_ratio": float(global_worst[0]),
+            "worst_at": str(global_worst[1]),
+            "per_case": results,
+        }
+        out = REPO / "logs" / "993_M_dual_certificates.json"
     out.write_text(json.dumps(payload, indent=2))
     print(f"cases verified: {len(results)}, failures: {len(failures)}")
     if failures:

@@ -31,6 +31,13 @@ def require_exists(relative_path: str) -> None:
 def check_artifact_inventory() -> None:
     required = [
         "REPRODUCIBILITY.md",
+        "FORMALIZATION.md",
+        "lean-toolchain",
+        "lakefile.lean",
+        "formal/Erdos993Formal.lean",
+        "formal/Erdos993Formal/Basic.lean",
+        "scripts/check_formalization.py",
+        "scripts/reproduce_all.py",
         "notes/993_audit_report.md",
         "notes/993-current-integration-audit.md",
         "notes/993-counterexample-hunt-design.md",

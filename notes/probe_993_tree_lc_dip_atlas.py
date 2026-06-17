@@ -248,7 +248,7 @@ def main() -> None:
                 non_unimodal.append(result)
                 print(f"!!! NON-UNIMODAL TREE: {result['label']}", flush=True)
 
-    non_lc.sort(key=lambda r: -r["max_balance"])
+    non_lc.sort(key=lambda r: (-r["max_balance"], r["label"]))
     by_offset: dict[int, int] = {}
     nonmonic = [r for r in non_lc if not r["monic"]]
     for r in non_lc:
@@ -262,7 +262,7 @@ def main() -> None:
         print(f"   balance {r['max_balance']:.4f} offset {r['max_offset']} lead {r['lead']} "
               f"n={r['n']} tail {r['tail']} {r['label']}", flush=True)
     if nonmonic:
-        nonmonic.sort(key=lambda r: -r["max_balance"])
+        nonmonic.sort(key=lambda r: (-r["max_balance"], r["label"]))
         print("[atlas] top non-monic champions:", flush=True)
         for r in nonmonic[:12]:
             print(f"   balance {r['max_balance']:.4f} offset {r['max_offset']} lead {r['lead']} "

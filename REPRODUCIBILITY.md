@@ -14,9 +14,19 @@ bash scripts/reproduce.sh
 ```
 
 `scripts/reproduce.sh` runs the unit tests, two direct Band B verifiers, the
-log/certificate validator, and rebuilds `paper/main.pdf` when `tectonic` is
-installed. Larger certification/search scripts are committed so the logs can be
-regenerated, but they are intentionally outside the fast path.
+log/certificate validator, the Lean formalization build, and the no-placeholder
+formalization guard. It rebuilds `paper/main.pdf` when `tectonic` is installed.
+
+For the full paper-facing regeneration path, run:
+
+```bash
+uv run python scripts/reproduce_all.py --list
+uv run python scripts/reproduce_all.py
+```
+
+`scripts/reproduce_all.py` copies the repository to a temporary worktree,
+reruns the certificate/search generators, and compares regenerated artifacts to
+the committed logs after normalizing runtime-only timing fields.
 
 ## Claim-to-Artifact Map
 
@@ -41,13 +51,14 @@ regenerated, but they are intentionally outside the fast path.
 | Forest product scans through the `n <= 64` exact-convolution regime | `notes/search_993_forest_pair_products.py` | `logs/993_cx_hunt_pairscan_smoke3.json`, `notes/993-counterexample-hunt-design.md` |
 | Previous-record `T^*` symbolic/Newton checks used as regression context | `notes/verify_starred_newton.py`, `notes/certify_starred_newton.py` | unit-test and symbolic-check outputs |
 | Monic product closure branch and first-product concavity certificate | `notes/scan_monic_products.py`, `notes/verify_993_first_product_concavity.py` | `notes/monic-product-closure.md`, `logs/993_first_product_concavity_certificate.log` |
+| Lean formal surface for coefficient-level hub-spider objects | `formal/`, `lakefile.lean`, `scripts/check_formalization.py` | `lake build`, no `sorry`/`admit`/`axiom` placeholders |
 
 ## Fast Validator
 
 `scripts/check_reproducibility.py` validates the headline counts, zero-failure
 properties, and selected extremal/search values in the table above. It does not
 rerun the expensive searches; it checks that the committed artifacts are the
-ones cited by the paper.
+ones cited by the paper. `scripts/reproduce_all.py` is the regeneration path.
 
 ## Larger Regeneration Commands
 
@@ -55,7 +66,10 @@ Examples:
 
 ```bash
 uv run python notes/extract_993_M_dual_certificates.py
+uv run python notes/extract_993_M_dual_certificates.py --ext
 uv run python notes/certify_993_ecore_polyc.py
+uv run python notes/certify_993_ecore_polyc.py --h-min 8 --h-max 10 --k-min 2 --k-max 20 --out 993_ecore_polyc_ext.json
+uv run python notes/certify_993_ecore_polyc.py --topup
 uv run python notes/verify_993_factorial_ladder.py
 uv run python notes/verify_993_ladder_schur_step.py
 uv run python notes/certify_993_ladder_polyc.py 3 10 28 993_ladder_polyc_h3-10_k28.json
@@ -63,8 +77,11 @@ uv run python notes/certify_993_giant_polyc.py
 uv run python notes/verify_993_giant_vs_bal.py
 uv run python notes/verify_993_exchange_census.py
 uv run python notes/verify_993_bush_sweep.py
+uv run python notes/search_993_junction_beam.py --gadget-max 11 --beam 200 --max-n 170 --tag beam11 --no-hub-seed
 uv run python notes/search_993_junction_beam.py --gadget-max 11 --beam 200 --max-n 170 --tag beam11seed
+uv run python notes/search_993_forest_pair_products.py --exhaustive-max 10 --corona-base-max 7 --spine-max 8 --random-leg-patterns 4 --random-trees-per-n 5 --top-pool 400 --random-pairs 100000 --tag smoke3
 ```
 
-Some of these are CPU-heavy or exploratory. The committed JSON files are the
-paper-facing outputs used for publication.
+Some of these are CPU-heavy. The committed JSON files are the paper-facing
+outputs used for publication, and `scripts/reproduce_all.py` records the
+complete command sequence used to regenerate and compare them.
