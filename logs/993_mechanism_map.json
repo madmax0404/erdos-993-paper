@@ -1,0 +1,17 @@
+{
+  "tight_configs": 697,
+  "mechanisms": {
+    "M1": 683,
+    "M2": 6,
+    "M3": 8
+  },
+  "unclassified": [],
+  "n_unclassified": 0,
+  "boundary_sample": {
+    "('M1', False)": 527,
+    "('M1', True)": 156,
+    "('M3', False)": 8,
+    "('M2', False)": 5,
+    "('M2', True)": 1
+  }
+}

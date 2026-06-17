@@ -11,6 +11,7 @@ This repository contains the public paper and reproducibility package for
 - `tests/`: unit tests for the polynomial/tree utilities.
 - `notes/`: curated exact-arithmetic verification scripts used for the paper.
 - `logs/`: paper-facing JSON certificate and audit outputs.
+- `REPRODUCIBILITY.md`: claim-to-artifact map for the manuscript.
 - `scripts/check_reproducibility.py`: validates the committed logs against the
   headline counts used in the manuscript.
 - `scripts/reproduce.sh`: runs the fast reproducibility checks and rebuilds the
@@ -36,6 +37,9 @@ uv run python scripts/check_reproducibility.py
 
 If `tectonic` is available, it also rebuilds `paper/main.pdf`.
 
+For a section-by-section map from manuscript claims to scripts and committed
+logs, see `REPRODUCIBILITY.md`.
+
 ## Longer Certificate Scripts
 
 The repository also includes scripts for the larger exact certificates and
@@ -48,6 +52,13 @@ uv run python notes/verify_993_h2mixed_scope.py
 uv run python notes/verify_993_oddcore.py
 uv run python notes/verify_993_aggregate_dd.py
 uv run python notes/verify_993_purepair_reduction.py
+uv run python notes/verify_993_factorial_ladder.py
+uv run python notes/verify_993_ladder_schur_step.py
+uv run python notes/certify_993_ladder_polyc.py 3 10 28 993_ladder_polyc_h3-10_k28.json
+uv run python notes/certify_993_giant_polyc.py
+uv run python notes/verify_993_giant_vs_bal.py
+uv run python notes/verify_993_exchange_census.py
+uv run python notes/verify_993_bush_sweep.py
 ```
 
 Some of these are slower than the quick reproduction path.  The committed

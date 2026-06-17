@@ -1,0 +1,5708 @@
+{
+  "constructor_trees": 240602,
+  "non_lc_count": 1289,
+  "non_unimodal": [],
+  "max_offset_histogram": {
+    "1": 1289
+  },
+  "non_monic_non_lc": 19,
+  "top_balance": [
+    {
+      "label": "depth3[(0, 0, 3),(0, 1, 4),(0, 1, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 0, 3),(0, 1, 4),(0, 2, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 0, 3),(0, 1, 4),(0, 3, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 0, 3),(0, 1, 4),(0, 4, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 0, 3),(0, 0, 4),(0, 0, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 0, 3),(0, 0, 4),(0, 1, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 0, 3),(0, 0, 4),(0, 2, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 0, 3),(0, 0, 4),(0, 3, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 0, 3),(0, 0, 4),(0, 4, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 0, 3),(0, 3, 4),(0, 3, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 0, 3),(0, 3, 4),(0, 4, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 0, 3),(0, 2, 4),(0, 2, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 0, 3),(0, 2, 4),(0, 3, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 0, 3),(0, 2, 4),(0, 4, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 0, 3),(0, 4, 4),(0, 4, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 0, 4),(0, 1, 3)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 0, 4),(0, 2, 3)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 0, 4),(0, 3, 3)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 0, 4),(0, 4, 3)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 1, 3),(0, 1, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 1, 3),(0, 2, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 1, 3),(0, 3, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 1, 3),(0, 4, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 1, 4),(0, 2, 3)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 1, 4),(0, 3, 3)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 1, 4),(0, 4, 3)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 2, 3),(0, 2, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 2, 3),(0, 3, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 2, 3),(0, 4, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 2, 4),(0, 3, 3)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 2, 4),(0, 4, 3)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 3, 3),(0, 3, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 3, 3),(0, 4, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 3, 4),(0, 4, 3)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 4, 3),(0, 4, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 1, 3),(0, 1, 4),(0, 1, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 1, 3),(0, 1, 4),(0, 2, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 1, 3),(0, 1, 4),(0, 3, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 1, 3),(0, 1, 4),(0, 4, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 1, 3),(0, 2, 4),(0, 2, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 1, 3),(0, 2, 4),(0, 3, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 1, 3),(0, 2, 4),(0, 4, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 1, 3),(0, 3, 4),(0, 3, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 1, 3),(0, 3, 4),(0, 4, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 1, 3),(0, 4, 4),(0, 4, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 1, 4),(0, 2, 3),(0, 2, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 1, 4),(0, 2, 3),(0, 3, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 1, 4),(0, 1, 4),(0, 2, 3)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 1, 4),(0, 1, 4),(0, 3, 3)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 1, 4),(0, 1, 4),(0, 4, 3)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 1, 4),(0, 3, 3),(0, 3, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 1, 4),(0, 3, 3),(0, 4, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 1, 4),(0, 3, 4),(0, 4, 3)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 1, 4),(0, 4, 3),(0, 4, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 1, 4),(0, 2, 3),(0, 4, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 1, 4),(0, 2, 4),(0, 3, 3)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 1, 4),(0, 2, 4),(0, 4, 3)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 2, 3),(0, 2, 4),(0, 2, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 2, 3),(0, 2, 4),(0, 3, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 2, 3),(0, 2, 4),(0, 4, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 2, 3),(0, 3, 4),(0, 3, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 2, 3),(0, 3, 4),(0, 4, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 2, 3),(0, 4, 4),(0, 4, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 2, 4),(0, 3, 3),(0, 3, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 2, 4),(0, 3, 3),(0, 4, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 2, 4),(0, 3, 4),(0, 4, 3)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 2, 4),(0, 2, 4),(0, 3, 3)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 2, 4),(0, 2, 4),(0, 4, 3)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 2, 4),(0, 4, 3),(0, 4, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 3, 3),(0, 4, 4),(0, 4, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 3, 3),(0, 3, 4),(0, 3, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 3, 3),(0, 3, 4),(0, 4, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 3, 4),(0, 3, 4),(0, 4, 3)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 3, 4),(0, 4, 3),(0, 4, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(0, 4, 3),(0, 4, 4),(0, 4, 4)]",
+      "n": 26,
+      "alpha": 14,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        100144,
+        55499,
+        18683,
+        2979,
+        51,
+        1
+      ],
+      "failures": [
+        {
+          "k": 13,
+          "offset": 1,
+          "balance": 0.0196078431372549,
+          "lc_ratio": 0.8731117824773413
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.0196078431372549
+    },
+    {
+      "label": "depth3[(1, 0, 1),(1, 2, 0),(2, 4, 0)]",
+      "n": 30,
+      "alpha": 16,
+      "lead": 2,
+      "monic": false,
+      "unimodal": true,
+      "tail": [
+        440155,
+        187741,
+        48838,
+        6071,
+        110,
+        2
+      ],
+      "failures": [
+        {
+          "k": 15,
+          "offset": 1,
+          "balance": 0.01818181818181818,
+          "lc_ratio": 0.9965409323011036
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.01818181818181818
+    },
+    {
+      "label": "depth3[(1, 1, 0),(1, 1, 0),(2, 4, 0)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        193781,
+        90347,
+        25504,
+        3415,
+        55,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.01818181818181818,
+          "lc_ratio": 0.8857979502196194
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.01818181818181818
+    },
+    {
+      "label": "depth3[(1, 1, 0),(1, 2, 1),(2, 4, 0)]",
+      "n": 32,
+      "alpha": 17,
+      "lead": 2,
+      "monic": false,
+      "unimodal": true,
+      "tail": [
+        817256,
+        301539,
+        67449,
+        7184,
+        117,
+        2
+      ],
+      "failures": [
+        {
+          "k": 16,
+          "offset": 1,
+          "balance": 0.017094017094017096,
+          "lc_ratio": 0.9527422048997772
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.017094017094017096
+    },
+    {
+      "label": "depth3[(1, 1, 1),(1, 2, 0),(2, 4, 0)]",
+      "n": 32,
+      "alpha": 17,
+      "lead": 2,
+      "monic": false,
+      "unimodal": true,
+      "tail": [
+        837608,
+        313071,
+        71338,
+        7779,
+        119,
+        2
+      ],
+      "failures": [
+        {
+          "k": 16,
+          "offset": 1,
+          "balance": 0.01680672268907563,
+          "lc_ratio": 0.9102069674765394
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.01680672268907563
+    },
+    {
+      "label": "depth3[(1, 3, 0),(2, 4, 0)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        208603,
+        98375,
+        27748,
+        3618,
+        60,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.016666666666666666,
+          "lc_ratio": 0.9950248756218906
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.016666666666666666
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 0, 4),(0, 0, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        240347,
+        120903,
+        37220,
+        5410,
+        60,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.016666666666666666,
+          "lc_ratio": 0.6654343807763401
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.016666666666666666
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 0, 4),(0, 1, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        240347,
+        120903,
+        37220,
+        5410,
+        60,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.016666666666666666,
+          "lc_ratio": 0.6654343807763401
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.016666666666666666
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 0, 4),(0, 2, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        240347,
+        120903,
+        37220,
+        5410,
+        60,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.016666666666666666,
+          "lc_ratio": 0.6654343807763401
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.016666666666666666
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 0, 4),(0, 3, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        240347,
+        120903,
+        37220,
+        5410,
+        60,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.016666666666666666,
+          "lc_ratio": 0.6654343807763401
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.016666666666666666
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 0, 4),(0, 4, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        240347,
+        120903,
+        37220,
+        5410,
+        60,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.016666666666666666,
+          "lc_ratio": 0.6654343807763401
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.016666666666666666
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 1, 4),(0, 1, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        240347,
+        120903,
+        37220,
+        5410,
+        60,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.016666666666666666,
+          "lc_ratio": 0.6654343807763401
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.016666666666666666
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 1, 4),(0, 2, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        240347,
+        120903,
+        37220,
+        5410,
+        60,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.016666666666666666,
+          "lc_ratio": 0.6654343807763401
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.016666666666666666
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 1, 4),(0, 3, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        240347,
+        120903,
+        37220,
+        5410,
+        60,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.016666666666666666,
+          "lc_ratio": 0.6654343807763401
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.016666666666666666
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 1, 4),(0, 4, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        240347,
+        120903,
+        37220,
+        5410,
+        60,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.016666666666666666,
+          "lc_ratio": 0.6654343807763401
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.016666666666666666
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 2, 4),(0, 2, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        240347,
+        120903,
+        37220,
+        5410,
+        60,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.016666666666666666,
+          "lc_ratio": 0.6654343807763401
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.016666666666666666
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 2, 4),(0, 3, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        240347,
+        120903,
+        37220,
+        5410,
+        60,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.016666666666666666,
+          "lc_ratio": 0.6654343807763401
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.016666666666666666
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 2, 4),(0, 4, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        240347,
+        120903,
+        37220,
+        5410,
+        60,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.016666666666666666,
+          "lc_ratio": 0.6654343807763401
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.016666666666666666
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 3, 4),(0, 3, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        240347,
+        120903,
+        37220,
+        5410,
+        60,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.016666666666666666,
+          "lc_ratio": 0.6654343807763401
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.016666666666666666
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 3, 4),(0, 4, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        240347,
+        120903,
+        37220,
+        5410,
+        60,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.016666666666666666,
+          "lc_ratio": 0.6654343807763401
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.016666666666666666
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 4, 4),(0, 4, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        240347,
+        120903,
+        37220,
+        5410,
+        60,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.016666666666666666,
+          "lc_ratio": 0.6654343807763401
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.016666666666666666
+    },
+    {
+      "label": "depth3[(0, 1, 4),(0, 1, 4),(0, 1, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        240347,
+        120903,
+        37220,
+        5410,
+        60,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.016666666666666666,
+          "lc_ratio": 0.6654343807763401
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.016666666666666666
+    },
+    {
+      "label": "depth3[(0, 1, 4),(0, 1, 4),(0, 2, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        240347,
+        120903,
+        37220,
+        5410,
+        60,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.016666666666666666,
+          "lc_ratio": 0.6654343807763401
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.016666666666666666
+    },
+    {
+      "label": "depth3[(0, 1, 4),(0, 1, 4),(0, 3, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        240347,
+        120903,
+        37220,
+        5410,
+        60,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.016666666666666666,
+          "lc_ratio": 0.6654343807763401
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.016666666666666666
+    },
+    {
+      "label": "depth3[(0, 1, 4),(0, 1, 4),(0, 4, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        240347,
+        120903,
+        37220,
+        5410,
+        60,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.016666666666666666,
+          "lc_ratio": 0.6654343807763401
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.016666666666666666
+    },
+    {
+      "label": "depth3[(0, 1, 4),(0, 3, 4),(0, 3, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        240347,
+        120903,
+        37220,
+        5410,
+        60,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.016666666666666666,
+          "lc_ratio": 0.6654343807763401
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.016666666666666666
+    },
+    {
+      "label": "depth3[(0, 1, 4),(0, 3, 4),(0, 4, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        240347,
+        120903,
+        37220,
+        5410,
+        60,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.016666666666666666,
+          "lc_ratio": 0.6654343807763401
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.016666666666666666
+    },
+    {
+      "label": "depth3[(0, 1, 4),(0, 2, 4),(0, 2, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        240347,
+        120903,
+        37220,
+        5410,
+        60,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.016666666666666666,
+          "lc_ratio": 0.6654343807763401
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.016666666666666666
+    },
+    {
+      "label": "depth3[(0, 1, 4),(0, 2, 4),(0, 3, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        240347,
+        120903,
+        37220,
+        5410,
+        60,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.016666666666666666,
+          "lc_ratio": 0.6654343807763401
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.016666666666666666
+    },
+    {
+      "label": "depth3[(0, 1, 4),(0, 2, 4),(0, 4, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        240347,
+        120903,
+        37220,
+        5410,
+        60,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.016666666666666666,
+          "lc_ratio": 0.6654343807763401
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.016666666666666666
+    },
+    {
+      "label": "depth3[(0, 1, 4),(0, 4, 4),(0, 4, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        240347,
+        120903,
+        37220,
+        5410,
+        60,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.016666666666666666,
+          "lc_ratio": 0.6654343807763401
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.016666666666666666
+    },
+    {
+      "label": "depth3[(0, 2, 4),(0, 3, 4),(0, 3, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        240347,
+        120903,
+        37220,
+        5410,
+        60,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.016666666666666666,
+          "lc_ratio": 0.6654343807763401
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.016666666666666666
+    },
+    {
+      "label": "depth3[(0, 2, 4),(0, 3, 4),(0, 4, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        240347,
+        120903,
+        37220,
+        5410,
+        60,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.016666666666666666,
+          "lc_ratio": 0.6654343807763401
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.016666666666666666
+    },
+    {
+      "label": "depth3[(0, 2, 4),(0, 2, 4),(0, 2, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        240347,
+        120903,
+        37220,
+        5410,
+        60,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.016666666666666666,
+          "lc_ratio": 0.6654343807763401
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.016666666666666666
+    },
+    {
+      "label": "depth3[(0, 2, 4),(0, 2, 4),(0, 3, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        240347,
+        120903,
+        37220,
+        5410,
+        60,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.016666666666666666,
+          "lc_ratio": 0.6654343807763401
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.016666666666666666
+    },
+    {
+      "label": "depth3[(0, 2, 4),(0, 2, 4),(0, 4, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        240347,
+        120903,
+        37220,
+        5410,
+        60,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.016666666666666666,
+          "lc_ratio": 0.6654343807763401
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.016666666666666666
+    },
+    {
+      "label": "depth3[(0, 2, 4),(0, 4, 4),(0, 4, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        240347,
+        120903,
+        37220,
+        5410,
+        60,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.016666666666666666,
+          "lc_ratio": 0.6654343807763401
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.016666666666666666
+    },
+    {
+      "label": "depth3[(0, 3, 4),(0, 3, 4),(0, 3, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        240347,
+        120903,
+        37220,
+        5410,
+        60,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.016666666666666666,
+          "lc_ratio": 0.6654343807763401
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.016666666666666666
+    },
+    {
+      "label": "depth3[(0, 3, 4),(0, 3, 4),(0, 4, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        240347,
+        120903,
+        37220,
+        5410,
+        60,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.016666666666666666,
+          "lc_ratio": 0.6654343807763401
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.016666666666666666
+    },
+    {
+      "label": "depth3[(0, 3, 4),(0, 4, 4),(0, 4, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        240347,
+        120903,
+        37220,
+        5410,
+        60,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.016666666666666666,
+          "lc_ratio": 0.6654343807763401
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.016666666666666666
+    },
+    {
+      "label": "depth3[(0, 4, 4),(0, 4, 4),(0, 4, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        240347,
+        120903,
+        37220,
+        5410,
+        60,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.016666666666666666,
+          "lc_ratio": 0.6654343807763401
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.016666666666666666
+    },
+    {
+      "label": "depth3[(1, 2, 0),(1, 2, 2),(2, 4, 0)]",
+      "n": 36,
+      "alpha": 19,
+      "lead": 4,
+      "monic": false,
+      "unimodal": true,
+      "tail": [
+        3264872,
+        995566,
+        184438,
+        16337,
+        252,
+        4
+      ],
+      "failures": [
+        {
+          "k": 18,
+          "offset": 1,
+          "balance": 0.015873015873015872,
+          "lc_ratio": 0.9717818448919631
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.015873015873015872
+    },
+    {
+      "label": "depth3[(1, 0, 3),(1, 3, 0),(2, 4, 0)]",
+      "n": 36,
+      "alpha": 19,
+      "lead": 8,
+      "monic": false,
+      "unimodal": true,
+      "tail": [
+        4588655,
+        1547598,
+        323848,
+        32876,
+        509,
+        8
+      ],
+      "failures": [
+        {
+          "k": 18,
+          "offset": 1,
+          "balance": 0.015717092337917484,
+          "lc_ratio": 0.9850688952427302
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.015717092337917484
+    },
+    {
+      "label": "depth3[(1, 1, 0),(1, 2, 0),(2, 4, 0)]",
+      "n": 30,
+      "alpha": 16,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        413817,
+        173283,
+        44205,
+        5350,
+        64,
+        1
+      ],
+      "failures": [
+        {
+          "k": 15,
+          "offset": 1,
+          "balance": 0.015625,
+          "lc_ratio": 0.765607476635514
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.015625
+    },
+    {
+      "label": "depth3[(1, 0, 2),(1, 3, 0),(2, 4, 0)]",
+      "n": 34,
+      "alpha": 18,
+      "lead": 4,
+      "monic": false,
+      "unimodal": true,
+      "tail": [
+        2076870,
+        748015,
+        165949,
+        17662,
+        257,
+        4
+      ],
+      "failures": [
+        {
+          "k": 17,
+          "offset": 1,
+          "balance": 0.01556420233463035,
+          "lc_ratio": 0.9349026157853018
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.01556420233463035
+    },
+    {
+      "label": "depth3[(1, 0, 1),(1, 3, 0),(2, 4, 0)]",
+      "n": 32,
+      "alpha": 17,
+      "lead": 2,
+      "monic": false,
+      "unimodal": true,
+      "tail": [
+        961814,
+        374977,
+        89426,
+        10113,
+        132,
+        2
+      ],
+      "failures": [
+        {
+          "k": 16,
+          "offset": 1,
+          "balance": 0.015151515151515152,
+          "lc_ratio": 0.8614654405221003
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.015151515151515152
+    },
+    {
+      "label": "depth3[(1, 2, 0),(1, 2, 1),(2, 4, 0)]",
+      "n": 34,
+      "alpha": 18,
+      "lead": 2,
+      "monic": false,
+      "unimodal": true,
+      "tail": [
+        1646595,
+        553822,
+        113573,
+        11101,
+        135,
+        2
+      ],
+      "failures": [
+        {
+          "k": 17,
+          "offset": 1,
+          "balance": 0.014814814814814815,
+          "lc_ratio": 0.8208719935140978
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014814814814814815
+    },
+    {
+      "label": "depth3[(0, 0, 3),(0, 1, 4),(0, 1, 5)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 3),(0, 1, 4),(0, 2, 5)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 3),(0, 1, 4),(0, 3, 5)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 3),(0, 1, 4),(0, 4, 5)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 3),(0, 1, 5),(0, 2, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 3),(0, 1, 5),(0, 3, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 3),(0, 1, 5),(0, 4, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 3),(0, 0, 4),(0, 0, 5)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 3),(0, 0, 4),(0, 1, 5)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 3),(0, 0, 4),(0, 2, 5)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 3),(0, 0, 4),(0, 3, 5)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 3),(0, 0, 4),(0, 4, 5)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 3),(0, 0, 5),(0, 1, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 3),(0, 0, 5),(0, 2, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 3),(0, 0, 5),(0, 3, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 3),(0, 0, 5),(0, 4, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 3),(0, 3, 4),(0, 3, 5)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 3),(0, 3, 4),(0, 4, 5)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 3),(0, 2, 4),(0, 2, 5)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 3),(0, 2, 4),(0, 3, 5)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 3),(0, 2, 4),(0, 4, 5)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 3),(0, 2, 5),(0, 3, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 3),(0, 2, 5),(0, 4, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 3),(0, 4, 4),(0, 4, 5)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 3),(0, 3, 5),(0, 4, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 0, 5),(0, 1, 3)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 0, 5),(0, 2, 3)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 0, 5),(0, 3, 3)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 0, 5),(0, 4, 3)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 1, 3),(0, 1, 5)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 1, 3),(0, 2, 5)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 1, 3),(0, 3, 5)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 1, 3),(0, 4, 5)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 1, 5),(0, 2, 3)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 1, 5),(0, 3, 3)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 1, 5),(0, 4, 3)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 2, 3),(0, 2, 5)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 2, 3),(0, 3, 5)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 2, 3),(0, 4, 5)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 2, 5),(0, 3, 3)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 2, 5),(0, 4, 3)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 3, 3),(0, 3, 5)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 3, 3),(0, 4, 5)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 3, 5),(0, 4, 3)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 4),(0, 4, 3),(0, 4, 5)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 5),(0, 1, 3),(0, 1, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 5),(0, 1, 3),(0, 2, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 5),(0, 1, 3),(0, 3, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 5),(0, 2, 3),(0, 2, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 5),(0, 2, 3),(0, 3, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 5),(0, 2, 3),(0, 4, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 5),(0, 1, 3),(0, 4, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 5),(0, 1, 4),(0, 2, 3)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 5),(0, 1, 4),(0, 3, 3)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 5),(0, 1, 4),(0, 4, 3)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 5),(0, 2, 4),(0, 3, 3)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 5),(0, 2, 4),(0, 4, 3)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 5),(0, 3, 3),(0, 3, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 5),(0, 3, 3),(0, 4, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 5),(0, 3, 4),(0, 4, 3)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 0, 5),(0, 4, 3),(0, 4, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 1, 3),(0, 1, 4),(0, 1, 5)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 1, 3),(0, 1, 4),(0, 2, 5)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 1, 3),(0, 1, 4),(0, 3, 5)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 1, 3),(0, 1, 4),(0, 4, 5)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 1, 3),(0, 1, 5),(0, 2, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 1, 3),(0, 1, 5),(0, 3, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 1, 3),(0, 1, 5),(0, 4, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 1, 3),(0, 2, 4),(0, 2, 5)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 1, 3),(0, 2, 4),(0, 3, 5)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 1, 3),(0, 2, 4),(0, 4, 5)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 1, 3),(0, 2, 5),(0, 3, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 1, 3),(0, 2, 5),(0, 4, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 1, 3),(0, 3, 4),(0, 3, 5)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 1, 3),(0, 3, 4),(0, 4, 5)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 1, 3),(0, 3, 5),(0, 4, 4)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 1, 3),(0, 4, 4),(0, 4, 5)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 1, 4),(0, 2, 3),(0, 2, 5)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    },
+    {
+      "label": "depth3[(0, 1, 4),(0, 2, 3),(0, 3, 5)]",
+      "n": 28,
+      "alpha": 15,
+      "lead": 1,
+      "monic": true,
+      "unimodal": true,
+      "tail": [
+        245228,
+        123878,
+        38310,
+        5606,
+        68,
+        1
+      ],
+      "failures": [
+        {
+          "k": 14,
+          "offset": 1,
+          "balance": 0.014705882352941176,
+          "lc_ratio": 0.8248305387085266
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014705882352941176
+    }
+  ],
+  "top_non_monic": [
+    {
+      "label": "depth3[(1, 0, 1),(1, 2, 0),(2, 4, 0)]",
+      "n": 30,
+      "alpha": 16,
+      "lead": 2,
+      "monic": false,
+      "unimodal": true,
+      "tail": [
+        440155,
+        187741,
+        48838,
+        6071,
+        110,
+        2
+      ],
+      "failures": [
+        {
+          "k": 15,
+          "offset": 1,
+          "balance": 0.01818181818181818,
+          "lc_ratio": 0.9965409323011036
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.01818181818181818
+    },
+    {
+      "label": "depth3[(1, 1, 0),(1, 2, 1),(2, 4, 0)]",
+      "n": 32,
+      "alpha": 17,
+      "lead": 2,
+      "monic": false,
+      "unimodal": true,
+      "tail": [
+        817256,
+        301539,
+        67449,
+        7184,
+        117,
+        2
+      ],
+      "failures": [
+        {
+          "k": 16,
+          "offset": 1,
+          "balance": 0.017094017094017096,
+          "lc_ratio": 0.9527422048997772
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.017094017094017096
+    },
+    {
+      "label": "depth3[(1, 1, 1),(1, 2, 0),(2, 4, 0)]",
+      "n": 32,
+      "alpha": 17,
+      "lead": 2,
+      "monic": false,
+      "unimodal": true,
+      "tail": [
+        837608,
+        313071,
+        71338,
+        7779,
+        119,
+        2
+      ],
+      "failures": [
+        {
+          "k": 16,
+          "offset": 1,
+          "balance": 0.01680672268907563,
+          "lc_ratio": 0.9102069674765394
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.01680672268907563
+    },
+    {
+      "label": "depth3[(1, 2, 0),(1, 2, 2),(2, 4, 0)]",
+      "n": 36,
+      "alpha": 19,
+      "lead": 4,
+      "monic": false,
+      "unimodal": true,
+      "tail": [
+        3264872,
+        995566,
+        184438,
+        16337,
+        252,
+        4
+      ],
+      "failures": [
+        {
+          "k": 18,
+          "offset": 1,
+          "balance": 0.015873015873015872,
+          "lc_ratio": 0.9717818448919631
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.015873015873015872
+    },
+    {
+      "label": "depth3[(1, 0, 3),(1, 3, 0),(2, 4, 0)]",
+      "n": 36,
+      "alpha": 19,
+      "lead": 8,
+      "monic": false,
+      "unimodal": true,
+      "tail": [
+        4588655,
+        1547598,
+        323848,
+        32876,
+        509,
+        8
+      ],
+      "failures": [
+        {
+          "k": 18,
+          "offset": 1,
+          "balance": 0.015717092337917484,
+          "lc_ratio": 0.9850688952427302
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.015717092337917484
+    },
+    {
+      "label": "depth3[(1, 0, 2),(1, 3, 0),(2, 4, 0)]",
+      "n": 34,
+      "alpha": 18,
+      "lead": 4,
+      "monic": false,
+      "unimodal": true,
+      "tail": [
+        2076870,
+        748015,
+        165949,
+        17662,
+        257,
+        4
+      ],
+      "failures": [
+        {
+          "k": 17,
+          "offset": 1,
+          "balance": 0.01556420233463035,
+          "lc_ratio": 0.9349026157853018
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.01556420233463035
+    },
+    {
+      "label": "depth3[(1, 0, 1),(1, 3, 0),(2, 4, 0)]",
+      "n": 32,
+      "alpha": 17,
+      "lead": 2,
+      "monic": false,
+      "unimodal": true,
+      "tail": [
+        961814,
+        374977,
+        89426,
+        10113,
+        132,
+        2
+      ],
+      "failures": [
+        {
+          "k": 16,
+          "offset": 1,
+          "balance": 0.015151515151515152,
+          "lc_ratio": 0.8614654405221003
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.015151515151515152
+    },
+    {
+      "label": "depth3[(1, 2, 0),(1, 2, 1),(2, 4, 0)]",
+      "n": 34,
+      "alpha": 18,
+      "lead": 2,
+      "monic": false,
+      "unimodal": true,
+      "tail": [
+        1646595,
+        553822,
+        113573,
+        11101,
+        135,
+        2
+      ],
+      "failures": [
+        {
+          "k": 17,
+          "offset": 1,
+          "balance": 0.014814814814814815,
+          "lc_ratio": 0.8208719935140978
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014814814814814815
+    },
+    {
+      "label": "depth3[(1, 1, 2),(1, 3, 0),(2, 4, 0)]",
+      "n": 36,
+      "alpha": 19,
+      "lead": 4,
+      "monic": false,
+      "unimodal": true,
+      "tail": [
+        3646095,
+        1153869,
+        224036,
+        20868,
+        274,
+        4
+      ],
+      "failures": [
+        {
+          "k": 18,
+          "offset": 1,
+          "balance": 0.014598540145985401,
+          "lc_ratio": 0.8994153728196281
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014598540145985401
+    },
+    {
+      "label": "depth3[(1, 1, 0),(1, 3, 1),(2, 4, 0)]",
+      "n": 34,
+      "alpha": 18,
+      "lead": 2,
+      "monic": false,
+      "unimodal": true,
+      "tail": [
+        1698904,
+        572508,
+        116994,
+        11273,
+        139,
+        2
+      ],
+      "failures": [
+        {
+          "k": 17,
+          "offset": 1,
+          "balance": 0.014388489208633094,
+          "lc_ratio": 0.8569591058280848
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.014388489208633094
+    },
+    {
+      "label": "depth3[(1, 1, 1),(1, 3, 0),(2, 4, 0)]",
+      "n": 34,
+      "alpha": 18,
+      "lead": 2,
+      "monic": false,
+      "unimodal": true,
+      "tail": [
+        1783024,
+        614882,
+        129851,
+        13062,
+        145,
+        2
+      ],
+      "failures": [
+        {
+          "k": 17,
+          "offset": 1,
+          "balance": 0.013793103448275862,
+          "lc_ratio": 0.8048154953299648
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.013793103448275862
+    },
+    {
+      "label": "depth3[(1, 4, 0),(2, 0, 1),(2, 4, 0)]",
+      "n": 35,
+      "alpha": 19,
+      "lead": 2,
+      "monic": false,
+      "unimodal": true,
+      "tail": [
+        2411937,
+        753623,
+        144596,
+        13202,
+        159,
+        2
+      ],
+      "failures": [
+        {
+          "k": 18,
+          "offset": 1,
+          "balance": 0.012578616352201259,
+          "lc_ratio": 0.9574685653688835
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.012578616352201259
+    },
+    {
+      "label": "depth3[(1, 4, 0),(2, 4, 0),(3, 0, 1)]",
+      "n": 36,
+      "alpha": 20,
+      "lead": 2,
+      "monic": false,
+      "unimodal": true,
+      "tail": [
+        2970962,
+        852181,
+        152697,
+        13344,
+        161,
+        2
+      ],
+      "failures": [
+        {
+          "k": 19,
+          "offset": 1,
+          "balance": 0.012422360248447204,
+          "lc_ratio": 0.9712604916067147
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.012422360248447204
+    },
+    {
+      "label": "depth3[(1, 2, 0),(1, 3, 1),(2, 4, 0)]",
+      "n": 36,
+      "alpha": 19,
+      "lead": 2,
+      "monic": false,
+      "unimodal": true,
+      "tail": [
+        3361662,
+        1040677,
+        196789,
+        17656,
+        165,
+        2
+      ],
+      "failures": [
+        {
+          "k": 18,
+          "offset": 1,
+          "balance": 0.012121212121212121,
+          "lc_ratio": 0.7709843679202537
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.012121212121212121
+    },
+    {
+      "label": "depth3[(1, 0, 2),(1, 4, 0),(2, 4, 0)]",
+      "n": 36,
+      "alpha": 19,
+      "lead": 4,
+      "monic": false,
+      "unimodal": true,
+      "tail": [
+        4554962,
+        1529339,
+        317101,
+        31331,
+        333,
+        4
+      ],
+      "failures": [
+        {
+          "k": 18,
+          "offset": 1,
+          "balance": 0.012012012012012012,
+          "lc_ratio": 0.8848185503175768
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.012012012012012012
+    },
+    {
+      "label": "depth3[(1, 2, 1),(1, 3, 0),(2, 4, 0)]",
+      "n": 36,
+      "alpha": 19,
+      "lead": 2,
+      "monic": false,
+      "unimodal": true,
+      "tail": [
+        3440851,
+        1076003,
+        206354,
+        18852,
+        169,
+        2
+      ],
+      "failures": [
+        {
+          "k": 18,
+          "offset": 1,
+          "balance": 0.011834319526627219,
+          "lc_ratio": 0.7575058349246764
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.011834319526627219
+    },
+    {
+      "label": "depth3[(1, 0, 1),(1, 4, 0),(2, 4, 0)]",
+      "n": 34,
+      "alpha": 18,
+      "lead": 2,
+      "monic": false,
+      "unimodal": true,
+      "tail": [
+        2143025,
+        775716,
+        172505,
+        18129,
+        174,
+        2
+      ],
+      "failures": [
+        {
+          "k": 17,
+          "offset": 1,
+          "balance": 0.011494252873563218,
+          "lc_ratio": 0.8350157206685421
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.011494252873563218
+    },
+    {
+      "label": "depth3[(1, 1, 0),(1, 4, 1),(2, 4, 0)]",
+      "n": 36,
+      "alpha": 19,
+      "lead": 2,
+      "monic": false,
+      "unimodal": true,
+      "tail": [
+        3635150,
+        1138903,
+        216961,
+        19376,
+        181,
+        2
+      ],
+      "failures": [
+        {
+          "k": 18,
+          "offset": 1,
+          "balance": 0.011049723756906077,
+          "lc_ratio": 0.8454015276630884
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.011049723756906077
+    },
+    {
+      "label": "depth3[(1, 1, 1),(1, 4, 0),(2, 4, 0)]",
+      "n": 36,
+      "alpha": 19,
+      "lead": 2,
+      "monic": false,
+      "unimodal": true,
+      "tail": [
+        3893069,
+        1256413,
+        249545,
+        23559,
+        195,
+        2
+      ],
+      "failures": [
+        {
+          "k": 18,
+          "offset": 1,
+          "balance": 0.010256410256410256,
+          "lc_ratio": 0.8070164268432446
+        }
+      ],
+      "max_offset": 1,
+      "max_balance": 0.010256410256410256
+    }
+  ],
+  "elapsed_seconds": 26.01
+}

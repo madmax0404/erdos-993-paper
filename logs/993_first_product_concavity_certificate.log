@@ -1,0 +1,6 @@
+first-product S-bound concavity certificate
+S = a*p + s0
+Y = a**2*p**2/q - p*(a - b) + y0
+F = g^2*S - Y^2*u
+F_pp = -2*u*((2*a^2*p/q-(a-b))^2 + 2*a^2*Y/q)
+Thus F is concave on the hard region Y>=0.

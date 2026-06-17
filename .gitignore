@@ -90,6 +90,7 @@ cover/
 
 # Django stuff:
 *.log
+!logs/993_first_product_concavity_certificate.log
 local_settings.py
 db.sqlite3
 db.sqlite3-journal

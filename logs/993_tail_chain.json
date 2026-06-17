@@ -1,0 +1,11 @@
+{
+  "sweep": {
+    "cases": 3024,
+    "chain_holds": 3024,
+    "corner_holds": 3024,
+    "chain_but_not_corner": [],
+    "n_chain_but_not_corner": 0,
+    "covered_by_neither": [],
+    "n_uncovered": 0
+  }
+}

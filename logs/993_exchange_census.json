@@ -1,0 +1,15 @@
+{
+  "combos": 43,
+  "distinct_local_maxima": 76,
+  "class_counts": {
+    "adjacent_two_value": 43,
+    "bulk_giant": 33
+  },
+  "tight_local_maxima": 74,
+  "tight_class_counts": {
+    "adjacent_two_value": 41,
+    "bulk_giant": 33
+  },
+  "tight_OTHER": [],
+  "n_tight_OTHER": 0
+}

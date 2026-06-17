@@ -1,0 +1,15 @@
+{
+  "combos": 63,
+  "distinct_maxima": 255,
+  "classes": {
+    "one_cluster": 63,
+    "two_cluster": 192
+  },
+  "tight": 255,
+  "tight_classes": {
+    "one_cluster": 63,
+    "two_cluster": 192
+  },
+  "tight_OTHER": [],
+  "n_tight_OTHER": 0
+}
