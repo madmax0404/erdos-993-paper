@@ -30,6 +30,8 @@ def require_exists(relative_path: str) -> None:
 
 def check_artifact_inventory() -> None:
     required = [
+        "CLAIM_INVENTORY.md",
+        "EXPERT_REVIEW_BRIEF.md",
         "REPRODUCIBILITY.md",
         "FORMALIZATION.md",
         "lean-toolchain",

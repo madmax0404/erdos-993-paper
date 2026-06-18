@@ -159,8 +159,8 @@ by the search (Section~\ref{sec:extremal}), and the uniform Kadrawi--Levit
 diagonal $T_{c,c,c}$, $c\le 10$, have unimodal independence sequences.
 \end{theorem}
 
-The proof of Theorem~\ref{thm:scope} is a composition of human-proved
-lemmas with machine-verified components, all executed in exact
+The proof of Theorem~\ref{thm:scope} is a composition of manuscript
+lemmas with exact-script-verified components, all executed in exact
 rational arithmetic and reproducible from the public scripts; the
 methodology is described in Section~\ref{sec:verification}.
 
@@ -1102,14 +1102,17 @@ $B-1=2\ell+2$.
 The finite-$c$ statement of Theorem~\ref{thm:cert} is proved by the
 polynomial certification method of Section~\ref{sec:verification}.
 
-\section{Certificates and machine verification}\label{sec:verification}
+\section{Certificates and exact-script verification}\label{sec:verification}
 
-This section describes the machine-verified components and the
+This section describes the exact-script-verified components and the
 protocol under which they were produced and audited.  All
 verifications are exact: every inequality is decided in rational
 arithmetic (Python \texttt{fractions.Fraction} or \texttt{sympy}
 integer polynomials), with no floating point in any verified
-statement.
+statement.  The accompanying repository also contains a Lean
+formalization of the Taylor-shift positivity checker and the generated
+E-core polynomial instances, but the manuscript is not claimed to be
+fully theorem-prover verified.
 
 \subsection{Certificates for the master inequality}
 
@@ -1488,10 +1491,11 @@ slack than the E-core rung in all scans, may help here too.
 
 The author used AI tools, including Claude (Anthropic) and ChatGPT/Codex
 (OpenAI), during proof exploration, drafting, code development, audit, and
-reproducibility packaging.  These tools are not authors.  The human author
-reviewed the output, takes responsibility for the manuscript, proofs,
-verification code and data, and approved the final version.  All verification
-scripts and paper-facing logs are available in the accompanying repository.
+reproducibility packaging.  These tools are not authors.  This draft is being
+prepared for independent mathematical review; for any submitted version, the
+human author is responsible for the manuscript, proofs, verification code and
+data, and final approval.  All verification scripts and paper-facing logs are
+available in the accompanying repository.
 
 \begin{thebibliography}{99}
 \bibitem{AMSE87} Y.~Alavi, P.~J. Malde, A.~J. Schwenk, P.~Erd\H{o}s,

@@ -13,6 +13,9 @@ This repository contains the public paper and reproducibility package for
 - `logs/`: paper-facing JSON certificate and audit outputs.
 - `REPRODUCIBILITY.md`: claim-to-artifact map for the manuscript.
 - `FORMALIZATION.md`: Lean formalization status and build instructions.
+- `CLAIM_INVENTORY.md`: pre-submission map from paper claims to verification
+  status and trust boundaries.
+- `EXPERT_REVIEW_BRIEF.md`: short brief for independent mathematical review.
 - `formal/`: Lean 4 sources for the checked formal surface.
 - `scripts/check_reproducibility.py`: validates the committed logs against the
   headline counts used in the manuscript.
@@ -109,6 +112,7 @@ Some of these are slower than the quick reproduction path.  The committed
 
 The manuscript includes an AI-use declaration.  AI tools, including Claude
 (Anthropic) and ChatGPT/Codex (OpenAI), assisted with proof exploration,
-drafting, code development, and audit, but are not listed as authors.  The
-human author takes responsibility for the manuscript, proofs, verification code
-and data, and final approval.
+drafting, code development, and audit, but are not listed as authors.  This
+draft is being prepared for independent mathematical review; for any submitted
+version, the human author is responsible for the manuscript, proofs,
+verification code and data, and final approval.
