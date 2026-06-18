@@ -31,7 +31,8 @@ bash scripts/reproduce.sh
 ```
 
 The fast path now also builds the Lean project. Install Lean with `elan` first
-if `lake` is not already available.
+if `lake` is not already available; Lake will fetch the pinned Mathlib
+dependency from `lake-manifest.json`.
 
 The script runs:
 
@@ -96,6 +97,7 @@ Some of these are slower than the quick reproduction path.  The committed
 ## AI-Use Declaration
 
 The manuscript includes an AI-use declaration.  AI tools, including Claude
-(Anthropic), assisted with proof exploration, drafting, code development, and
-audit, but are not listed as authors.  The human author takes responsibility for
-the manuscript, proofs, verification code and data, and final approval.
+(Anthropic) and ChatGPT/Codex (OpenAI), assisted with proof exploration,
+drafting, code development, and audit, but are not listed as authors.  The
+human author takes responsibility for the manuscript, proofs, verification code
+and data, and final approval.

@@ -36,6 +36,7 @@ def check_artifact_inventory() -> None:
         "lakefile.lean",
         "formal/Erdos993Formal.lean",
         "formal/Erdos993Formal/Basic.lean",
+        "formal/Erdos993Formal/CertificateAlgebra.lean",
         "scripts/check_formalization.py",
         "scripts/reproduce_all.py",
         "notes/993_audit_report.md",
