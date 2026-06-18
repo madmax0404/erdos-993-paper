@@ -30,6 +30,20 @@ Repair: return None; callers fall back to the Q-ceiling alone.
 P_0 = 1, P_1 = n (vertices), P_2 = C(n,2) - (n-1) (tree edges), and
 n^2 >= n(n-1)/2 - (n-1) is n^2 + 3n - 2 >= 0.  G3 resolved.
 
+**F4 (mathematical flaw, repaired later): the background-flow vertex
+reduction was false.**
+The former manuscript claimed that the symmetric-form ratio is
+Mobius, hence monotone, in each flow variable and therefore reaches
+its supremum at a vertex of the background flow box.  This is true for
+the two selected pair slots but false for a general background slot:
+the ratio is generally quadratic-over-quadratic and can have an
+interior maximum.  The repair did not replace it with another pairwise
+reduction.  Instead, the uniform theorem now uses the independently
+certified factorial ladder, specifically the p = h subfamily of the
+adjacent-two-value certificates, together with the factorial criterion.
+The 996 E-core certificates remain in the paper only as
+vertex-background E-core certificates.
+
 ## Post-repair verification (all exact)
 
 - Sub-bound audit, 10,751 class-instances: g+ <= ceilA, floor <= g0
@@ -63,6 +77,11 @@ composition (prefix-LC through kdec - 1 suffices); Liggett padding.
 
 ## Conclusion
 
-Two implementation-level flaws found and repaired, one gap closed; no
-mathematical link of the chain was broken.  All headline numbers are
-unchanged after repair.  The certified scope stands.
+The original audit found and repaired two implementation-level flaws
+and closed one gap without changing the headline numbers.  A later
+review found the F4 mathematical flaw in the background-flow vertex
+reduction; the proof chain has since been repaired by routing the
+uniform scope through the factorial ladder and by retaining the E-core
+certificates only as vertex-background results.  The certified scope
+stands subject to the remaining manuscript and exact-script trust
+boundaries described in the public review packet.

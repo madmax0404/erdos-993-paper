@@ -92,7 +92,7 @@ are manuscript proofs, and which are conjectural or empirical.
 | T1/T2 master-inequality certificates over grid `G` | Section `sec:verification` | Exact-script checked; checker soundness not Lean-checked | Critical |
 | E-core Taylor-shift certificate method | Section `sec:polyc` | Generic positivity checker Lean-checked; 996 generated vertex-background E-core integer-polynomial instances Lean-checked | Critical |
 | Uniform factorial-ladder certificates | Section `sec:verification`, Theorem `thm:cert` | Exact-script checked; the `p=h` subfamily covers all uniform rungs for `3 <= h <= 10`, `k <= 28` | Critical |
-| Audit report found and repaired two implementation flaws with unchanged headline figures | Section `sec:audit`, notes | Exact-script/audit documentation | Medium |
+| Audit report records two implementation flaws and the later false vertex-reduction repair | Section `sec:audit`, notes | Exact-script/audit documentation | Medium |
 | Ladder scans: 5,298 profiles, zero rung failures | Section `sec:audit` | Exact-script evidence | Medium |
 | Adjacent-two-value ladder certificates: 7,866 instances | Section `sec:audit` | Exact-script checked; not Lean-checked | High |
 | Bulk-plus-giant certificates: 1,512 instances | Section `sec:open` and logs | Exact-script checked; not Lean-checked | Medium |

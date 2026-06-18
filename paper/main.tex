@@ -1194,8 +1194,11 @@ dynamic-programming code.  The audit found two implementation-level
 flaws (an incorrectly indexed ceiling inside $\mathrm{dev}$, masked by
 unrelated slack, and a finite sentinel acting as a false bound at
 class-birth positions), both repaired with all headline figures
-unchanged, and no mathematical flaw.  The audit report and all scripts
-are in the accompanying repository.
+unchanged.  A later review found a false background-flow vertex
+reduction lemma; the current manuscript removes that lemma and routes
+the uniform proof through the independently certified factorial
+ladder.  The audit report and all scripts are in the accompanying
+repository.
 
 The same adversarial methodology was applied to the working
 conjectures themselves, and twice replaced them.  The symmetric form
@@ -1274,15 +1277,14 @@ $(c_1,\dots,c_h;k)$.
 
 \begin{proof}[Proof of Theorem~\ref{thm:scope}]
 $h=1$ is Lemma~\ref{lem:d1}.
-For $h=2$: Theorem~\ref{thm:h2} supplies the symmetric form at every
-position with constant $2=1+\tfrac1{h-1}$, hence hypothesis (ii) by
-Proposition~\ref{prop:dd} (a single pair; the AM--GM step), so
-Theorem~\ref{thm:reduction} applies to every $S(c,c)$ in the
-certificate grid; for the eleven mixed members, hypothesis (ii) is
-Theorem~\ref{thm:h2mixed} directly (band B is empty at $h=2$:
-$k_{\mathrm{dec}}\le\lceil(2C+3)/3\rceil\le C$ for $C\ge3$).  For
-the sixteen three-hub adjacent-two-value families, hypothesis (ii)
-is supplied by the ladder certificates on $(a^p,(a{+}1)^q)$
+For $h=2$, Theorem~\ref{thm:h2mixed} supplies hypothesis (ii) for
+all arm pairs, including equal arms.  Hypothesis (i) is verified for
+every $h=2$ multiset in the certificate grid, and band B is empty:
+$k_{\mathrm{dec}}\le\lceil(2C+3)/3\rceil\le C$ for $C\ge3$.  Thus
+Theorem~\ref{thm:reduction} applies to the equal-arm two-hub family
+and to the eleven mixed two-hub members.  For the sixteen three-hub
+adjacent-two-value families, hypothesis (ii) is supplied by the
+ladder certificates on $(a^p,(a{+}1)^q)$
 ($h=3$, all integer $a$, $k\le28\ge k_A$) with
 Proposition~\ref{prop:ladder}, hypothesis (i) was verified per
 multiset (worst certificate ratio $0.38$), and band B is empty
