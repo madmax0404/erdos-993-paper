@@ -1,7 +1,24 @@
 # Erdős 993 Hub-Spider Paper
 
-This repository contains the public paper and reproducibility package for
+This repository contains a pre-submission draft and reproducibility package for
 `Unimodality of independence polynomials of hub spiders`.
+
+## Current Status
+
+This draft is being prepared for independent mathematical review before any
+submission or public claim of correctness.  The main review goal is to find
+fatal flaws in the reduction theorem, the certificate interface, and the
+unconditional scope theorem.
+
+The term `hub spider` is local to this draft.  It means a tree
+`S(c_1,...,c_h)` formed from a root joined to `h` hubs, where the `i`-th hub
+carries `c_i` pendant paths of length two.  The draft studies this subfamily
+of trees; it does not claim a solution of Erdős Problem #993.
+
+The repository includes exact-arithmetic scripts, committed logs,
+reproducibility harnesses, and a partial Lean 4 formalization.  It is not a
+fully theorem-prover-verified manuscript.  Reviewers should start with
+`EXPERT_REVIEW_BRIEF.md` and `CLAIM_INVENTORY.md`.
 
 ## Contents
 
