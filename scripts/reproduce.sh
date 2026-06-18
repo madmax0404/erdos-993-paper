@@ -16,6 +16,7 @@ fi
 uv run python scripts/check_formalization.py
 
 if command -v tectonic >/dev/null 2>&1; then
+  export SOURCE_DATE_EPOCH="${SOURCE_DATE_EPOCH:-1780272000}"
   (cd paper && tectonic main.tex)
 else
   echo "tectonic not found; skipping PDF rebuild" >&2

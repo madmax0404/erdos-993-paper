@@ -18,6 +18,8 @@ This repository contains the public paper and reproducibility package for
   headline counts used in the manuscript.
 - `scripts/reproduce_all.py`: regenerates paper-facing artifacts in a temporary
   copy and compares them with the committed outputs.
+- `scripts/export_ecore_poly_certificate.py`: exports exact polynomial
+  certificate data for the Lean Taylor-shift checker.
 - `scripts/reproduce.sh`: runs the fast reproducibility checks and rebuilds the
   PDF when `tectonic` is installed.
 
@@ -45,7 +47,8 @@ lake build
 uv run python scripts/check_formalization.py
 ```
 
-If `tectonic` is available, it also rebuilds `paper/main.pdf`.
+If `tectonic` is available, it also rebuilds `paper/main.pdf` with a fixed
+`SOURCE_DATE_EPOCH` unless that variable is already set.
 
 For a section-by-section map from manuscript claims to scripts and committed
 logs, see `REPRODUCIBILITY.md`.
