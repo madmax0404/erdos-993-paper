@@ -7,9 +7,9 @@ Updated: 2026-06-10 KST.  Companion to `notes/993-counterexample-hunt-design.md`
 No counterexample found, and the negative is structured: every mechanism that
 produces non-log-concave trees at accessible sizes is provably-or-empirically
 capped far below the threshold a unimodality failure needs.  The hunt produced
-several new structural facts along the way, including a record-fragility tree
-family and an exact offset law, and it converts cleanly into proof-side
-material.
+several new structural facts along the way, including high-fragility junction
+trees and an observed offset law over the searched uniform range, and it
+converts cleanly into proof-side material.
 
 Balance language: at an interior index `k`, define
 `balance(k) = min(i_{k-1}, i_{k+1}) / i_k`.  A strict valley at `k` means

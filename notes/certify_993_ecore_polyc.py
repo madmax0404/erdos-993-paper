@@ -1,8 +1,7 @@
 """Exact certification of the E-core inequality as polynomials in c.
 
-For uniform arm count c, fixed k, h, and W-pattern E^{h-2-w} H2^w
-(H2 = E + 2b; by the slot expansion these vertex backgrounds are the
-only ones needed), the three brackets
+For uniform arm count c, fixed k, h, and vertex-background W-pattern
+E^{h-2-w} H2^w (H2 = E + 2b), the three brackets
 
     N1 = [b^2 W]_k,   N2 = [E^2 W]_k,   Dq = [b E W]_k
 
@@ -12,11 +11,12 @@ bracket is a finite convolution.  The E-core
 
     (h-1) N1(c) N2(c)  <=  h  Dq(c)^2      for all integer c >= 1
 
-is therefore decidable per (k, h, w) by exact real-root isolation on
+is therefore decidable per vertex-background instance (k, h, w) by
+exact real-root isolation on
 R(c) = h Dq^2 - (h-1) N1 N2: we verify R(1) >= 0 and that R has no
 real root in (1, oo) (or only roots where R stays >= 0, checked by
 sign evaluation between isolated roots).  A certified instance is the
-E-core proved for ALL c at that (k, h, w).
+E-core proved for ALL c at that vertex-background instance (k, h, w).
 
 Output: the certified region and any failures, to
 logs/993_ecore_polyc_certification.json.

@@ -1,4 +1,4 @@
-"""Export one E-core Taylor-shift positivity certificate as data.
+"""Export one vertex-background E-core Taylor-shift certificate as data.
 
 This is the bridge from the existing SymPy certification scripts to the Lean
 checker in `formal/Erdos993Formal/PolynomialCertificate.lean`.  It does not

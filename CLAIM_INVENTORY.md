@@ -19,8 +19,8 @@ are manuscript proofs, and which are conjectural or empirical.
 ## Trust Boundaries
 
 - Lean currently proves the generic Taylor-shift polynomial certificate
-  soundness theorem and 996 generated E-core integer-polynomial certificate
-  instances.
+  soundness theorem and 996 generated vertex-background E-core
+  integer-polynomial certificate instances.
 - The generated E-core Lean file checks positivity of the exported scaled
   integer polynomials.  Lean does not yet independently derive those polynomial
   coefficients from the hub-spider bracket formulas; that extraction is still
@@ -42,7 +42,7 @@ are manuscript proofs, and which are conjectural or empirical.
 | E-core at `h=2`, uniform arms | Theorem `thm:h2` | Manuscript proof; supporting algebraic style suitable for formalization, but not fully Lean-checked | High |
 | Flow concavity at `h=2`, arbitrary arms | Theorem `thm:h2mixed` | Manuscript proof; `t`-cancellation algebra is Lean-checked in abstract form, but the full theorem is not | High |
 | Limit calculus for uniform all-`E` background | Theorem `thm:limit` | Manuscript calculus/asymptotic proof; not Lean-checked | Medium |
-| Finite E-core certification for 996 uniform instances | Theorem `thm:cert` | Exact-script checked; polynomial positivity instances are Lean-checked after export; bracket-to-polynomial extraction remains Python/SymPy trusted | Critical |
+| Finite certification for the uniform ladder and vertex-background E-core | Theorem `thm:cert` | Uniform ladder is exact-script checked via the `p=h` subfamily of the adjacent-two-value certificates; vertex-background E-core polynomial positivity instances are Lean-checked after export; bracket-to-polynomial extraction remains Python/SymPy trusted | Critical |
 
 ## Reduction and Assembly Claims
 
@@ -80,8 +80,7 @@ are manuscript proofs, and which are conjectural or empirical.
 
 | Claim | Location | Current status | Review priority |
 | --- | --- | --- | --- |
-| Vertex reduction over the flow box | Lemma `lem:vertex` | Manuscript proof using multiaffine Mobius transformations | High |
-| Slot expansion reducing vertices to the core case | Lemma `lem:slot` | Manuscript coefficientwise expansion proof | High |
+| Slot expansion reducing pair-slot `E`/`E+2b` cases to the core case | Lemma `lem:slot` | Manuscript coefficientwise expansion proof | High |
 | `t`-cancellation determinant identity | Lemma `lem:tcancel` | Manuscript proof; core algebra is Lean-checked in `CertificateAlgebra.lean` | High |
 | Schur minimality of balanced split | Lemma `lem:schurS` | Manuscript coefficientwise proof | High |
 | Odd core inequality | Lemma `lem:oddcore` | Manuscript proof plus exact finite verification statement; not Lean-checked | High |
@@ -91,7 +90,8 @@ are manuscript proofs, and which are conjectural or empirical.
 | Claim | Location | Current status | Review priority |
 | --- | --- | --- | --- |
 | T1/T2 master-inequality certificates over grid `G` | Section `sec:verification` | Exact-script checked; checker soundness not Lean-checked | Critical |
-| E-core Taylor-shift certificate method | Section `sec:polyc` | Generic positivity checker Lean-checked; 996 generated E-core integer-polynomial instances Lean-checked | Critical |
+| E-core Taylor-shift certificate method | Section `sec:polyc` | Generic positivity checker Lean-checked; 996 generated vertex-background E-core integer-polynomial instances Lean-checked | Critical |
+| Uniform factorial-ladder certificates | Section `sec:verification`, Theorem `thm:cert` | Exact-script checked; the `p=h` subfamily covers all uniform rungs for `3 <= h <= 10`, `k <= 28` | Critical |
 | Audit report found and repaired two implementation flaws with unchanged headline figures | Section `sec:audit`, notes | Exact-script/audit documentation | Medium |
 | Ladder scans: 5,298 profiles, zero rung failures | Section `sec:audit` | Exact-script evidence | Medium |
 | Adjacent-two-value ladder certificates: 7,866 instances | Section `sec:audit` | Exact-script checked; not Lean-checked | High |
@@ -124,10 +124,11 @@ are manuscript proofs, and which are conjectural or empirical.
    Proposition `prop:flow`, and the T1/T2 certificate interface.
 3. Check Theorem `thm:a2`, since it supplies the quantitative margin used
    throughout.
-4. Check the E-core chain: Lemmas `lem:vertex`, `lem:slot`, Theorem
-   `thm:cert`, and whether the Python/SymPy coefficient extraction matches
-   the bracket formulas.
+4. Check the repaired uniform-scope chain: the `p=h` ladder certificates,
+   Proposition `prop:ladder`, and Theorem `thm:cert`.
 5. Check the `h=2` arbitrary-arm proof, especially the use of
    `t`-cancellation, Schur minimality, and the odd core.
-6. Treat the extremal/search section as supporting context unless the reviewer
+6. Check the E-core vertex-background certificates and whether the Python/SymPy
+   coefficient extraction matches the bracket formulas.
+7. Treat the extremal/search section as supporting context unless the reviewer
    wants to audit the broader open program.

@@ -49,12 +49,12 @@ controls all moments of the class-mass profile.  The flow concavity
 is proved completely for $h=2$, for arbitrary arms --- by an
 elementary argument (a trinomial collapse, symmetrization, AM--GM,
 and Vandermonde) extended through a $t$-cancellation identity and a
-coefficientwise Schur lemma; at
-uniform multisets it is equivalent to a symmetric pairwise
-inequality (the \emph{E-core}), which is proved in the limit
-$c\to\infty$ for all $h$ and $k$ by a five-line calculus bound and
-established for all integer $c$ on a large finite range of $(k,h)$
-by an exact polynomial certification method.  Consequently the
+coefficientwise Schur lemma; at uniform multisets it is certified on
+the finite range used here by the factorial ladder criterion, whose
+bottom rung is the symmetric pairwise \emph{E-core}.  We also certify
+the E-core on a large vertex-background range by an exact polynomial
+method and prove its all-$E$ limiting form by a five-line calculus
+bound.  Consequently the
 unimodality of $I(S)$ is proved unconditionally for $h=1$ (all
 $c$) and for $82$ further families: $55$ uniform ones including
 $S(4^5)$, a particularly fragile uniform hub spider found by the search, and
@@ -68,8 +68,8 @@ counterexamples leave standing.
 
 We also record structural results from a systematic counterexample
 search: a balance invariant that measures distance from unimodality
-failure, an exact offset law for the location of log-concavity failures
-in uniform hub spiders, and the observation that the
+failure, an observed offset law for the location of log-concavity failures
+in the searched uniform hub spiders, and the observation that the
 Levit--Mandrescu/Basit--Galvin decreasing zone protects this junction
 mechanism from becoming a unimodality failure.
 \end{abstract}
@@ -191,13 +191,16 @@ inequality $\sum_{i\ne j}(G\,y_{ij}-x_ix_j)\le\sum_ix_i^2$, where
 $A_l=E_l+t\,b_l$, $x_i=[b_i\prod_{l\ne i}A_l]_k$ and
 $y_{ij}=[b_ib_j\prod_{l\ne i,j}A_l]_k$.  At uniform multisets the
 diagonal flow makes all $x_i$ equal and all $y_{ij}$ equal, and (ii)
-becomes the \emph{symmetric E-core}
+becomes
 \begin{equation}\label{eq:sym}
   [b_ib_jW]_k\,[A_iA_jW]_k\;\le\;
   \Bigl(1+\frac1{h-1}\Bigr)[b_iA_jW]_k\,[b_jA_iW]_k,
   \qquad W=\prod_{l\ne i,j}A_l,
 \end{equation}
-which is the form all certifications below address.
+This is the symmetric flow form.  The E-core certificates below address
+its all-$E$ pair-slot, vertex-background specializations; the finite
+uniform flow statement is proved instead by the factorial ladder
+criterion.
 
 We caution --- twice --- against strengthening (ii) to a
 \emph{pairwise} statement for general multisets; both natural
@@ -219,13 +222,15 @@ worst ratio $0.085$ and margins that \emph{grow} (to $-5.3$ at
 background size $1024$) exactly where the pairwise splits die
 (Section~\ref{sec:verification}).
 
-Four results establish \eqref{eq:flowcc} unconditionally on large
-families.
+The following results establish the two-hub case and the certified
+uniform range used in the unconditional scope.
 
 \begin{theorem}[E-core at $h=2$]\label{thm:h2}
-For $h=2$ the symmetric form holds with constant $2$ for all $c\ge1$
-and all $k\ge0$, with no band restriction; by AM--GM this implies
-the flow concavity \eqref{eq:flowcc} at $h=2$, $c_1=c_2$.
+For equal arms at $h=2$, the core inequality
+\[
+  [b^2]_k[E^2]_k\le 2[bE]_k^2
+\]
+holds for all $c\ge1$ and all $k\ge0$, with no band restriction.
 \end{theorem}
 
 The proof (Section~\ref{sec:p6}) is elementary and short: the bracket
@@ -270,24 +275,24 @@ the required bound.
 \end{theorem}
 
 \begin{theorem}[Finite certification]\label{thm:cert}
-The symmetric form \eqref{eq:sym} (hence, at uniform multisets, the
-flow concavity \eqref{eq:flowcc}) holds, for all integer
-$c\ge1$ in the uniform case, at every $(k,h)$ with $3\le h\le 7$, $k\le 28$ and
-$8\le h\le 10$, $k\le 20$, and every background pattern: $996$
-instances, each certified by an exact polynomial argument
-(Section~\ref{sec:verification}).
+For uniform multisets $S(c^h)$, the factorial ladder
+\eqref{eq:ladder}, hence the flow concavity \eqref{eq:flowcc}, holds
+for all integer $c\ge1$ at every $3\le h\le10$, every $k\le28$, and
+every rung; this is the $p=h$ subfamily of the $7{,}866$
+two-adjacent-value polynomial certificates of
+Section~\ref{sec:verification}.  Separately, the E-core all-$E$
+pair-slot specialization of \eqref{eq:sym} is certified for all
+integer $c\ge1$ at the $996$ vertex-background instances with
+$3\le h\le7$, $k\le28$ and $8\le h\le10$, $k\le20$.
 \end{theorem}
 
 Finally, the counterexample search that initiated this work produced
 extremal information of independent interest
-(Section~\ref{sec:extremal}): an exact \emph{offset law} --- in
-$S(c^h)$ with $c\ge4$ the unique log-concavity failure sits exactly
-$h-2$ positions below the top degree --- and the \emph{record
-fragility} tree, a $48$-vertex junction tree (four hub gadgets and
-one exotic gadget) whose log-concavity
-\emph{balance} (Definition~\ref{def:balance}) is $0.0451$, more than
-twice the previous literature record, yet still $22$ times short of
-what a unimodality counterexample requires.
+(Section~\ref{sec:extremal}): an observed \emph{offset law} in the
+uniform hub-spider range $h\le25$, $c\le12$, where for $c\ge4$ the
+unique log-concavity failure sits exactly $h-2$ positions below the
+top degree, and high-fragility junction trees with balance about
+$0.045$, still far below what a unimodality counterexample requires.
 
 \subsection{Method overview}\label{sec:overview}
 
@@ -314,10 +319,11 @@ window-mean identities, and two Jensen arguments give closed-form
 two-sided bounds on every class growth; the \emph{demotion flow}
 $\phi(t)=\ln[x^k]\prod_i(E_i+tb_i)$ supplies all moment bounds for the
 class-mass profile via its concavity --- which is exactly the single
-inequality \eqref{eq:flowcc} of Theorem~\ref{thm:reduction}, and which
-at uniform multisets is equivalent to the symmetric E-core
-\eqref{eq:sym}.  The final assembly into explicit certificates,
-verified in exact rational arithmetic, is described in
+inequality \eqref{eq:flowcc} of Theorem~\ref{thm:reduction}.  At
+uniform multisets this concavity is certified here by the factorial
+ladder \eqref{eq:ladder}, whose bottom rung is the all-$E$ symmetric
+E-core specialization of \eqref{eq:sym}.  The final assembly into
+explicit certificates, verified in exact rational arithmetic, is described in
 Section~\ref{sec:verification}.
 
 \section{Setup and notation}\label{sec:setup}
@@ -837,9 +843,9 @@ the ladder is that single rung, which is the inequality proved in
 Theorem~\ref{thm:h2mixed}; and at uniform multisets, where
 $W_s=\binom hsu_s$ with $u_s=[b^sE^{h-s}]_k$, rung $s$ becomes
 $u_s^2\ge u_{s-1}u_{s+1}(h-s)/(h-s+1)$, whose first case is the
-symmetric E-core \eqref{eq:sym}.  Each bracket $u_s$ is a polynomial
-in $c$ at fixed $(k,h,s)$, so the higher rungs are certifiable by
-the method of Section~\ref{sec:polyc}.  Exact scans
+all-$E$ symmetric E-core specialization of \eqref{eq:sym}.  Each
+bracket $u_s$ is a polynomial in $c$ at fixed $(k,h,s)$, so the higher
+rungs are certifiable by the method of Section~\ref{sec:polyc}.  Exact scans
 (Section~\ref{sec:verification}) found no rung failure anywhere ---
 and located the binding rung at $s=1$ throughout --- so the ladder
 is the route we pursue for mixed multisets
@@ -889,28 +895,14 @@ Section~\ref{sec:open}).
 \section{The E-core and the flow concavity at
 \texorpdfstring{$h=2$}{h=2}}\label{sec:p6}
 
-The two reduction lemmas of this section concern the symmetric form
-\eqref{eq:sym}; they power the uniform-case certification, where by
-Proposition~\ref{prop:dd} the symmetric form at every pair is
-equivalent to the flow concavity.  For mixed multisets no pairwise
-reduction is available (Remark~\ref{rem:nopairwise}) and the
-aggregate diagonal $t$-family must be treated as such
-(Section~\ref{sec:open}); the exception is $h=2$, where the
-aggregate \emph{is} the single-pair inequality and is proved below
-for even total degree.
-
-\begin{lemma}[Vertex reduction]\label{lem:vertex}
-The supremum over $(t_1,\dots,t_h)\in[0,2]^h$ of the symmetric-form
-defect $[b_ib_jW][A_iA_jW]/\bigl([b_iA_jW][b_jA_iW]\bigr)$ with
-$A_l=E_l+t_lb_l$ is attained with each $A_l\in\{E_l,\,E_l+2b_l\}$.
-\end{lemma}
-
-\begin{proof}
-The defect is a ratio of polynomials with positive coefficients,
-multiaffine in the $t_l$; as a function of each $t_l$ separately it is
-a M\"obius transformation with no pole on $[0,\infty)$, hence monotone
-there, so the supremum over the box is attained at a vertex.
-\end{proof}
+This section proves the core two-slot inequalities used in the
+two-hub case and records the pair-slot expansion behind the E-core
+certificates.  No vertex reduction is used over background flow
+variables: for a background slot the symmetric-form ratio is generally
+quadratic-over-quadratic and may have an interior maximum.  The
+finite uniform scope is therefore certified by the factorial ladder
+of Proposition~\ref{prop:ladder}, not by extending vertex-background
+E-core certificates to arbitrary background flows.
 
 \begin{lemma}[Slot expansion]\label{lem:slot}
 For any nonnegative background $W$, any $d\ge0$, and $H_2:=E+2b$, the
@@ -925,7 +917,7 @@ nontrivial comparison is the core case.
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:h2}]
-By Lemmas~\ref{lem:vertex} and~\ref{lem:slot} it suffices to prove
+It suffices to prove the core inequality
 $[b^2]_k[E^2]_k\le 2([bE]_k)^2$.  All three brackets are explicit:
 $[b^2]_k=\binom{2c}{k-2}$, $[E^2]_k=\binom{2c}k2^k$, and since
 $(1+x)^c(1+2x)^c=(1+3x+2x^2)^c$,
@@ -1099,8 +1091,11 @@ converts this to the form displayed in Theorem~\ref{thm:limit} with
 $B-1=2\ell+2$.
 \end{proof}
 
-The finite-$c$ statement of Theorem~\ref{thm:cert} is proved by the
-polynomial certification method of Section~\ref{sec:verification}.
+The finite-$c$ statements in Theorem~\ref{thm:cert} are proved by
+exact polynomial certificate scripts: the $p=h$ factorial-ladder
+subfamily for uniform flow concavity and, separately, the
+vertex-background E-core certificates described in
+Section~\ref{sec:verification}.
 
 \section{Certificates and exact-script verification}\label{sec:verification}
 
@@ -1111,8 +1106,8 @@ arithmetic (Python \texttt{fractions.Fraction} or \texttt{sympy}
 integer polynomials), with no floating point in any verified
 statement.  The accompanying repository also contains a Lean
 formalization of the Taylor-shift positivity checker and the generated
-E-core polynomial instances, but the manuscript is not claimed to be
-fully theorem-prover verified.
+vertex-background E-core polynomial instances, but the manuscript is not
+claimed to be fully theorem-prover verified.
 
 \subsection{Certificates for the master inequality}
 
@@ -1169,20 +1164,22 @@ Section~\ref{sec:bandB}.
 
 \subsection{Polynomial certification of the E-core}\label{sec:polyc}
 
-At fixed $(k,h)$ and background pattern $W=E^{h-2-w}(E+2b)^w$ in the
-uniform case, each bracket of \eqref{eq:sym} is a polynomial in $c$
-of degree at most $k$ (each factor coefficient is a polynomial in $c$;
-the bracket is a finite convolution).  The claim ``\eqref{eq:sym}
-holds for \emph{all integers} $c\ge1$'' is therefore decidable
-exactly: write $R(c)=h\,[bEW]_k^2-(h-1)[b^2W]_k[E^2W]_k$, check the
-leading coefficient is positive, choose $B$ at least the largest real
-root (any upper bound suffices; we use a numerically located bound,
-then \emph{prove} positivity beyond it by verifying that all
-coefficients of the Taylor shift $R(c+B)$ are nonnegative), and
-evaluate $R$ exactly at every integer in $[1,B]$.  The numeric root
-location plays no role in the rigor; it only sizes the verified
-range.  This certified the $996$ instances of Theorem~\ref{thm:cert}
-with zero failures.
+At fixed $(k,h)$ and vertex-background pattern
+$W=E^{h-2-w}(E+2b)^w$ in the uniform case, each bracket of
+\eqref{eq:sym} is a polynomial in $c$ of degree at most $k$ (each
+factor coefficient is a polynomial in $c$; the bracket is a finite
+convolution).  The claim ``\eqref{eq:sym} holds for \emph{all
+integers} $c\ge1$'' is therefore decidable exactly: write
+$R(c)=h\,[bEW]_k^2-(h-1)[b^2W]_k[E^2W]_k$, check the leading
+coefficient is positive, choose $B$ at least the largest real root
+(any upper bound suffices; we use a numerically located bound, then
+\emph{prove} positivity beyond it by verifying that all coefficients
+of the Taylor shift $R(c+B)$ are nonnegative), and evaluate $R$
+exactly at every integer in $[1,B]$.  The numeric root location plays
+no role in the rigor; it only sizes the verified range.  This
+certified the $996$ vertex-background E-core instances of
+Theorem~\ref{thm:cert} with zero failures.  These certificates are
+not used to control arbitrary background flow variables.
 
 \subsection{Audit}\label{sec:audit}
 
@@ -1215,9 +1212,10 @@ $A\le256$), all $200$ pairwise-violation witnesses, and $40$ random
 mixed multisets, with zero violations, worst ratio $+0.085$, and the
 margin improving to $-5.3$ in probes to $A=1024$.  At uniform
 multisets the aggregate ratio was confirmed to coincide with the
-symmetric-form ratio (zero mismatches), which is the formal statement
-that Theorems~\ref{thm:h2}, \ref{thm:limit} and~\ref{thm:cert}
-certify instances of hypothesis (ii).
+symmetric-form ratio (zero mismatches).  The proof of hypothesis (ii)
+for the listed uniform families, however, uses the certified factorial
+ladder and Proposition~\ref{prop:ladder}; it does not use a
+background-flow vertex reduction.
 
 The ladder \eqref{eq:ladder} was scanned with the same rigor:
 $5{,}298$ class-mass profiles in exact arithmetic --- uniform
@@ -1288,13 +1286,13 @@ is supplied by the ladder certificates on $(a^p,(a{+}1)^q)$
 ($h=3$, all integer $a$, $k\le28\ge k_A$) with
 Proposition~\ref{prop:ladder}, hypothesis (i) was verified per
 multiset (worst certificate ratio $0.38$), and band B is empty
-except at $(1,1,2)$, whose single position is checked directly.  For $3\le h\le10$: Theorem~\ref{thm:cert} supplies
-the symmetric form, over the whole flow box by
-Lemmas~\ref{lem:vertex} and~\ref{lem:slot}, at every band position
-provided $k_A$ does not exceed the certified $k$-range, which holds
-exactly for the table of Theorem~\ref{thm:scope}; at uniform
-multisets the diagonal is symmetric, so Proposition~\ref{prop:dd}
-yields hypothesis (ii) and Theorem~\ref{thm:reduction} applies.
+except at $(1,1,2)$, whose single position is checked directly.  For
+the listed uniform families with $3\le h\le10$,
+Theorem~\ref{thm:cert} supplies the full factorial ladder at every
+band position because $k_A\le28$ exactly for the table of
+Theorem~\ref{thm:scope}.  Proposition~\ref{prop:ladder} therefore
+yields hypothesis (ii), hypothesis (i) is verified by the certificate
+grid, and Theorem~\ref{thm:reduction} applies.
 \end{proof}
 
 \section{Extremal results and the counterexample
@@ -1305,9 +1303,10 @@ For an interior index $k$ of a positive sequence $(a_k)$, the (local)
 \emph{balance} is $\min(a_{k-1},a_{k+1})/a_k$.  A positive sequence
 fails unimodality if and only if some index $k$ satisfies the global
 condition $\min\bigl(\max_{i<k}a_i,\;\max_{i>k}a_i\bigr)>a_k$; local
-balance $>1$ is the width-one special case, and every log-concavity
-failure observed in trees to date has width exactly one, so local
-balance is the operative diagnostic.
+balance $>1$ is the width-one special case.  It is the operative
+diagnostic for the hub-spider and junction searches below, although
+other tree families can have several consecutive log-concavity breaks
+\cite{BautistaRamos}.
 \end{definition}
 
 A valley at $k$ is precisely an interior index with balance $>1$, so
@@ -1316,7 +1315,7 @@ searching for a unimodality counterexample is the optimization problem
 a log-concavity failure.  Three structural facts organize the search
 space.
 
-\paragraph{The offset law.}
+\paragraph{The observed offset law.}
 For uniform hub spiders, $I(S(c^h))=H_c^h+xE_c^h$, and over the range
 $h\le25$, $c\le12$ ($n$ up to $256$) the unique log-concavity failure
 sits at offset exactly $h-2$ below the top degree for every $c\ge4$,
@@ -1325,10 +1324,10 @@ index where the fat $xE^h$ hump still contributes against the thin
 $H^h$ tail.  Balance peaks at $0.0439$ for $S(4^5)$ ($n=46$) and
 decays in both directions.
 
-\paragraph{A high-fragility tree.}
+\paragraph{High-fragility trees.}
 A beam search over junction trees built from all $2{,}975$ rooted
 gadgets on at most $11$ vertices, seeded with hub-spider multisets,
-produced a concrete high-fragility witness: a $48$-vertex tree (root,
+produced a concrete high-fragility seed: a $48$-vertex tree (root,
 four $H_4$ hub gadgets, one $11$-vertex gadget) with a single
 log-concavity failure of balance $0.04512$ --- more than double the
 previous record ($0.0208$, for the family $T^*$).  It is the first
@@ -1367,10 +1366,11 @@ $64$, every forest product checked was log-concave outright, and the
 flat-tail/steep-cliff combination a non-unimodal product requires
 never co-occurs in real tree polynomials.  All searches and caps are,
 of course, evidence about accessible scales only; they are recorded
-here because the structural caps (the offset law, the Maclaurin
+here because the structural caps (the observed offset law, the Maclaurin
 tension, the decreasing-zone protection) are proof-shaped statements
-that delimit where any counterexample must live: width $\ge2$
-log-convex windows, for which no generator is known.
+that delimit where a counterexample by this junction mechanism would
+have to live: below the decreasing zone or outside the width-one local
+balance regime.
 
 \section{Open problems}\label{sec:open}
 

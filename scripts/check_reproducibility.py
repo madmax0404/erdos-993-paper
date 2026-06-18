@@ -108,7 +108,15 @@ def check_main_certificates() -> None:
     m = load("993_M_dual_certificates.json")
     require(m["cases"] == 238, "unexpected M-dual case count")
     require(len(m["failures"]) == 0, "M-dual failures present")
-    print(f"M dual: cases={m['cases']} failures=0 worst_ratio={m['worst_ratio']:.6f}")
+    m_ext = load("993_M_dual_certificates_ext.json")
+    require(m_ext["cases"] == 212, "unexpected extended M-dual case count")
+    require(len(m_ext["failures"]) == 0, "extended M-dual failures present")
+    require(m_ext["worst"] <= m["worst_ratio"], "extended M-dual worst ratio mismatch")
+    print(
+        "M dual: "
+        f"base_cases={m['cases']} extended_cases={m_ext['cases']} "
+        f"failures=0 worst_ratio={m['worst_ratio']:.6f}"
+    )
 
     ecore_logs = [
         "993_ecore_polyc_certification.json",
@@ -191,11 +199,29 @@ def check_ladder_and_landscape() -> None:
     require(adjacent["range"] == [3, 10, 28], "adjacent-value certificate range mismatch")
     require(len(adjacent["certified"]) == 7866, "adjacent-value certificate count mismatch")
     require(adjacent["failed"] == [], "adjacent-value certificate failures present")
+    adjacent_certified = {tuple(row) for row in adjacent["certified"]}
+    uniform_missing = [
+        (h, h, k, s)
+        for h in range(3, 11)
+        for k in range(2, 29)
+        for s in range(1, min(h, k))
+        if (h, h, k, s) not in adjacent_certified
+    ]
+    require(uniform_missing == [], f"uniform ladder certificate gaps: {uniform_missing[:5]}")
+    uniform_count = sum(
+        1
+        for h, p, k, _s in adjacent_certified
+        if p == h and 3 <= h <= 10 and k <= 28
+    )
+    require(uniform_count == 1068, "uniform ladder certificate count mismatch")
     require(
         adjacent["schur_datapoint"]["balanced_is_worse"] is True,
         "adjacent-value Schur datapoint mismatch",
     )
-    print("Adjacent-two-value ladder certificates: certified=7866 failures=0")
+    kl_scope = load("993_kl_scope.json")
+    require(kl_scope["all_checks_pass"] is True, "three-hub adjacent scope check failed")
+    require(len(kl_scope["families"]) == 16, "three-hub adjacent scope count mismatch")
+    print("Adjacent-two-value ladder certificates: certified=7866 uniform=1068 failures=0")
 
     giant_cert = load("993_giant_certification.json")
     require(len(giant_cert["certified"]) == 1512, "giant certificate count mismatch")
@@ -289,6 +315,10 @@ def check_structural_searches() -> None:
     require(
         0.04512 <= beam["history"][0]["best_balance"] <= 0.04513,
         "junction beam seed balance mismatch",
+    )
+    require(
+        max(row["best_balance"] for row in beam["history"]) > beam["history"][0]["best_balance"],
+        "junction beam extension balance did not exceed seed",
     )
     require(max(row["best_balance"] for row in beam["history"]) < 1.0, "junction beam found valley")
 

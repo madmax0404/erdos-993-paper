@@ -1,4 +1,4 @@
-"""Generate Lean theorem instances for committed E-core certificates."""
+"""Generate Lean theorem instances for committed vertex-background E-core certificates."""
 
 from __future__ import annotations
 
@@ -58,7 +58,7 @@ def theorem_block(instance: tuple[int, int, int], payload: dict) -> str:
     scale = payload["scale_denominator"]
     return f"""
 /--
-E-core Taylor-shift certificate for `(k, h, w) = ({k}, {h}, {w})`.
+Vertex-background E-core Taylor-shift certificate for `(k, h, w) = ({k}, {h}, {w})`.
 The integer polynomial is scaled by the positive denominator `{scale}`.
 -/
 abbrev {poly_name} : IntPoly := {coeffs}

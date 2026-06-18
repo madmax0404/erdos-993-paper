@@ -39,8 +39,10 @@ n^2 >= n(n-1)/2 - (n-1) is n^2 + 3n - 2 >= 0.  G3 resolved.
   extended grid 212/212 (worst 0.4352).
 - LP certification: worst 0.7403 / margin 25.97% unchanged (the
   repaired instances were never binding).
-- End-to-end: all 68 trees in the claimed unconditional scope are
-  unimodal by direct DP (independent of all lemma machinery).
+- End-to-end: the then-current finite claimed scope was checked by direct
+  DP (independent of all lemma machinery).  The present manuscript scope is
+  larger: 55 uniform finite parameter choices, eleven mixed two-hub choices,
+  and sixteen adjacent-three-hub choices beyond the all-`h=1` family.
 - Bracket construction (certify_993_ecore_polyc.brackets) crosschecked
   against independent numeric products at 120 random points: exact
   match.  (The E-core certification is unaffected by F1/F2: it uses

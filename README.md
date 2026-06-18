@@ -41,7 +41,8 @@ fully theorem-prover-verified manuscript.  Reviewers should start with
 - `scripts/export_ecore_poly_certificate.py`: exports exact polynomial
   certificate data for the Lean Taylor-shift checker.
 - `scripts/generate_ecore_lean_certificates.py`: regenerates the Lean theorem
-  instances for the 996 committed E-core polynomial certificates.
+  instances for the 996 committed vertex-background E-core polynomial
+  certificates.
 - `scripts/reproduce.sh`: runs the fast reproducibility checks and rebuilds the
   PDF when `tectonic` is installed.
 
@@ -89,7 +90,8 @@ uv run python scripts/reproduce_all.py
 The full run includes exact symbolic certificates and structural searches, so
 it is substantially slower than `scripts/reproduce.sh`.
 
-The generated Lean E-core certificate file can also be refreshed directly:
+The generated Lean vertex-background E-core certificate file can also be
+refreshed directly:
 
 ```bash
 uv run python scripts/generate_ecore_lean_certificates.py --jobs 16

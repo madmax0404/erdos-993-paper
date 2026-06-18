@@ -184,7 +184,7 @@ k: notes/verify_993_oddcore.py, logs/993_oddcore.json (zero
 failures).
 
 **Theorem L3 (final form).**  For h = 2 and ALL arms (c_1, c_2), the
-flow concavity phi'' <= 0 holds on the whole flow box at every
+flow concavity phi'' <= 0 holds for every t in [0,2] at every
 position k.  (Even s: the chain above with the even core; odd s: with
 the odd core.)
 
@@ -232,9 +232,10 @@ devices for (ii-agg); (ii-agg) itself survives everything
 - A -> infinity probes (A <= 1024): ratio decreases to ~ -5.31; the
   aggregate margin GROWS where the per-pair split dies.
 - Uniform sanity: at (c^h) the aggregate ratio EQUALS the symmetric
-  per-pair ratio (split exact by symmetry) -- 0 mismatches.  Hence
-  the 996 polynomial-in-c certified instances, the h = 2 theorem, and
-  the limit lemma are already proofs of (ii-agg) at uniform multisets.
+  per-pair ratio (split exact by symmetry) -- 0 mismatches.  The finite
+  uniform scope now uses the p = h factorial-ladder certificates plus
+  Proposition prop:ladder for (ii-agg); the 996 E-core certificates are
+  vertex-background checks and are not a background-flow box reduction.
 
 (ii-agg) is the new hypothesis (ii) normal form.  At h = 2 it IS the
 single-pair inequality, so Theorem L3 below is an unconditional
@@ -250,8 +251,9 @@ certificate ratio 0.194), hypothesis (ii) is Theorem L3 (final form,
 both parities), and band B is empty at h = 2
 (k_dec <= ceil((2C+3)/3) <= C for C >= 3), so the reduction theorem
 applies unconditionally: the eleven mixed spiders (n from 15 to 49)
-are the first mixed-arm members of the certified scope; the count
-beyond h=1 goes 55 -> 66.  End-to-end checks (grid membership +
+are the first mixed-arm members of the certified scope; at this checkpoint the
+count beyond h=1 went 55 -> 66, and the current manuscript adds sixteen
+adjacent-three-hub choices.  End-to-end checks (grid membership +
 ratios + band-B emptiness + brute-force unimodality):
 notes/verify_993_h2mixed_scope.py -> logs/993_h2mixed_scope.json
 (even four); notes/verify_993_oddcore.py -> logs/993_oddcore.json

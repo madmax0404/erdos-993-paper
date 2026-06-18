@@ -40,7 +40,8 @@ presented as conjectural/open.
   - algebraic certificate identities, including the `t`-cancellation pattern;
   - a generic Taylor-shift positivity checker for univariate integer
     polynomials;
-  - 996 generated E-core integer-polynomial positivity instances.
+  - 996 generated vertex-background E-core integer-polynomial positivity
+    instances.
 
 Important boundary: Lean checks the exported integer-polynomial certificates.
 It does not yet independently derive those polynomials from the paper's bracket
@@ -67,9 +68,11 @@ human mathematical review.
 3. Check Theorem `thm:a2`, the virtual ultra-log-concavity margin.
 4. Check Lemma `lem:epsid`, the per-class growth bounds, and Proposition
    `prop:flow`.
-5. Check the E-core pipeline: Lemmas `lem:vertex` and `lem:slot`, the
+5. Check the repaired uniform-scope route: the `p=h` factorial-ladder
+   certificates, Proposition `prop:ladder`, and Theorem `thm:cert`.
+6. Check the E-core vertex-background pipeline: Lemma `lem:slot`, the
    polynomial certification method, and the Python/SymPy bracket extraction.
-6. Check Theorem `thm:h2mixed`, especially `t`-cancellation, Schur minimality,
+7. Check Theorem `thm:h2mixed`, especially `t`-cancellation, Schur minimality,
    and the odd core.
 
 The detailed inventory is in `CLAIM_INVENTORY.md`.
@@ -102,7 +105,7 @@ lake build
 uv run python scripts/check_formalization.py
 ```
 
-Regenerate the Lean E-core theorem instances:
+Regenerate the Lean vertex-background E-core theorem instances:
 
 ```bash
 uv run python scripts/generate_ecore_lean_certificates.py --jobs 16 --check
@@ -115,11 +118,13 @@ uv run python scripts/generate_ecore_lean_certificates.py --jobs 16 --check
 2. Does Theorem `thm:scope` actually cover exactly the families it claims?
 3. Is Theorem `thm:a2` correct, including the virtual-degree bound and the
    absorption inequalities?
-4. Is the E-core polynomial `R(c)` exactly the bracket inequality stated in
-   the paper for each generated instance?
-5. Are the T1/T2 certificates sufficient to prove the master inequality in the
+4. Does the factorial-ladder route prove the listed uniform cases without any
+   hidden background-vertex assumption?
+5. Is the E-core polynomial `R(c)` exactly the vertex-background bracket
+   inequality stated in the paper for each generated instance?
+6. Are the T1/T2 certificates sufficient to prove the master inequality in the
    way the manuscript states?
-6. Are any empirical/search claims accidentally used as theorem inputs?
+7. Are any empirical/search claims accidentally used as theorem inputs?
 
 ## Non-Goals
 
