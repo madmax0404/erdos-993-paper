@@ -10,10 +10,10 @@ lake build
 uv run python scripts/check_formalization.py
 ```
 
-The project is pinned by `lean-toolchain` and currently uses only Lean core.
-The formal files define coefficient sequences, convolution, log-concavity
-predicates, binomial coefficients, and the hub-spider coefficient formula used
-as the target interface for later analytic lemmas.
+The project is pinned by `lean-toolchain` and `lake-manifest.json`.  The formal
+files define coefficient sequences, convolution, log-concavity predicates,
+binomial coefficients, and the hub-spider coefficient formula used as the
+target interface for later analytic lemmas.
 
 The guard script rejects `sorry`, `admit`, and `axiom` in `formal/**/*.lean`.
 That keeps the checked Lean surface honest: every theorem currently in the
@@ -30,13 +30,15 @@ formal directory is kernel-checked without placeholders.
 | `formal/Erdos993Formal/CertificateAlgebra.lean` | the `t`-cancellation determinant identity |
 | `formal/Erdos993Formal/CertificateAlgebra.lean` | monotonicity of cross-bracket products under nonnegative flow |
 | `formal/Erdos993Formal/PolynomialCertificate.lean` | soundness of Taylor-shift polynomial nonnegativity certificates |
+| `formal/Erdos993Formal/Generated/Ecore.lean` | 996 Lean-checked E-core Taylor-shift certificate instances, generated from the committed E-core certificate logs |
 
 ## Remaining Formalization Work
 
-The manuscript's main theorem and the soundness of the Python certificate
-checkers have not yet been fully translated into Lean. The present Lean project
-is a checked foundation and build gate, not a completed formal proof of the
-paper.
+The manuscript's main theorem and all Python certificate checkers have not yet
+been fully translated into Lean. The present Lean project now checks the
+generic polynomial-certificate soundness theorem and the 996 generated E-core
+certificate instances, but it is not yet a completed formal proof of every
+manuscript reduction and certificate family.
 
 The manuscript also contains conjectural all-parameter certificate statements.
 Those cannot be theorem-prover verified as theorems without new mathematics;
@@ -47,3 +49,5 @@ format.
 Use `scripts/export_ecore_poly_certificate.py` to export one E-core polynomial
 certificate in the Taylor-shift format checked by
 `PolynomialCertificate.lean`.
+Use `scripts/generate_ecore_lean_certificates.py` to regenerate the committed
+Lean E-core certificate instances.

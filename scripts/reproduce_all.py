@@ -60,6 +60,11 @@ COMMANDS: list[tuple[str, list[str], list[str]]] = [
         ["logs/993_ecore_polyc_ext.json"],
     ),
     ("E-core top-up certificates", ["uv", "run", "python", "notes/certify_993_ecore_polyc.py", "--topup"], ["logs/993_ecore_polyc_topup.json"]),
+    (
+        "E-core Lean certificates",
+        ["uv", "run", "python", "scripts/generate_ecore_lean_certificates.py", "--jobs", "16"],
+        ["formal/Erdos993Formal/Generated/Ecore.lean"],
+    ),
     ("Band B verifier", ["uv", "run", "python", "notes/verify_993_band_B.py"], ["logs/993_band_B_verification.json"]),
     ("Band B threshold verifier", ["uv", "run", "python", "notes/verify_993_band_B_threshold.py"], ["logs/993_band_B_threshold.json"]),
     ("A0 prime/P6 extension", ["uv", "run", "python", "notes/verify_993_A0prime_P6ext.py"], ["logs/993_A0prime_P6ext.json"]),

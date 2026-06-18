@@ -53,6 +53,13 @@ def CoeffsNonneg (p : IntPoly) : Prop :=
 def SamplesNonneg (p : IntPoly) (B : Nat) : Prop :=
   ∀ n : Nat, 1 ≤ n -> n ≤ B -> 0 ≤ eval p (Int.ofNat n)
 
+def coeffsNonnegBool : IntPoly -> Bool
+  | [] => true
+  | a :: p => decide (0 ≤ a) && coeffsNonnegBool p
+
+def samplesNonnegBool (p : IntPoly) (B : Nat) : Bool :=
+  (List.range B).all (fun i => decide (0 ≤ eval p (Int.ofNat (i + 1))))
+
 structure PositivityCertificate (p : IntPoly) where
   bound : Nat
   samples : SamplesNonneg p bound
@@ -106,6 +113,36 @@ theorem eval_nonneg_of_coeffsNonneg (p : IntPoly) {x : Int}
       have ht : 0 ≤ eval p x := ih hp'
       have hmul : 0 ≤ x * eval p x := mul_nonneg hx ht
       simpa [eval] using add_nonneg ha hmul
+
+theorem coeffsNonneg_of_bool {p : IntPoly} (h : coeffsNonnegBool p = true) :
+    CoeffsNonneg p := by
+  induction p with
+  | nil =>
+      intro a ha
+      cases ha
+  | cons a p ih =>
+      simp [coeffsNonnegBool] at h
+      intro b hb
+      simp at hb
+      rcases hb with rfl | hb
+      · exact h.1
+      · exact ih h.2 b hb
+
+theorem samplesNonneg_of_bool {p : IntPoly} {B : Nat}
+    (h : samplesNonnegBool p B = true) : SamplesNonneg p B := by
+  intro n hn hle
+  have hi : n - 1 ∈ List.range B := by
+    simp [List.mem_range]
+    omega
+  have hall : ∀ i ∈ List.range B,
+      decide (0 ≤ eval p (Int.ofNat (i + 1))) = true := by
+    simpa [samplesNonnegBool, List.all_eq_true] using h
+  have hdec := hall (n - 1) hi
+  have hnonneg : 0 ≤ eval p (Int.ofNat ((n - 1) + 1)) := by
+    exact of_decide_eq_true hdec
+  have hnback : (n - 1) + 1 = n := by
+    omega
+  simpa [hnback] using hnonneg
 
 /--
 Soundness of the Taylor-shift positivity certificate.

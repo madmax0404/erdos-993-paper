@@ -3,12 +3,15 @@
 This is the bridge from the existing SymPy certification scripts to the Lean
 checker in `formal/Erdos993Formal/PolynomialCertificate.lean`.  It does not
 itself prove the certificate in Lean; it emits the exact data that generated
-Lean files will instantiate:
+Lean files will instantiate.  The target polynomial may have rational
+coefficients, so the exported integer polynomial is multiplied by a positive
+common denominator:
 
-* ascending coefficients of the target integer polynomial `R(c)`;
+* the positive scale denominator;
+* ascending coefficients of the scaled target integer polynomial;
 * the finite check bound `B`;
-* exact samples `R(1), ..., R(B)`;
-* ascending coefficients of the shifted tail polynomial `R(c+B)`.
+* exact scaled samples;
+* ascending coefficients of the scaled shifted tail polynomial.
 """
 
 from __future__ import annotations
@@ -27,9 +30,13 @@ sys.path.insert(0, str(ROOT / "notes"))
 import certify_993_ecore_polyc as ecore  # noqa: E402
 
 
-def coeffs_ascending(expr: sp.Expr) -> list[int]:
+def scaled_coeffs_ascending(expr: sp.Expr) -> tuple[int, list[int]]:
     poly = sp.Poly(sp.expand(expr), ecore.c)
-    return [int(x) for x in reversed(poly.all_coeffs())]
+    coeffs = list(reversed(poly.all_coeffs()))
+    denominator = 1
+    for coeff in coeffs:
+        denominator = sp.ilcm(denominator, sp.denom(coeff))
+    return int(denominator), [int(x * denominator) for x in coeffs]
 
 
 def positivity_bound(expr: sp.Expr) -> int:
@@ -68,17 +75,22 @@ def positivity_bound(expr: sp.Expr) -> int:
 def build_payload(k: int, h: int, w: int) -> dict:
     n1, n2, dq = ecore.brackets(k, h, w)
     expr = sp.expand(h * dq**2 - (h - 1) * n1 * n2)
+    scale, coeffs = scaled_coeffs_ascending(expr)
     bound = positivity_bound(expr)
     poly = sp.Poly(expr, ecore.c)
     shifted = sp.expand(expr.subs(ecore.c, ecore.c + bound))
+    shifted_scale, shifted_coeffs = scaled_coeffs_ascending(shifted)
+    if shifted_scale != scale:
+        raise ValueError("shifted polynomial denominator changed unexpectedly")
     return {
         "family": "ecore",
         "instance": {"k": k, "h": h, "w": w},
         "variable": "c",
+        "scale_denominator": scale,
         "bound": bound,
-        "polynomial_coefficients_ascending": coeffs_ascending(expr),
-        "samples": [int(poly.eval(i)) for i in range(1, bound + 1)],
-        "shifted_coefficients_ascending": coeffs_ascending(shifted),
+        "polynomial_coefficients_ascending": coeffs,
+        "samples": [int(poly.eval(i) * scale) for i in range(1, bound + 1)],
+        "shifted_coefficients_ascending": shifted_coeffs,
     }
 
 

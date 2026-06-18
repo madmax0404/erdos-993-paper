@@ -35,6 +35,7 @@ the committed logs after normalizing runtime-only timing fields.
 | Polynomial/tree utility correctness and known non-LC examples | `tests/`, `src/erdos993/` | `uv run pytest -q` |
 | T1/T2 certificate grid: 238 cases, no failures, worst ratio 0.4352 | `notes/extract_993_M_dual_certificates.py` | `logs/993_M_dual_certificates.json`, `logs/993_M_dual_certificates_ext.json` |
 | E-core polynomial certification: 996 instances, no failures | `notes/certify_993_ecore_polyc.py` | `logs/993_ecore_polyc_certification.json`, `logs/993_ecore_polyc_ext.json`, `logs/993_ecore_polyc_topup.json` |
+| Lean-checked E-core Taylor-shift certificates: 996 generated theorem instances | `scripts/generate_ecore_lean_certificates.py` | `formal/Erdos993Formal/Generated/Ecore.lean`, checked by `lake build` |
 | Band B residual: 24,394 multisets, 54,049 rows, no failures; large threshold from C=55 | `notes/verify_993_band_B.py`, `notes/verify_993_band_B_threshold.py` | `logs/993_band_B_verification.json`, `logs/993_band_B_threshold.json` |
 | Scope theorem auxiliary checks for h=1, h=2, adjacent-three-hub families, odd cases, and pure-pair reduction | `notes/verify_993_h2mixed_scope.py`, `notes/verify_993_oddcore.py`, `notes/verify_993_kl_scope.py`, `notes/verify_993_purepair_reduction.py` | `logs/993_h2mixed_scope.json`, `logs/993_oddcore.json`, `logs/993_kl_scope.json`, `logs/993_purepair_reduction.json` |
 | A0/A1/A2/G/N/W auxiliary proof obligations | `notes/verify_993_A0prime_P6ext.py`, `notes/verify_993_A1_*.py`, `notes/verify_993_A2_threevalue.py`, `notes/certify_993_G_tails.py`, `notes/verify_993_N_convexity.py`, `notes/verify_993_W_schur_dom.py` | matching `logs/993_A0prime_P6ext.json`, `logs/993_A1_*.json`, `logs/993_A2_threevalue.json`, `logs/993_G_tails_certification.json`, `logs/993_N_convexity.json`, `logs/993_W_schur_dom.json` |
@@ -70,6 +71,7 @@ uv run python notes/extract_993_M_dual_certificates.py --ext
 uv run python notes/certify_993_ecore_polyc.py
 uv run python notes/certify_993_ecore_polyc.py --h-min 8 --h-max 10 --k-min 2 --k-max 20 --out 993_ecore_polyc_ext.json
 uv run python notes/certify_993_ecore_polyc.py --topup
+uv run python scripts/generate_ecore_lean_certificates.py --jobs 16
 uv run python notes/verify_993_factorial_ladder.py
 uv run python notes/verify_993_ladder_schur_step.py
 uv run python notes/certify_993_ladder_polyc.py 3 10 28 993_ladder_polyc_h3-10_k28.json
